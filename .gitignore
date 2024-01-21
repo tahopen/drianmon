@@ -1,0 +1,14 @@
+target
+*/src/generated
+mondrian.*properties
+*.ipr
+*.iws
+*.iml
+.project
+.settings
+.classpath
+.idea
+bin/
+build/
+classes/
+lib/
