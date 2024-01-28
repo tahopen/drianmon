@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>pentaho</groupId>
-    <artifactId>pentaho-mondrian-parent-pom</artifactId>
-    <version>10.1.0.0-SNAPSHOT</version>
+    <artifactId>tahopen-drianmon-parent-pom</artifactId>
+    <version>0.1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>drianmon</artifactId>
-  <version>10.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0-SNAPSHOT</version>
   <name>Drianmon Project: ${project.artifactId}</name>
   <description>Drianmon OLAP Engine</description>
   <url>http://drianmon.org</url>

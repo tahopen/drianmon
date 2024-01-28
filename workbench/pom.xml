@@ -10,7 +10,7 @@
   <artifactId>workbench</artifactId>
   <version>0.1.0.0-SNAPSHOT</version>
   <name>Tahopen Project: ${project.artifactId}</name>
-  <description>drianmon Schema Workbench</description>
+  <description>Drianmon Schema Workbench</description>
   <url>http://tahopen.org</url>
   <properties>
     <jlfgr.version>1.0</jlfgr.version>
