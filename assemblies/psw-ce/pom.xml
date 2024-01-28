@@ -8,7 +8,7 @@
     <version>10.1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>psw-ce</artifactId>
-  <version>10.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Pentaho Schema Workbench - CE</name>
   <description>Mondrian Schema Workbench</description>
@@ -52,7 +52,7 @@
     <dependency>
       <groupId>pentaho</groupId>
       <artifactId>mondrian</artifactId>
-      <version>${project.version}</version>
+      <version>9.6.0.0-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <artifactId>javacc</artifactId>
