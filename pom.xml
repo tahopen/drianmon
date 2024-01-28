@@ -7,7 +7,7 @@
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
     <version>9.6.0.0-SNAPSHOT</version>
   </parent>
-  <groupId>pentaho</groupId>
+  <groupId>tahopen</groupId>
   <artifactId>tahopen-drianmon-parent-pom</artifactId>
   <version>0.1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
