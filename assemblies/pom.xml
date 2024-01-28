@@ -11,9 +11,9 @@
   <artifactId>tahopen-drianmon-assemblies</artifactId>
   <version>0.1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Pentaho Mondrian Assemblies</name>
-  <description>Packages Mondrian artifacts</description>
-  <url>http://www.pentaho.com</url>
+  <name>Tahopen Drianmon Assemblies</name>
+  <description>Packages Driamon artifacts</description>
+  <url>http://www.tahopen.org</url>
   <modules>
     <module>psw-ce</module>
   </modules>
