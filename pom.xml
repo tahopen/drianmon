@@ -3,16 +3,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.pentaho</groupId>
-    <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-    <version>9.6.0.0-SNAPSHOT</version>
+    <groupId>org.tahopen</groupId>
+    <artifactId>tahopen-ce-jar-parent-pom</artifactId>
+    <version>0.1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>tahopen</groupId>
   <artifactId>tahopen-drianmon-parent-pom</artifactId>
   <version>0.1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Tahopen Driamon Parent POM</name>
-  <description>Container pom for mondrian and mondrian workbench</description>
+  <description>Container pom for drianmon and drianmon workbench</description>
   <url>http://www.pentaho.com</url>
   <licenses>
     <license>
@@ -22,15 +22,15 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git@github.com:pentaho/mondrian.git</connection>
-    <developerConnection>scm:git:git@github.com:pentaho/mondrian.git</developerConnection>
-    <url>scm:git:git@github.com:pentaho/mondrian.git</url>
+    <connection>scm:git:git@github.com:tahopen/drianmon.git</connection>
+    <developerConnection>scm:git:git@github.com:tahopen/drianmon.git</developerConnection>
+    <url>scm:git:git@github.com:tahopen/drianmon.git</url>
   </scm>
   <properties>
     <license.licenseName>epl_only_v1</license.licenseName>
 
     <olap4j.version>1.2.0</olap4j.version>
-    <eigenbase-properties.version>1.1.2</eigenbase-properties.version>
+    <eigenbase-properties.version>1.1.6</eigenbase-properties.version>
     <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
     <olap4j-tck.version>1.0.1.539</olap4j-tck.version>
     <eigenbase-resgen.version>1.3.1</eigenbase-resgen.version>
@@ -39,12 +39,12 @@
     <validation-api.version>1.0.0.GA</validation-api.version>
     <commons-collections.version>3.2.2</commons-collections.version>
     <commons-math.version>1.1</commons-math.version>
-    <olap4j-xmla.version>1.2.0</olap4j-xmla.version>
+    <olap4j-xmla.version>1.1.0</olap4j-xmla.version>
     <jsp-api.version>2.0</jsp-api.version>
     <mockito-all.version>1.9.5</mockito-all.version>
     <commons-dbcp2.version>2.9.0</commons-dbcp2.version>
     <olap4j-xmlaserver.version>1.2.0</olap4j-xmlaserver.version>
-    <eigenbase-xom.version>1.3.5</eigenbase-xom.version>
+    <eigenbase-xom.version>1.3.4</eigenbase-xom.version> <!-- origin 1.3.5 -->
     <servlet-api.version>2.4</servlet-api.version>
     <commons-lang.version>2.4</commons-lang.version>
     <xmlunit.version>1.1</xmlunit.version>
@@ -80,6 +80,33 @@
   </profiles>
 
   <repositories>
+<!--
+    <repository>
+            <id>redhat-ga-repository</id>
+            <name>Redhat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+    </repository>
+-->
+   
+<!--
+   <repository>
+        <id>spring</id>
+        <name>Spring Repository</name>
+        <url>https://repo.spring.io/plugins-release/</url>
+  </repository>
+-->  
+  
+  <!--
+  <repository>
+    <id>spring-snapshot</id>
+    <name>Spring Snapshot Repository</name>
+    <url>https://repo.spring.io/snapshot</url>
+    <snapshots>
+        <enabled>true</enabled>
+    </snapshots>
+  </repository>
+-->		
+<!--  
     <repository>
       <id>pentaho-public</id>
       <name>Pentaho Public</name>
@@ -93,9 +120,38 @@
         <updatePolicy>interval:15</updatePolicy>
       </snapshots>
     </repository>
+-->
   </repositories>
 
   <pluginRepositories>
+<!--  
+   <pluginRepository>
+            <id>redhat-ga-repository</id>
+            <name>Redhat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </pluginRepository>  
+-->  
+<!--  
+ <pluginRepository>
+        <id>mavencentral</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>spring-releases</id>
+        <url>https://repo.spring.io/libs-release</url>
+    </pluginRepository>
+-->      
+<!--  
+    <pluginRepository>
+        <id>spring-snapshots</id>
+        <url>https://repo.spring.io/snapshot</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>spring-milestones</id>
+        <url>https://repo.spring.io/milestone</url>
+    </pluginRepository>
+-->    
+<!--
     <pluginRepository>
       <id>pentaho-public-plugins</id>
       <name>Pentaho Public Plugins</name>
@@ -107,6 +163,8 @@
         <updatePolicy>never</updatePolicy>
       </releases>
     </pluginRepository>
+-->    
+
   </pluginRepositories>
 
 </project>

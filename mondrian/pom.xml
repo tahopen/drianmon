@@ -86,25 +86,49 @@
       <version>${validation-api.version}</version>
     </dependency>
     <dependency>
+      <groupId>net.hydromatic</groupId>
+      <artifactId>eigenbase-xom</artifactId>
+      <version>1.3.7</version>
+    </dependency>
+<!--    
+    <dependency>
       <groupId>eigenbase</groupId>
       <artifactId>eigenbase-xom</artifactId>
       <version>${eigenbase-xom.version}</version>
     </dependency>
+-->    
+<!--
     <dependency>
       <groupId>eigenbase</groupId>
       <artifactId>eigenbase-properties</artifactId>
       <version>${eigenbase-properties.version}</version>
     </dependency>
+-->
+    <dependency>
+      <groupId>net.hydromatic</groupId>
+      <artifactId>eigenbase-properties</artifactId>
+      <version>${eigenbase-properties.version}</version>
+    </dependency>
+    
+<!--
     <dependency>
       <groupId>eigenbase</groupId>
       <artifactId>eigenbase-resgen</artifactId>
       <version>${eigenbase-resgen.version}</version>
     </dependency>
+-->    
+    <dependency>
+      <groupId>net.hydromatic</groupId>
+      <artifactId>eigenbase-resgen</artifactId>
+      <version>1.3.7</version>
+    </dependency>
+        
     <dependency>
       <groupId>org.olap4j</groupId>
       <artifactId>olap4j</artifactId>
       <version>${olap4j.version}</version>
     </dependency>
+    
     <dependency>
       <groupId>org.olap4j</groupId>
       <artifactId>olap4j-xmla</artifactId>
@@ -148,11 +172,20 @@
       <version>${mockito-all.version}</version>
       <scope>test</scope>
     </dependency>
+<!--
     <dependency>
       <groupId>javacup</groupId>
       <artifactId>javacup</artifactId>
       <version>10k</version>
     </dependency>
+-->    
+    
+    <dependency>
+      <groupId>com.github.vbmacher</groupId>
+      <artifactId>java-cup</artifactId>
+      <version>11b</version>
+    </dependency>
+    
     <dependency>
       <groupId>net.java.dev.javacc</groupId>
       <artifactId>javacc</artifactId>
