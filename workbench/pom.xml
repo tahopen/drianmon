@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>tahopen</groupId>
+    <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-parent-pom</artifactId>
     <version>0.1.0.0-SNAPSHOT</version>
   </parent>
@@ -20,7 +20,8 @@
     <oss-licenses.version>9.6.0.0-SNAPSHOT</oss-licenses.version>
     <dependency.jersey.revision>1.19.1</dependency.jersey.revision>
     <pdi.version>9.3.0.0-SNAPSHOT</pdi.version>
-    <commons-xul.version>9.6.0.0-SNAPSHOT</commons-xul.version>
+    <commons-xul.version>0.1.0.0-SNAPSHOT</commons-xul.version>
+    <eigenbase-properties.version>1.1.4</eigenbase-properties.version>
   </properties>
   <dependencies>
     <dependency>
@@ -57,9 +58,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>pentaho</groupId>
-      <artifactId>mondrian</artifactId>
-      <version>9.6.0.0-SNAPSHOT</version>
+      <groupId>org.tahopen</groupId>
+      <artifactId>drianmon</artifactId>
+      <version>0.1.0.0-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -90,7 +91,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.pentaho</groupId>
+      <groupId>org.tahopen</groupId>
       <artifactId>commons-xul-core</artifactId>
       <version>${commons-xul.version}</version>
       <exclusions>
@@ -101,7 +102,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.pentaho</groupId>
+      <groupId>org.tahopen</groupId>
       <artifactId>commons-xul-swing</artifactId>
       <version>${commons-xul.version}</version>
       <exclusions>

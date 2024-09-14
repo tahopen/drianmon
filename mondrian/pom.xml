@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>tahopen</groupId>
+    <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-parent-pom</artifactId>
     <version>0.1.0.0-SNAPSHOT</version>
   </parent>
@@ -172,20 +172,33 @@
       <version>${mockito-all.version}</version>
       <scope>test</scope>
     </dependency>
-<!--
     <dependency>
       <groupId>javacup</groupId>
       <artifactId>javacup</artifactId>
       <version>10k</version>
     </dependency>
--->    
-    
+ 
+ <!--   
+
+<dependency>
+    <groupId>javacup</groupId>
+    <artifactId>javacup</artifactId>
+    <version>0.10k</version>
+</dependency>
+
+
+<dependency>
+    <groupId>java-cup</groupId>
+    <artifactId>java-cup</artifactId>
+    <version>11b</version>
+</dependency>
+ 
     <dependency>
       <groupId>com.github.vbmacher</groupId>
       <artifactId>java-cup</artifactId>
       <version>11b</version>
     </dependency>
-    
+ -->   
     <dependency>
       <groupId>net.java.dev.javacc</groupId>
       <artifactId>javacc</artifactId>

@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>tahopen</groupId>
+    <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-assemblies</artifactId>
     <version>0.1.0.0-SNAPSHOT</version>
   </parent>
@@ -15,14 +15,14 @@
   <url>http://tahopen.org</url>
   <properties>
     <jlfgr.version>1.0</jlfgr.version>
-    <pentaho-launcher.version>9.6.0.0-SNAPSHOT</pentaho-launcher.version>
+    <tahopen-launcher.version>0.1.0.0-SNAPSHOT</tahopen-launcher.version>
     <dependency.groovy-all.revision>2.4.8</dependency.groovy-all.revision>
     <pdi-dataservice-client-plugin.version>9.3.0.0-SNAPSHOT</pdi-dataservice-client-plugin.version>
-    <oss-licenses.version>9.6.0.0-SNAPSHOT</oss-licenses.version>
+    <oss-licenses.version>9.4.0.0-SNAPSHOT</oss-licenses.version>
     <dependency.jersey.revision>1.19.1</dependency.jersey.revision>
     <pdi.version>9.3.0.0-SNAPSHOT</pdi.version>
-    <commons-xul.version>9.6.0.0-SNAPSHOT</commons-xul.version>
-    <mondrian-schemaworkbench-plugins.version>9.6.0.0-SNAPSHOT</mondrian-schemaworkbench-plugins.version>
+    <commons-xul.version>0.1.0.0-SNAPSHOT</commons-xul.version>
+    <drianmon-schemaworkbench-plugins.version>0.1.0.0-SNAPSHOT</drianmon-schemaworkbench-plugins.version>
   </properties>
   <dependencies>
     <dependency>
@@ -50,9 +50,9 @@
       <version>${commons-io.version}</version>
     </dependency>
     <dependency>
-      <groupId>pentaho</groupId>
-      <artifactId>mondrian</artifactId>
-      <version>9.6.0.0-SNAPSHOT</version>
+      <groupId>org.tahopen</groupId>
+      <artifactId>drianmon</artifactId>
+      <version>0.1.0.0-SNAPSHOT</version>
       <exclusions>
         <exclusion>
           <artifactId>javacc</artifactId>
@@ -143,7 +143,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.pentaho</groupId>
+      <groupId>org.tahopen</groupId>
       <artifactId>commons-xul-core</artifactId>
       <version>${commons-xul.version}</version>
       <exclusions>
@@ -158,14 +158,14 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.pentaho</groupId>
+      <groupId>org.tahopen</groupId>
       <artifactId>commons-xul-swing</artifactId>
       <version>${commons-xul.version}</version>
     </dependency>
     <dependency>
-      <groupId>pentaho</groupId>
-      <artifactId>pentaho-application-launcher</artifactId>
-      <version>${pentaho-launcher.version}</version>
+      <groupId>org.tahopen</groupId>
+      <artifactId>tahopen-application-launcher</artifactId>
+      <version>${tahopen-launcher.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
@@ -176,9 +176,9 @@
       <artifactId>log4j-jcl</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.pentaho</groupId>
-      <artifactId>mondrian-schemaworkbench-plugins</artifactId>
-      <version>${mondrian-schemaworkbench-plugins.version}</version>
+      <groupId>org.tahopen</groupId>
+      <artifactId>drianmon-schemaworkbench-plugins</artifactId>
+      <version>${drianmon-schemaworkbench-plugins.version}</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
