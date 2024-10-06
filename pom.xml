@@ -21,11 +21,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  <scm>
-    <connection>scm:git:git@github.com:tahopen/drianmon.git</connection>
-    <developerConnection>scm:git:git@github.com:tahopen/drianmon.git</developerConnection>
-    <url>scm:git:git@github.com:tahopen/drianmon.git</url>
-  </scm>
+  
   <properties>
     <license.licenseName>epl_only_v1</license.licenseName>
 
@@ -80,23 +76,18 @@
   </profiles>
 
   <repositories>
-<!--
     <repository>
             <id>redhat-ga-repository</id>
             <name>Redhat GA Repository</name>
             <url>https://maven.repository.redhat.com/ga/</url>
     </repository>
--->
-   
-<!--
+
    <repository>
         <id>spring</id>
         <name>Spring Repository</name>
         <url>https://repo.spring.io/plugins-release/</url>
   </repository>
--->  
-  
-  <!--
+
   <repository>
     <id>spring-snapshot</id>
     <name>Spring Snapshot Repository</name>
@@ -105,33 +96,17 @@
         <enabled>true</enabled>
     </snapshots>
   </repository>
--->		
-<!--  
-    <repository>
-      <id>pentaho-public</id>
-      <name>Pentaho Public</name>
-      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>interval:15</updatePolicy>
-      </snapshots>
-    </repository>
--->
+
   </repositories>
 
   <pluginRepositories>
-<!--  
+
    <pluginRepository>
             <id>redhat-ga-repository</id>
             <name>Redhat GA Repository</name>
             <url>https://maven.repository.redhat.com/ga/</url>
         </pluginRepository>  
--->  
-<!--  
+
  <pluginRepository>
         <id>mavencentral</id>
         <url>https://repo.maven.apache.org/maven2</url>
@@ -140,8 +115,7 @@
         <id>spring-releases</id>
         <url>https://repo.spring.io/libs-release</url>
     </pluginRepository>
--->      
-<!--  
+
     <pluginRepository>
         <id>spring-snapshots</id>
         <url>https://repo.spring.io/snapshot</url>
@@ -150,20 +124,6 @@
         <id>spring-milestones</id>
         <url>https://repo.spring.io/milestone</url>
     </pluginRepository>
--->    
-<!--
-    <pluginRepository>
-      <id>pentaho-public-plugins</id>
-      <name>Pentaho Public Plugins</name>
-      <url>https://repo.orl.eng.hitachivantara.com/artifactory/pnt-mvn/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </pluginRepository>
--->    
 
   </pluginRepositories>
 
