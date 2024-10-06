@@ -15,6 +15,6 @@
   <description>Packages Driamon artifacts</description>
   <url>http://www.tahopen.org</url>
   <modules>
-    <module>psw-ce</module>
+    <module>tsw-ce</module>
   </modules>
 </project>

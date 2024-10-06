@@ -11,7 +11,7 @@
   <version>0.1.0.0-SNAPSHOT</version>
   <name>Drianmon Project: ${project.artifactId}</name>
   <description>Drianmon OLAP Engine</description>
-  <url>http://drianmon.org</url>
+  <url>http://tahopen.org</url>
   <properties>
     <project.version.minor>000</project.version.minor>
     <driver.version>${project.version}</driver.version>
@@ -19,7 +19,7 @@
     <schema.version>3</schema.version>
     <driver.name>Mondrian olap4j driver</driver.name>
     <driver.version.minor>${project.version.minor}</driver.version.minor>
-    <vendor>Pentaho</vendor>
+    <vendor>Tahopen</vendor>
     <driver.version.major>${project.version.major}</driver.version.major>
     <maven-failsafe-plugin.argLine>-Duser.language=en -Duser.country=US -Djava.locale.providers=COMPAT,SPI</maven-failsafe-plugin.argLine>
   </properties>

@@ -19,7 +19,7 @@
     <pdi-dataservice-client-plugin.version>9.3.0.0-SNAPSHOT</pdi-dataservice-client-plugin.version>
     <oss-licenses.version>9.6.0.0-SNAPSHOT</oss-licenses.version>
     <dependency.jersey.revision>1.19.1</dependency.jersey.revision>
-    <pdi.version>9.3.0.0-SNAPSHOT</pdi.version>
+    <pdi.version>9.4.0.0-SNAPSHOT</pdi.version>
     <commons-xul.version>0.1.0.0-SNAPSHOT</commons-xul.version>
     <eigenbase-properties.version>1.1.4</eigenbase-properties.version>
   </properties>
@@ -134,7 +134,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>mondrian.gui.Workbench</mainClass>
+              <mainClass>drianmon.gui.Workbench</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -155,7 +155,7 @@
                 <property name="relative.generated.java.dir" value="src/generated/java" />
                 <property name="generated.java.dir" value="${project.basedir}/src/generated/java" />
                 <mkdir dir="${project.build.outputDirectory}" />
-                <mkdir dir="${generated.java.dir}/mondrian/olap" />
+                <mkdir dir="${generated.java.dir}/drianmon/olap" />
                 <ant target="def" />
               </target>
             </configuration>

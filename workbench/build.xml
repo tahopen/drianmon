@@ -18,10 +18,10 @@
   <target name="def" depends="define-tasks">
     <!-- Workbench needs a different model. See Mondrian_SW.xml for details. -->
     <xomgen
-        model="${relative.java.dir}/mondrian/olap/Mondrian_SW.xml"
+        model="${relative.java.dir}/drianmon/olap/Drianmon_SW.xml"
         destdir="${relative.generated.java.dir}"
-        classname="mondrian.gui.MondrianGuiDef"
-        dtdname="mondrian_SW.dtd"
+        classname="drianmon.gui.DrianmonGuiDef"
+        dtdname="drianmon_SW.dtd"
         />
   </target>
 
