@@ -1,0 +1,95 @@
+/*
+// This software is subject to the terms of the Eclipse Public License v1.0
+// Agreement, available at the following URL:
+// http://www.eclipse.org/legal/epl-v10.html.
+// You must accept the terms of that agreement to use this software.
+//
+// Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
+*/
+package drianmon.rolap.sql;
+
+import drianmon.olap.DrianmonDef;
+
+import java.util.List;
+
+import drianmon.olap.Evaluator;
+import drianmon.rolap.*;
+import drianmon.rolap.aggmatcher.AggStar;
+import drianmon.spi.Dialect;
+import drianmon.util.Pair;
+
+/**
+ * Restricts the SQL result set to members where particular columns have
+ * particular values.
+ *
+ * @version $Id$
+ */
+public class MemberKeyConstraint
+    implements TupleConstraint
+{
+    private final Pair<List<DrianmonDef.Expression>, List<Comparable>> cacheKey;
+    private final List<DrianmonDef.Expression> columnList;
+    private final List<Dialect.Datatype> datatypeList;
+    private final List<Comparable> valueList;
+
+    public MemberKeyConstraint(
+        List<DrianmonDef.Expression> columnList,
+        List<Dialect.Datatype> datatypeList,
+        List<Comparable> valueList)
+    {
+        this.columnList = columnList;
+        this.datatypeList = datatypeList;
+        this.valueList = valueList;
+        cacheKey = Pair.of(columnList, valueList);
+    }
+
+    public void addConstraint(
+        SqlQuery sqlQuery, RolapCube baseCube, AggStar aggStar)
+    {
+        for (int i = 0; i < columnList.size(); i++) {
+            DrianmonDef.Expression expression = columnList.get(i);
+            final Comparable value = valueList.get(i);
+            final Dialect.Datatype datatype = datatypeList.get(i);
+            sqlQuery.addWhere(
+                SqlConstraintUtils.constrainLevel2(
+                    sqlQuery,
+                    expression,
+                    datatype,
+                    value));
+        }
+    }
+
+    public void addLevelConstraint(
+        SqlQuery sqlQuery,
+        RolapCube baseCube,
+        AggStar aggStar,
+        RolapLevel level)
+    {
+    }
+
+    public MemberChildrenConstraint getMemberChildrenConstraint(
+        RolapMember parent)
+    {
+        return null;
+    }
+
+    public String toString() {
+        return "MemberKeyConstraint";
+    }
+
+
+    public Object getCacheKey() {
+        return cacheKey;
+    }
+
+    public Evaluator getEvaluator() {
+        return null;
+    }
+
+    @Override
+    public boolean supportsAggTables() {
+        return true;
+    }
+}
+
+// End MemberKeyConstraint.java

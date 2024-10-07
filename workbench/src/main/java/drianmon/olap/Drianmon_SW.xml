@@ -21,7 +21,7 @@
  dtdName="drianmon_SW.dtd"
  className="DrianmonGuiDef"
  packageName="drianmon.gui"
- importName="drianmon.olap.*:mondrian.rolap.sql.SqlQuery"
+ importName="mondrian.olap.*:mondrian.rolap.sql.SqlQuery"
  root="Schema"
  version="1.0">
     <Doc>

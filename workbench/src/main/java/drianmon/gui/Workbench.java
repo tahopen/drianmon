@@ -13,12 +13,13 @@
 package drianmon.gui;
 
 import drianmon.gui.DrianmonGuiDef;
-import mondrian.olap.DriverManager;
-import mondrian.olap.MondrianProperties;
-import mondrian.olap.Util;
-import mondrian.olap.Util.PropertyList;
-import mondrian.server.MondrianServerRegistry;
-import mondrian.util.UnionIterator;
+import drianmon.olap.MondrianProperties;
+import drianmon.gui.WorkbenchMenubarPlugin;
+import drianmon.olap.DriverManager;
+import drianmon.olap.Util;
+import drianmon.olap.Util.PropertyList;
+import drianmon.server.MondrianServerRegistry;
+import drianmon.util.UnionIterator;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -401,7 +402,7 @@ public class Workbench extends javax.swing.JFrame {
 
         setTitle(
             getResourceConverter().getString(
-                "workbench.panel.title", "Tahopen Schema Workbench"));
+                "workbench.panel.title", "Schema Workbench"));
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(
             new WindowAdapter() {

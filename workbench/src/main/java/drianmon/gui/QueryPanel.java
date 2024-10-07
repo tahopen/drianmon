@@ -12,16 +12,11 @@
 
 package drianmon.gui;
 
-import mondrian.olap.Connection;
-import mondrian.olap.DriverManager;
-import mondrian.olap.Query;
-import mondrian.olap.Result;
-import mondrian.olap.Util.PropertyList;
-
 import org.apache.logging.log4j.Logger;
 
 import drianmon.gui.validate.ValidationUtils;
-import mondrian.olap.*;
+import drianmon.olap.*;
+import drianmon.olap.Util.PropertyList;
 
 import org.apache.logging.log4j.LogManager;
 

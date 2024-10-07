@@ -14,9 +14,9 @@ package drianmon.gui;
 
 import drianmon.gui.DrianmonGuiDef;
 import drianmon.gui.DrianmonGuiDef.Hierarchy;
-import mondrian.olap.Id;
-import mondrian.olap.MondrianProperties;
-import mondrian.olap.Util;
+import drianmon.olap.Id;
+import drianmon.olap.Util;
+import drianmon.olap.MondrianProperties;
 
 import org.eigenbase.xom.NodeDef;
 

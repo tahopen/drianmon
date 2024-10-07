@@ -13,7 +13,7 @@
 package drianmon.gui;
 
 import drianmon.gui.DrianmonGuiDef;
-import mondrian.util.CompositeList;
+import drianmon.util.CompositeList;
 
 import java.util.*;
 import javax.swing.tree.*;

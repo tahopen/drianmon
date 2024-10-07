@@ -51,7 +51,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <modules>
-        <module>mondrian</module>
+        <module>drianmon</module>
       </modules>
     </profile>
     <profile>
