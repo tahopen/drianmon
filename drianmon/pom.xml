@@ -244,10 +244,10 @@
                 <property name="classes.dir" value="${project.build.outputDirectory}" />
                 <property name="build.compiler" value="extJavac"/>
                 <mkdir dir="${project.build.outputDirectory}" />
-                <mkdir dir="${generated.java.dir}/drianmon/olap" />
-                <mkdir dir="${generated.java.dir}/drianmon/rolap/aggmatcher" />
-                <mkdir dir="${generated.java.dir}/drianmon/xmla" />
-                <mkdir dir="${generated.java.dir}/drianmon/parser" />
+                <mkdir dir="${generated.java.dir}/mondrian/olap" />
+                <mkdir dir="${generated.java.dir}/mondrian/rolap/aggmatcher" />
+                <mkdir dir="${generated.java.dir}/mondrian/xmla" />
+                <mkdir dir="${generated.java.dir}/mondrian/parser" />
                 <ant target="def" />
                 <ant target="generate.properties" />
                 <ant target="generate.resources" />
@@ -317,13 +317,13 @@
         <configuration>
           <transformationSets>
             <transformationSet>
-              <dir>${project.build.sourceDirectory}/drianmon/olap</dir>
-              <includes>Drianmon.xml</includes>
+              <dir>${project.build.sourceDirectory}/mondrian/olap</dir>
+              <includes>Mondrian.xml</includes>
               <stylesheet>src/site/xsl/Meta.xsl</stylesheet>
               <outputDir>${project.build.directory}/site/doc</outputDir>
               <fileMappers>
                 <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
-                  <pattern>Drianmon.xml</pattern>
+                  <pattern>Mondrian.xml</pattern>
                   <replacement>xml_schema.html</replacement>
                 </fileMapper>
               </fileMappers>
