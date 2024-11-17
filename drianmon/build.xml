@@ -8,7 +8,7 @@
   == Copyright (C) 2005-2019 Hitachi Vantara and others
   == All Rights Reserved.
   -->
-<project name="drianmon">
+<project name="mondrian">
   <target name="define-tasks">
     <taskdef name="javacup" classname="java_cup.JavaCUPTask">
       <classpath path="${classpath}"/>
@@ -34,13 +34,13 @@
         classpath="${classpath}"
         includeantruntime="false"
         release="${release.jdk.version}">
-      <include name="drianmon/olap/MondrianException.java" />
-      <include name="drianmon/olap/ResultLimitExceededException.java" />
-      <include name="drianmon/olap/InvalidHierarchyException.java" />
-      <include name="drianmon/olap/ResourceLimitExceededException.java" />
-      <include name="drianmon/olap/NativeEvaluationUnsupportedException.java" />
-      <include name="drianmon/olap/QueryCanceledException.java" />
-      <include name="drianmon/olap/QueryTimeoutException.java" />
+      <include name="mondrian/olap/MondrianException.java" />
+      <include name="mondrian/olap/ResultLimitExceededException.java" />
+      <include name="mondrian/olap/InvalidHierarchyException.java" />
+      <include name="mondrian/olap/ResourceLimitExceededException.java" />
+      <include name="mondrian/olap/NativeEvaluationUnsupportedException.java" />
+      <include name="mondrian/olap/QueryCanceledException.java" />
+      <include name="mondrian/olap/QueryTimeoutException.java" />
     </javac>
 
     <resgen
@@ -49,7 +49,7 @@
         resdir="${generated.resources.dir}"
         style="functor"
         locales="en_US,de_DE,de,es_ES">
-      <include name="drianmon/resource/MondrianResource.xml"/>
+      <include name="mondrian/resource/MondrianResource.xml"/>
     </resgen>
 
   </target>
@@ -65,14 +65,14 @@
         includeantruntime="false"
         source="${source.jdk.version}"
         target="${target.jdk.version}">
-      <include name="drianmon/util/PropertyUtil.java" />
+      <include name="mondrian/util/PropertyUtil.java" />
     </javac>
 
     <java classpath="${classpath}"
-        classname="drianmon.util.PropertyUtil"
+        classname="mondrian.util.PropertyUtil"
         fork="no">
-        <arg value="${java.dir}/drianmon/olap"/>
-        <arg value="${generated.java.dir}/drianmon/olap"/>
+        <arg value="${java.dir}/mondrian/olap"/>
+        <arg value="${generated.java.dir}/mondrian/olap"/>
       </java>
   </target>
 
@@ -80,46 +80,46 @@
     <!-- Old parser. -->
     <javacup
         srcdir="${java.dir}"
-        input="${java.dir}/drianmon/olap/Parser.cup"
+        input="${java.dir}/mondrian/olap/Parser.cup"
 
         expect="63"
         interface="true"/>
-    <move file="${java.dir}/drianmon/olap/Parser.java" todir="${generated.java.dir}/drianmon/olap"/>
-    <move file="${java.dir}/drianmon/olap/ParserSym.java" todir="${generated.java.dir}/drianmon/olap"/>
+    <move file="${java.dir}/mondrian/olap/Parser.java" todir="${generated.java.dir}/mondrian/olap"/>
+    <move file="${java.dir}/mondrian/olap/ParserSym.java" todir="${generated.java.dir}/mondrian/olap"/>
     <!-- New parser. -->
     <copy file="${net.java.dev.javacc:javacc:jar}" tofile="${project.build.directory}/javacc.jar" />
     <javacc
-        target="${java.dir}/drianmon/parser/MdxParser.jj"
-        outputdirectory="${generated.java.dir}/drianmon/parser"
+        target="${java.dir}/mondrian/parser/MdxParser.jj"
+        outputdirectory="${generated.java.dir}/mondrian/parser"
         javacchome="${project.build.directory}"/>
   </target>
 
   <target name="def" depends="define-tasks">
     <xomgen
-        model="${relative.java.dir}/drianmon/olap/Drianmon.xml"
+        model="${relative.java.dir}/mondrian/olap/Mondrian.xml"
         destdir="${relative.generated.java.dir}"
-        classname="drianmon.olap.DrianmonDef"
-        dtdname="drianmon.dtd"/>
+        classname="mondrian.olap.MondrianDef"
+        dtdname="mondrian.dtd"/>
     <!--<copy file="${generated.java.dir}/mondrian/olap/mondrian.dtd"-->
       <!--todir="${project.build.directory}"/>-->
 
     <xomgen
         model="${relative.resources.dir}/DefaultRulesSchema.xml"
         destdir="${relative.generated.java.dir}"
-        classname="drianmon.rolap.aggmatcher.DefaultDef"
+        classname="mondrian.rolap.aggmatcher.DefaultDef"
         dtdname="aggregates.dtd"/>
     <!--<copy file="${generated.java.dir}/mondrian/rolap/aggmatcher/aggregates.dtd"-->
       <!--todir="${project.build.directory}"/>-->
 
     <xomgen
-        model="${relative.java.dir}/drianmon/xmla/DataSourcesConfig.xml"
+        model="${relative.java.dir}/mondrian/xmla/DataSourcesConfig.xml"
         destdir="${relative.generated.java.dir}"
-        classname="drianmon.xmla.DataSourcesConfig"
+        classname="mondrian.xmla.DataSourcesConfig"
         dtdname="datasourcesconfig.dtd"/>
     <!--<copy file="${generated.java.dir}/mondrian/xmla/datasourcesconfig.dtd"-->
         <!--todir="${project.build.directory}"/>-->
   </target>
-
+i
   <target name="version">
     <echo file="${generated.resources.dir}/VERSION.txt">Title: ${project.artifactId}
 Version: ${project.version}
@@ -127,10 +127,10 @@ VersionMajor: ${project.version.major}
 VersionMinor: ${project.version.minor}
 Vendor: ${vendor}
 </echo>
-   <echo file="${generated.java.dir}/drianmon/olap4j/MondrianOlap4jDriverVersion.java">/*
+   <echo file="${generated.java.dir}/mondrian/olap4j/MondrianOlap4jDriverVersion.java">/*
  * Project version information. Generated - do not modify.
  */
-package drianmon.olap4j;
+package mondrian.olap4j;
 /**
  * Version information for the Mondrian olap4j driver. (Generated.)
  */
@@ -142,10 +142,10 @@ class MondrianOlap4jDriverVersion {
 }
 
 // End MondrianOlap4jDriverVersion.java</echo>
-       <echo file="${generated.java.dir}/drianmon/server/MondrianServerVersion.java">/*
+       <echo file="${generated.java.dir}/mondrian/server/MondrianServerVersion.java">/*
  * Project version information. Generated - do not modify.
  */
-package drianmon.server;
+package mondrian.server;
 /**
  * Version information for Mondrian. (Generated by build)
  */

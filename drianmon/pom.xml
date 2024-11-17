@@ -502,7 +502,7 @@
                   <autocommit>true</autocommit>
                   <orderFile>ascending</orderFile>
                   <fileset>
-                    <basedir>${project.basedir}/src/it/resources/drianmon/test/loader/</basedir>
+                    <basedir>${project.basedir}/src/it/resources/mondrian/test/loader/</basedir>
                     <includes>
                       <include>SteelWheels.mysql.sql</include>
                     </includes>
