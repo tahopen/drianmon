@@ -10,14 +10,13 @@
 */
 package drianmon.rolap;
 
-import drianmon.resource.MondrianResource;
-
 import org.apache.logging.log4j.Logger;
 
 import drianmon.olap.Util;
 import drianmon.rolap.aggmatcher.JdbcSchema;
 import drianmon.spi.DynamicSchemaProcessor;
 import drianmon.util.*;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

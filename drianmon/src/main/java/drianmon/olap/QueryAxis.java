@@ -12,13 +12,13 @@
 package drianmon.olap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import java.io.PrintWriter;
 
 import drianmon.calc.*;
 import drianmon.mdx.*;
 import drianmon.olap.type.*;
+import mondrian.resource.MondrianResource;
 
 /**
  * An axis in an MDX query. For example, the typical MDX query has two axes,

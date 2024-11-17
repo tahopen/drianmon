@@ -12,13 +12,12 @@
 */
 package drianmon.rolap;
 
-import drianmon.resource.MondrianResource;
-
 import org.apache.commons.collections.*;
 
 import drianmon.olap.*;
 import drianmon.olap.fun.VisualTotalsFunDef.VisualTotalMember;
 import drianmon.rolap.agg.*;
+import mondrian.resource.MondrianResource;
 
 import java.util.*;
 

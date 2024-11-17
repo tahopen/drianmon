@@ -12,7 +12,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,6 +41,7 @@ import drianmon.util.CancellationChecker;
 import drianmon.util.CreationException;
 import drianmon.util.ObjectFactory;
 import drianmon.util.Pair;
+import mondrian.resource.MondrianResource;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;

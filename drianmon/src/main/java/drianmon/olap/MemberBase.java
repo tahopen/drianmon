@@ -10,14 +10,13 @@
 */
 package drianmon.olap;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import drianmon.olap.fun.FunUtil;
 import drianmon.spi.MemberFormatter;
 import drianmon.util.Bug;
+import mondrian.resource.MondrianResource;
 
 /**
  * <code>MemberBase</code> is a partial implementation of {@link Member}.

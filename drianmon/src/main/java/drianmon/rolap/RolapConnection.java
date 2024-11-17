@@ -11,7 +11,6 @@
 package drianmon.rolap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -30,6 +29,7 @@ import drianmon.server.*;
 import drianmon.spi.*;
 import drianmon.spi.impl.JndiDataSourceResolver;
 import drianmon.util.*;
+import mondrian.resource.MondrianResource;
 
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;

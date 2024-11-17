@@ -77,11 +77,11 @@ import drianmon.spi.CellFormatter;
 import drianmon.util.CancellationChecker;
 import drianmon.util.Format;
 import drianmon.util.ObjectPool;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 /**
  * A <code>RolapResult</code> is the result of running a query.

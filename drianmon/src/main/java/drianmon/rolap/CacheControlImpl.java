@@ -9,7 +9,6 @@
 package drianmon.rolap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.eigenbase.util.property.BooleanProperty;
 
@@ -20,6 +19,7 @@ import drianmon.server.Execution;
 import drianmon.server.Locus;
 import drianmon.spi.SegmentColumn;
 import drianmon.util.ArraySortedSet;
+import mondrian.resource.MondrianResource;
 
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;

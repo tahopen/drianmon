@@ -10,8 +10,6 @@
 */
 package drianmon.server;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -22,6 +20,7 @@ import drianmon.rolap.RolapConnection;
 import drianmon.rolap.agg.SegmentCacheManager;
 import drianmon.server.monitor.*;
 import drianmon.util.MDCUtil;
+import mondrian.resource.MondrianResource;
 
 /**
  * Execution context.

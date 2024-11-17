@@ -7,15 +7,15 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap.fun.extra;
+package mondrian.olap.fun.extra;
 
 import java.util.List;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.AbstractMemberCalc;
-import drianmon.mdx.ResolvedFunCall;
-import drianmon.olap.*;
-import drianmon.olap.fun.FunDefBase;
+import mondrian.calc.*;
+import mondrian.calc.impl.AbstractMemberCalc;
+import mondrian.mdx.ResolvedFunCall;
+import mondrian.olap.*;
+import mondrian.olap.fun.FunDefBase;
 
 /**
  * Definition of the <code>CalculatedChild</code> MDX function.

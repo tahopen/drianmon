@@ -13,7 +13,7 @@ import drianmon.calc.*;
 import drianmon.calc.impl.GenericCalc;
 import drianmon.olap.*;
 import drianmon.olap.type.Type;
-import drianmon.resource.MondrianResource;
+import mondrian.resource.MondrianResource;
 
 /**
  * Parameter that is defined in a schema.

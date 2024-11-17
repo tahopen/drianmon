@@ -13,7 +13,7 @@
 package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
-import drianmon.resource.MondrianResource;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 

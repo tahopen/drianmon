@@ -11,7 +11,6 @@
 package drianmon.olap.fun;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import static drianmon.olap.fun.sort.Sorter.hierarchizeTupleList;
 
@@ -70,6 +69,7 @@ import drianmon.server.Execution;
 import drianmon.util.CancellationChecker;
 import drianmon.util.ConcatenableList;
 import drianmon.util.IdentifierParser;
+import mondrian.resource.MondrianResource;
 
 /**
  * {@code FunUtil} contains a set of methods useful within the {@code mondrian.olap.fun} package.

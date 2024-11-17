@@ -13,7 +13,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 
@@ -51,6 +50,7 @@ import drianmon.rolap.sql.CrossJoinArg;
 import drianmon.rolap.sql.SqlQuery;
 import drianmon.spi.Dialect;
 import drianmon.util.FilteredIterableList;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

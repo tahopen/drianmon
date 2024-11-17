@@ -9,7 +9,6 @@
 package drianmon.rolap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import javax.sql.DataSource;
 
@@ -26,6 +25,7 @@ import drianmon.spi.Dialect;
 import drianmon.spi.DialectManager;
 import drianmon.util.Counters;
 import drianmon.util.DelegatingInvocationHandler;
+import mondrian.resource.MondrianResource;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;

@@ -9,14 +9,13 @@
 */
 package drianmon.rolap.format;
 
-import drianmon.resource.MondrianResource;
-
 import java.lang.reflect.Constructor;
 
 import drianmon.spi.CellFormatter;
 import drianmon.spi.MemberFormatter;
 import drianmon.spi.PropertyFormatter;
 import drianmon.spi.impl.Scripts;
+import mondrian.resource.MondrianResource;
 
 /**
  * Formatter factory to provide a single point

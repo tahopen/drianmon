@@ -13,13 +13,12 @@
 
 package drianmon.rolap;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.Collections;
 import java.util.List;
 
 import drianmon.olap.Id;
 import drianmon.olap.Util;
+import mondrian.resource.MondrianResource;
 
 /**
  * <code>ArrayMemberSource</code> implements a flat, static hierarchy. There is

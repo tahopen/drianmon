@@ -11,10 +11,10 @@
 
 package drianmon.recorder;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import mondrian.resource.MondrianResource;
 
 /**
  * Abstract implemention of the {@link MessageRecorder} interface.

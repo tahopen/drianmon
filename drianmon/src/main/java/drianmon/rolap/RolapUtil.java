@@ -14,7 +14,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +27,7 @@ import drianmon.rolap.RolapHierarchy.LimitedRollupMember;
 import drianmon.server.*;
 import drianmon.spi.Dialect;
 import drianmon.util.ClassResolver;
+import mondrian.resource.MondrianResource;
 
 import java.io.*;
 import java.lang.reflect.*;

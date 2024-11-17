@@ -10,8 +10,6 @@
 */
 package drianmon.rolap;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -33,6 +31,7 @@ import drianmon.rolap.agg.OrPredicate;
 import drianmon.rolap.agg.ValueColumnPredicate;
 import drianmon.rolap.sql.SqlQuery;
 import drianmon.util.Pair;
+import mondrian.resource.MondrianResource;
 
 /**
  * Constructs a Pair<BitKey, StarPredicate> based on an tuple list and measure, along with the string representation of

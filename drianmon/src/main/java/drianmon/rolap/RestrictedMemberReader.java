@@ -10,13 +10,12 @@
 */
 package drianmon.rolap;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.*;
 
 import drianmon.olap.*;
 import drianmon.rolap.sql.MemberChildrenConstraint;
 import drianmon.rolap.sql.TupleConstraint;
+import mondrian.resource.MondrianResource;
 
 /**
  * A <code>RestrictedMemberReader</code> reads only the members of a hierarchy

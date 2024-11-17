@@ -10,13 +10,13 @@
 package drianmon.rolap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.eigenbase.util.property.IntegerProperty;
 
 import drianmon.olap.*;
 import drianmon.server.Execution;
 import drianmon.util.Pair;
+import mondrian.resource.MondrianResource;
 
 import java.util.List;
 import java.util.Timer;

@@ -20,7 +20,7 @@
 <resourceBundle
     static="false"
     locale="en_US"
-    exceptionClassName="drianmon.olap.MondrianException">
+    exceptionClassName="mondrian.olap.MondrianException">
 
 <!-- ====================================================================== -->
 <!-- Internal errors 320,000 - 321,000 ==================================== -->
@@ -502,31 +502,31 @@
 <!-- ====================================================================== -->
 <!-- Runtime limit overflow -->
 
-<exception id="600010" name="LimitExceededDuringCrossjoin" className="drianmon.olap.ResourceLimitExceededException">
+<exception id="600010" name="LimitExceededDuringCrossjoin" className="mondrian.olap.ResourceLimitExceededException">
    <text>Size of CrossJoin result ({0,number}) exceeded limit ({1,number})</text>
 </exception>
 
-<exception id="600015" name="TotalMembersLimitExceeded" className="drianmon.olap.ResourceLimitExceededException">
+<exception id="600015" name="TotalMembersLimitExceeded" className="mondrian.olap.ResourceLimitExceededException">
    <text>Total number of Members in result ({0,number}) exceeded limit ({1,number})</text>
 </exception>
 
-<exception id="600020" name="MemberFetchLimitExceeded" className="drianmon.olap.ResourceLimitExceededException">
+<exception id="600020" name="MemberFetchLimitExceeded" className="mondrian.olap.ResourceLimitExceededException">
    <text>Number of members to be read exceeded limit ({0,number})</text>
 </exception>
 
-<exception id="600025" name="SegmentFetchLimitExceeded" className="drianmon.olap.ResourceLimitExceededException">
+<exception id="600025" name="SegmentFetchLimitExceeded" className="mondrian.olap.ResourceLimitExceededException">
    <text>Number of cell results to be read exceeded limit of ({0,number})</text>
 </exception>
 
-<exception id="600030" name="QueryCanceled" className="drianmon.olap.QueryCanceledException">
+<exception id="600030" name="QueryCanceled" className="mondrian.olap.QueryCanceledException">
     <text>Query canceled</text>
 </exception>
 
-<exception id="600040" name="QueryTimeout" className="drianmon.olap.QueryTimeoutException">
+<exception id="600040" name="QueryTimeout" className="mondrian.olap.QueryTimeoutException">
     <text>Query timeout of {0,number} seconds reached</text>
 </exception>
 
-<exception id="600050" name="IterationLimitExceeded" className="drianmon.olap.ResourceLimitExceededException">
+<exception id="600050" name="IterationLimitExceeded" className="mondrian.olap.ResourceLimitExceededException">
     <text>Number of iterations exceeded limit of {0,number} </text>
 </exception>
 
@@ -536,7 +536,7 @@
 
 <!-- empty ,invalid Dimension -->
 
-<exception id="601010" name="InvalidHierarchyCondition" className="drianmon.olap.InvalidHierarchyException">
+<exception id="601010" name="InvalidHierarchyCondition" className="mondrian.olap.InvalidHierarchyException">
    <text>Hierarchy ''{0}'' is invalid (has no members)</text>
 </exception>
 
@@ -885,7 +885,7 @@
 <!-- ====================================================================== -->
 <!-- Optimizer -->
 <exception id="8000000" name="NativeEvaluationUnsupported"
-    className="drianmon.olap.NativeEvaluationUnsupportedException">
+    className="mondrian.olap.NativeEvaluationUnsupportedException">
     <text>
         Native evaluation not supported for this usage of function ''{0}''
     </text>

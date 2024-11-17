@@ -14,7 +14,6 @@ package drianmon.rolap.aggmatcher;
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
 import drianmon.olap.DrianmonDef.AggLevel;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 
@@ -28,6 +27,7 @@ import drianmon.rolap.sql.SqlQuery;
 import drianmon.server.Execution;
 import drianmon.server.Locus;
 import drianmon.spi.Dialect;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

@@ -9,12 +9,11 @@
 
 package drianmon.util;
 
-import drianmon.resource.MondrianResource;
-
 import org.apache.logging.log4j.Logger;
 
 import drianmon.olap.Util;
 import drianmon.rolap.RolapUtil;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

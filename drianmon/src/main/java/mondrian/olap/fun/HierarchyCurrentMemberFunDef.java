@@ -6,22 +6,22 @@
 //
 // Copyright (c) 2002-2020 Hitachi Vantara..  All rights reserved.
 */
-package drianmon.olap.fun;
+package mondrian.olap.fun;
 
-import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
+import mondrian.olap.MondrianProperties;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import org.eigenbase.util.property.StringProperty;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.AbstractMemberCalc;
-import drianmon.mdx.ResolvedFunCall;
-import drianmon.olap.*;
-import drianmon.rolap.RolapEvaluator;
-import drianmon.rolap.RolapHierarchy;
+import mondrian.calc.*;
+import mondrian.calc.impl.AbstractMemberCalc;
+import mondrian.mdx.ResolvedFunCall;
+import mondrian.olap.*;
+import mondrian.rolap.RolapEvaluator;
+import mondrian.rolap.RolapHierarchy;
+import mondrian.resource.MondrianResource;
 
 import java.util.Map;
 import java.util.Set;

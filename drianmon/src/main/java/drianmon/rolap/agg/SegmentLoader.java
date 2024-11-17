@@ -11,7 +11,6 @@
 package drianmon.rolap.agg;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -31,6 +30,7 @@ import drianmon.server.Locus;
 import drianmon.server.monitor.SqlStatementEvent;
 import drianmon.spi.*;
 import drianmon.util.*;
+import mondrian.resource.MondrianResource;
 
 /**
  * <p>

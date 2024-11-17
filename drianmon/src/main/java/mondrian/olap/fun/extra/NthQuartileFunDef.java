@@ -7,14 +7,14 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap.fun.extra;
+package mondrian.olap.fun.extra;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.AbstractDoubleCalc;
-import drianmon.calc.impl.ValueCalc;
-import drianmon.mdx.ResolvedFunCall;
-import drianmon.olap.*;
-import drianmon.olap.fun.*;
+import mondrian.calc.*;
+import mondrian.calc.impl.AbstractDoubleCalc;
+import mondrian.calc.impl.ValueCalc;
+import mondrian.mdx.ResolvedFunCall;
+import mondrian.olap.*;
+import mondrian.olap.fun.*;
 
 /**
  * Definition of the <code>FirstQ</code> and <code>ThirdQ</code> MDX extension

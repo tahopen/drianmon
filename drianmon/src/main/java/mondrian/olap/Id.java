@@ -9,12 +9,12 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import org.olap4j.impl.UnmodifiableArrayList;
 
-import drianmon.mdx.MdxVisitor;
-import drianmon.olap.type.Type;
+import mondrian.mdx.MdxVisitor;
+import mondrian.olap.type.Type;
 
 import java.io.PrintWriter;
 import java.util.*;

@@ -11,7 +11,6 @@
 package drianmon.olap.fun;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 
@@ -59,6 +58,7 @@ import drianmon.server.Execution;
 import drianmon.server.Locus;
 import drianmon.util.CancellationChecker;
 import drianmon.util.CartesianProductList;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

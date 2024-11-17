@@ -12,7 +12,7 @@
 package drianmon.olap;
 
 import drianmon.spi.MemberFormatter;
-import drianmon.resource.MondrianResource;
+import mondrian.resource.MondrianResource;
 
 /**
  * Skeleton implementation of {@link Level}.

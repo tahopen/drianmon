@@ -10,7 +10,6 @@
 package drianmon.rolap.agg;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 
@@ -40,6 +39,7 @@ import drianmon.spi.SegmentHeader;
 import drianmon.util.BlockingHashMap;
 import drianmon.util.MDCUtil;
 import drianmon.util.Pair;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 

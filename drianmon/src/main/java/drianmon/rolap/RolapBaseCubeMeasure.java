@@ -10,13 +10,13 @@
 package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
-import drianmon.resource.MondrianResource;
 
 import java.util.*;
 
 import drianmon.olap.*;
 import drianmon.spi.CellFormatter;
 import drianmon.spi.Dialect;
+import mondrian.resource.MondrianResource;
 
 /**
  * Measure which is computed from a SQL column (or expression) and which is

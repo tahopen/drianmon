@@ -11,7 +11,6 @@
 package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +22,7 @@ import drianmon.rolap.format.FormatterCreateContext;
 import drianmon.rolap.format.FormatterFactory;
 import drianmon.spi.Dialect;
 import drianmon.spi.PropertyFormatter;
+import mondrian.resource.MondrianResource;
 
 import java.util.AbstractList;
 import java.util.ArrayList;

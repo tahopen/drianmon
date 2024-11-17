@@ -9,8 +9,6 @@
 */
 package drianmon.server;
 
-import drianmon.resource.MondrianResource;
-
 import org.apache.commons.collections.map.ReferenceMap;
 
 import org.apache.logging.log4j.Logger;
@@ -29,6 +27,7 @@ import drianmon.server.monitor.*;
 import drianmon.spi.CatalogLocator;
 import drianmon.util.LockBox;
 import drianmon.xmla.*;
+import mondrian.resource.MondrianResource;
 
 import java.lang.management.ManagementFactory;
 import java.sql.SQLException;

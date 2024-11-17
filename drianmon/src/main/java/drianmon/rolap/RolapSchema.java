@@ -12,7 +12,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.commons.vfs2.FileSystemException;
 
@@ -34,6 +33,7 @@ import drianmon.spi.*;
 import drianmon.spi.impl.Scripts;
 import drianmon.util.ByteString;
 import drianmon.util.ClassResolver;
+import mondrian.resource.MondrianResource;
 
 import java.io.*;
 import java.lang.reflect.Constructor;

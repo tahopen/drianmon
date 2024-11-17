@@ -11,7 +11,6 @@
 package drianmon.olap;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.commons.collections.collection.CompositeCollection;
 
@@ -26,6 +25,7 @@ import drianmon.rolap.*;
 import drianmon.server.*;
 import drianmon.spi.ProfileHandler;
 import drianmon.util.ArrayStack;
+import mondrian.resource.MondrianResource;
 
 import java.io.PrintWriter;
 import java.sql.SQLException;

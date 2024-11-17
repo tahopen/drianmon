@@ -125,8 +125,8 @@ import drianmon.util.ConcatenableList;
 import drianmon.util.Pair;
 import drianmon.util.UtilCompatible;
 import drianmon.util.UtilCompatibleJdk16;
+import mondrian.resource.MondrianResource;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 /**
  * Utility functions used throughout mondrian. All methods are static.

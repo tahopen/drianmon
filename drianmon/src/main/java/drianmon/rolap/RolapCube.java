@@ -12,7 +12,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -35,6 +34,7 @@ import drianmon.rolap.format.FormatterFactory;
 import drianmon.server.Locus;
 import drianmon.server.Statement;
 import drianmon.spi.CellFormatter;
+import mondrian.resource.MondrianResource;
 
 import java.util.*;
 

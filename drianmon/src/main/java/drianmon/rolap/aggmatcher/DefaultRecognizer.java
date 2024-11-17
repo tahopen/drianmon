@@ -11,8 +11,6 @@
 
 package drianmon.rolap.aggmatcher;
 
-import drianmon.resource.MondrianResource;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,6 +23,7 @@ import drianmon.recorder.MessageRecorder;
 import drianmon.rolap.*;
 import drianmon.rolap.aggmatcher.JdbcSchema.Table.Column;
 import drianmon.util.Pair;
+import mondrian.resource.MondrianResource;
 
 /**
  * This is the default Recognizer. It uses the rules found in the file

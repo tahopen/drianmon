@@ -11,8 +11,6 @@
 
 package drianmon.olap.fun;
 
-import drianmon.resource.MondrianResource;
-
 import static drianmon.olap.fun.sort.Sorter.hierarchizeMemberList;
 
 import java.util.ArrayList;
@@ -45,6 +43,7 @@ import drianmon.olap.type.NumericType;
 import drianmon.olap.type.SetType;
 import drianmon.olap.type.TupleType;
 import drianmon.olap.type.Type;
+import mondrian.resource.MondrianResource;
 
 /**
  * Definition of the <code>Descendants</code> MDX function.

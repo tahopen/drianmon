@@ -14,7 +14,6 @@
 package drianmon.util;
 
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import java.util.*;
 
@@ -23,6 +22,7 @@ import drianmon.calc.impl.ArrayTupleList;
 import drianmon.olap.*;
 import drianmon.olap.fun.FunUtil;
 import drianmon.rolap.RolapCube;
+import mondrian.resource.MondrianResource;
 
 /**
  * Utilities for parsing fully-qualified member names, tuples, member lists,

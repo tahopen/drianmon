@@ -12,7 +12,6 @@ package drianmon.rolap;
 
 import drianmon.olap.DrianmonDef;
 import drianmon.olap.MondrianProperties;
-import drianmon.resource.MondrianResource;
 
 import org.apache.logging.log4j.Logger;
 
@@ -30,6 +29,7 @@ import drianmon.rolap.sql.MemberChildrenConstraint;
 import drianmon.rolap.sql.SqlQuery;
 import drianmon.spi.CellFormatter;
 import drianmon.util.UnionIterator;
+import mondrian.resource.MondrianResource;
 
 import org.apache.logging.log4j.LogManager;
 
