@@ -12,14 +12,14 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
 import java.util.List;
 
-import drianmon.calc.Calc;
-import drianmon.olap.Evaluator;
-import drianmon.olap.Member;
-import drianmon.olap.Util;
+import mondrian.calc.Calc;
+import mondrian.olap.Evaluator;
+import mondrian.olap.Member;
+import mondrian.olap.Util;
 
 class HierarchicalTupleKeyComparator extends TupleExpMemoComparator {
 
