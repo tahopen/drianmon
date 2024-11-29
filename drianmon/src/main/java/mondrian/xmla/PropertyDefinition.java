@@ -9,12 +9,12 @@
 // All Rights Reserved.
 */
 
-package drianmon.xmla;
+package mondrian.xmla;
 
 import org.olap4j.impl.Olap4jUtil;
 import org.olap4j.metadata.XmlaConstants;
 
-import drianmon.olap.MondrianServer;
+import mondrian.olap.MondrianServer;
 
 import java.util.Set;
 

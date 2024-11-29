@@ -9,13 +9,13 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.List;
 
-import drianmon.mdx.ParameterExpr;
-import drianmon.olap.fun.Resolver;
-import drianmon.olap.type.Type;
+import mondrian.mdx.ParameterExpr;
+import mondrian.olap.fun.Resolver;
+import mondrian.olap.type.Type;
 
 /**
  * Provides context necessary to resolve identifiers to objects, function

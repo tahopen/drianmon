@@ -8,16 +8,16 @@
 // Copyright (C) 2005-2017 Hitachi Vantara
 // All Rights Reserved.
 */
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
-import drianmon.calc.Calc;
-import drianmon.rolap.RolapHierarchy;
-import drianmon.rolap.RolapSchema;
+import mondrian.calc.Calc;
+import mondrian.rolap.RolapHierarchy;
+import mondrian.rolap.RolapSchema;
 
 /**
  * A <code>SchemaReader</code> queries schema objects ({@link Schema},

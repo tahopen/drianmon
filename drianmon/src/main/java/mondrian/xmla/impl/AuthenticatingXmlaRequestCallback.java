@@ -7,11 +7,11 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.xmla.impl;
+package mondrian.xmla.impl;
 
 import org.w3c.dom.Element;
 
-import drianmon.xmla.*;
+import mondrian.xmla.*;
 
 import java.util.Map;
 import javax.servlet.ServletConfig;

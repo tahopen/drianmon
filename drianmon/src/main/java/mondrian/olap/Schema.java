@@ -7,7 +7,7 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.Date;
 import java.util.List;

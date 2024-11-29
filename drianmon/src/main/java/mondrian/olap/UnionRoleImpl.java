@@ -7,7 +7,7 @@
 // Copyright (C) 2002-2018 Hitachi Vantara and others
 // All Rights Reserved.
 */
-package drianmon.olap;
+package mondrian.olap;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

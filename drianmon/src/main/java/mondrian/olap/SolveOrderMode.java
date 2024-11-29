@@ -7,9 +7,9 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
-import drianmon.olap.MondrianProperties;
+import mondrian.olap.MondrianProperties;
 
 /**
  * Strategies for applying solve order, exposed via the property

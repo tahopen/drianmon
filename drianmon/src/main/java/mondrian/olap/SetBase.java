@@ -9,11 +9,11 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import org.apache.logging.log4j.Logger;
 
-import drianmon.olap.type.*;
+import mondrian.olap.type.*;
 
 import org.apache.logging.log4j.LogManager;
 

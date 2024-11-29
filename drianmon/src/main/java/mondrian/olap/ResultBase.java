@@ -9,12 +9,12 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import org.apache.logging.log4j.Logger;
 
-import drianmon.server.Execution;
-import drianmon.server.Statement;
+import mondrian.server.Execution;
+import mondrian.server.Statement;
 
 import org.apache.logging.log4j.LogManager;
 

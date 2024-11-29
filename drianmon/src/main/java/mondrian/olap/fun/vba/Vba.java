@@ -6,17 +6,17 @@
 //
 // Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
-package drianmon.olap.fun.vba;
+package mondrian.olap.fun.vba;
 
-import static drianmon.olap.fun.JavaFunDef.*;
+import static mondrian.olap.fun.JavaFunDef.*;
 
 import java.text.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import drianmon.olap.InvalidArgumentException;
-import drianmon.olap.Util;
+import mondrian.olap.InvalidArgumentException;
+import mondrian.olap.Util;
 
 /**
  * Implementations of functions in the Visual Basic for Applications (VBA)

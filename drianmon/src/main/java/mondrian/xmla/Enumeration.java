@@ -11,7 +11,7 @@
 // jhyde, May 2, 2003
 */
 
-package drianmon.xmla;
+package mondrian.xmla;
 
 import org.olap4j.impl.UnmodifiableArrayMap;
 import org.olap4j.metadata.XmlaConstant;

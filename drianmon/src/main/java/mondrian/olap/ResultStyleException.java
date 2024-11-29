@@ -9,11 +9,11 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.List;
 
-import drianmon.calc.ResultStyle;
+import mondrian.calc.ResultStyle;
 
 /**
  * Exception that indicates a compiler could not implement an expression in any

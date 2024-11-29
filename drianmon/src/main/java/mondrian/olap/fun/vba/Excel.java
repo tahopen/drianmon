@@ -7,13 +7,13 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap.fun.vba;
+package mondrian.olap.fun.vba;
 
-import static drianmon.olap.fun.JavaFunDef.Description;
-import static drianmon.olap.fun.JavaFunDef.FunctionName;
+import static mondrian.olap.fun.JavaFunDef.Description;
+import static mondrian.olap.fun.JavaFunDef.FunctionName;
 
-import drianmon.olap.InvalidArgumentException;
-import drianmon.olap.fun.JavaFunDef;
+import mondrian.olap.InvalidArgumentException;
+import mondrian.olap.fun.JavaFunDef;
 
 /**
  * Implementations of functions in the Excel worksheet library.

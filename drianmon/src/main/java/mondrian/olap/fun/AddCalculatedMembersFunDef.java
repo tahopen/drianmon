@@ -7,16 +7,16 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap.fun;
+package mondrian.olap.fun;
 
 import java.util.*;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.AbstractListCalc;
-import drianmon.calc.impl.UnaryTupleList;
-import drianmon.mdx.ResolvedFunCall;
-import drianmon.olap.*;
-import drianmon.olap.type.*;
+import mondrian.calc.*;
+import mondrian.calc.impl.AbstractListCalc;
+import mondrian.calc.impl.UnaryTupleList;
+import mondrian.mdx.ResolvedFunCall;
+import mondrian.olap.*;
+import mondrian.olap.type.*;
 
 /**
  * Definition of the <code>AddCalculatedMembers</code> MDX function.
