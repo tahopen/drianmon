@@ -9,15 +9,15 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.List;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.AbstractListCalc;
-import drianmon.calc.impl.GenericCalc;
-import drianmon.mdx.MemberExpr;
-import drianmon.olap.type.*;
+import mondrian.calc.*;
+import mondrian.calc.impl.AbstractListCalc;
+import mondrian.calc.impl.GenericCalc;
+import mondrian.mdx.MemberExpr;
+import mondrian.olap.type.*;
 
 /**
  * Implementation of {@link Parameter}.

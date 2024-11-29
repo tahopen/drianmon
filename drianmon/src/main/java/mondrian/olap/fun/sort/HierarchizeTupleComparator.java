@@ -12,11 +12,11 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
 import java.util.List;
 
-import drianmon.olap.Member;
+import mondrian.olap.Member;
 
 /**
  * Compares lists of {@link Member}s so as to convert them into hierarchical order. Applies lexicographic order to the

@@ -7,9 +7,9 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
-import drianmon.calc.ResultStyle;
+import mondrian.calc.ResultStyle;
 
 /**
  * Allows expressions to be evaluated native, e.g. in SQL.

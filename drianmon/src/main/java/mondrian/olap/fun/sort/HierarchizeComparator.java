@@ -12,11 +12,11 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
 import java.util.Comparator;
 
-import drianmon.olap.Member;
+import mondrian.olap.Member;
 
 /**
  * Compares {@link Member}s so as to arrange them in prefix or postfix hierarchical order.

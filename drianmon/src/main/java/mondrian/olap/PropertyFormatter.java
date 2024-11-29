@@ -9,7 +9,7 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 /**
  * SPI to redefine a member property display string.

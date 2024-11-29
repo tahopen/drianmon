@@ -8,23 +8,23 @@
 // Copyright (C) 2005-2021 Hitachi Vantara and others
 // All Rights Reserved.
 */
-package drianmon.olap;
+package mondrian.olap;
 
-import drianmon.olap.MondrianProperties;
+import mondrian.olap.MondrianProperties;
 
 import org.apache.commons.collections.collection.CompositeCollection;
 
 import org.olap4j.impl.*;
 import org.olap4j.mdx.IdentifierSegment;
 
-import drianmon.calc.*;
-import drianmon.mdx.*;
-import drianmon.olap.fun.ParameterFunDef;
-import drianmon.olap.type.*;
-import drianmon.rolap.*;
-import drianmon.server.*;
-import drianmon.spi.ProfileHandler;
-import drianmon.util.ArrayStack;
+import mondrian.calc.*;
+import mondrian.mdx.*;
+import mondrian.olap.fun.ParameterFunDef;
+import mondrian.olap.type.*;
+import mondrian.rolap.*;
+import mondrian.server.*;
+import mondrian.spi.ProfileHandler;
+import mondrian.util.ArrayStack;
 import mondrian.resource.MondrianResource;
 
 import java.io.PrintWriter;

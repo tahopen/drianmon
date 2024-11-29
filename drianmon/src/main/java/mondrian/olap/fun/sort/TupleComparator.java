@@ -12,14 +12,14 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
 import java.util.Comparator;
 import java.util.List;
 
-import drianmon.calc.Calc;
-import drianmon.olap.Evaluator;
-import drianmon.olap.Member;
+import mondrian.calc.Calc;
+import mondrian.olap.Evaluator;
+import mondrian.olap.Member;
 
 /**
  * Compares tuples, which are represented as lists of {@link Member}s.

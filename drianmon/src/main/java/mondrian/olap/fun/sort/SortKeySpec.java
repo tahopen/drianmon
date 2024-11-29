@@ -12,9 +12,9 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
-import drianmon.calc.Calc;
+import mondrian.calc.Calc;
 
 public class SortKeySpec {
   private final Calc key;

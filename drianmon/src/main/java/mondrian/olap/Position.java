@@ -11,7 +11,7 @@
 // jhyde, 6 August, 2001
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.List;
 

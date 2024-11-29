@@ -9,15 +9,15 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
-import drianmon.olap.MondrianProperties;
+import mondrian.olap.MondrianProperties;
 
 import java.io.PrintWriter;
 
-import drianmon.calc.*;
-import drianmon.mdx.*;
-import drianmon.olap.type.*;
+import mondrian.calc.*;
+import mondrian.mdx.*;
+import mondrian.olap.type.*;
 import mondrian.resource.MondrianResource;
 
 /**

@@ -9,7 +9,7 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 /**
  * Exception which indicates that a query was canceled by an end-user.

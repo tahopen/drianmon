@@ -12,9 +12,9 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
-import drianmon.olap.Member;
+import mondrian.olap.Member;
 
 public class OrderKey implements Comparable {
   final Member member;

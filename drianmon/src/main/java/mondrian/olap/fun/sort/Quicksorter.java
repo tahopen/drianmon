@@ -12,7 +12,7 @@
  *
  */
 
-package drianmon.olap.fun.sort;
+package mondrian.olap.fun.sort;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

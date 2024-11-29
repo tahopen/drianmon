@@ -9,7 +9,7 @@
 // All Rights Reserved.
 */
 
-package drianmon.olap;
+package mondrian.olap;
 
 import java.util.Locale;
 
