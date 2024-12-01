@@ -9,7 +9,7 @@
 // All Rights Reserved.
 */
 
-package drianmon.xmla;
+package mondrian.xmla;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

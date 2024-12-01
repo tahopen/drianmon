@@ -7,7 +7,7 @@
 * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
 */
 
-package drianmon.xmla;
+package mondrian.xmla;
 
 import org.w3c.dom.Element;
 

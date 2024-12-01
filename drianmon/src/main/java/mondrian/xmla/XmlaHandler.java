@@ -8,9 +8,9 @@
 // Copyright (C) 2005-2018 Hitachi Vantara
 // All Rights Reserved.
 */
-package drianmon.xmla;
+package mondrian.xmla;
 
-import drianmon.olap.MondrianProperties;
+import mondrian.olap.MondrianProperties;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -23,10 +23,10 @@ import org.olap4j.metadata.Property.StandardMemberProperty;
 
 import org.xml.sax.SAXException;
 
-import drianmon.olap.Util;
-import drianmon.olap4j.IMondrianOlap4jProperty;
-import drianmon.util.CompositeList;
-import drianmon.xmla.impl.DefaultSaxWriter;
+import mondrian.olap.Util;
+import mondrian.olap4j.IMondrianOlap4jProperty;
+import mondrian.util.CompositeList;
+import mondrian.xmla.impl.DefaultSaxWriter;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -38,7 +38,7 @@ import java.sql.*;
 import java.util.*;
 import java.util.Date;
 
-import static drianmon.xmla.XmlaConstants.*;
+import static mondrian.xmla.XmlaConstants.*;
 import static org.olap4j.metadata.XmlaConstants.*;
 
 /**

@@ -8,7 +8,7 @@
 // Copyright (C) 2005-2017 Hitachi Vantara
 // All Rights Reserved.
 */
-package drianmon.xmla;
+package mondrian.xmla;
 
 import org.olap4j.OlapConnection;
 import org.olap4j.OlapException;
@@ -17,10 +17,10 @@ import org.olap4j.impl.LcidLocale;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 
-import drianmon.olap.MondrianException;
-import drianmon.olap.Util;
-import drianmon.util.XmlParserFactoryProducer;
-import drianmon.xmla.impl.DefaultXmlaResponse;
+import mondrian.olap.MondrianException;
+import mondrian.olap.Util;
+import mondrian.util.XmlParserFactoryProducer;
+import mondrian.xmla.impl.DefaultXmlaResponse;
 
 import java.io.*;
 import java.nio.charset.Charset;
