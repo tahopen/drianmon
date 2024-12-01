@@ -11,14 +11,14 @@ package mondrian.calc;
 
 import java.util.Date;
 
-import drianmon.olap.Evaluator;
+import mondrian.olap.Evaluator;
 
 /**
  * Compiled expression whose result is a {@link Date}, representing an MDX
  * DateTime value.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractDateTimeCalc}, but it is not required.
+ * {@link mondrian.calc.impl.AbstractDateTimeCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 26, 2005

@@ -22,7 +22,7 @@ import java.util.*;
 import static org.olap4j.metadata.XmlaConstants.Method;
 
 /**
- * Default implementation of {@link drianmon.xmla.XmlaRequest} by DOM API.
+ * Default implementation of {@link mondrian.xmla.XmlaRequest} by DOM API.
  *
  * @author Gang Chen
  */

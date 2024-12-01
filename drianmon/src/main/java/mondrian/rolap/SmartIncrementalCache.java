@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-import drianmon.rolap.cache.*;
+import mondrian.rolap.cache.*;
 
 /**
  * Uses a SmartCache to store a collection of values.

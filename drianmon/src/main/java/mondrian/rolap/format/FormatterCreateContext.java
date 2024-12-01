@@ -71,7 +71,7 @@ public class FormatterCreateContext {
          * Data from Mondrian xml schema file to create
          * a custom implementation of a requested formatter.
          */
-        public Builder formatterDef(DrianmonDef.ElementFormatter formatterDef) {
+        public Builder formatterDef(MondrianDef.ElementFormatter formatterDef) {
             if (formatterDef != null) {
                 checkIfFormatterSpecifiedCorrectly(
                     formatterDef.className,
@@ -111,7 +111,7 @@ public class FormatterCreateContext {
          * A script data used to create
          * a script based implementation of a requested formatter.
          */
-        public Builder script(DrianmonDef.Script script) {
+        public Builder script(MondrianDef.Script script) {
             if (script != null) {
                 scriptText = script.cdata;
                 scriptLanguage = script.language;
@@ -125,7 +125,7 @@ public class FormatterCreateContext {
 
         private static void checkIfFormatterSpecifiedCorrectly(
             String className,
-            DrianmonDef.Script script)
+            MondrianDef.Script script)
         {
             if (className == null && script == null) {
                 throw Util.newError(

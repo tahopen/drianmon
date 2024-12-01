@@ -14,7 +14,7 @@ import mondrian.server.Statement;
 import mondrian.olap.Parser;
 
 /**
- * Default implementation of {@link drianmon.parser.MdxParserValidator}.
+ * Default implementation of {@link mondrian.parser.MdxParserValidator}.
  *
  * @author jhyde
  */

@@ -17,10 +17,10 @@ import java_cup.runtime.*;
 import java.util.*;
 import java.math.BigDecimal;
 
-import drianmon.mdx.*;
-import drianmon.parser.MdxParserValidator;
-import drianmon.resource.MondrianResource;
-import drianmon.server.Statement;
+import mondrian.mdx.*;
+import mondrian.parser.MdxParserValidator;
+import mondrian.resource.MondrianResource;
+import mondrian.server.Statement;
 
 // Preliminaries to set up and use the scanner.
 // action code {: ... :};

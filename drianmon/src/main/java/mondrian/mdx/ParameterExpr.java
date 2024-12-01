@@ -17,7 +17,7 @@ import mondrian.olap.*;
 import mondrian.olap.type.*;
 
 /**
- * MDX expression which is a usage of a {@link drianmon.olap.Parameter}.
+ * MDX expression which is a usage of a {@link mondrian.olap.Parameter}.
  *
  * @author jhyde
  */

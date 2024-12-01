@@ -60,9 +60,9 @@ public class DataSourceChangeListenerImpl2 implements DataSourceChangeListener {
     }
 
     public String getTableName(RolapHierarchy hierarchy) {
-        DrianmonDef.RelationOrJoin relation = hierarchy.getRelation();
-        if (relation instanceof DrianmonDef.Table) {
-            DrianmonDef.Table tableRelation = (DrianmonDef.Table) relation;
+        MondrianDef.RelationOrJoin relation = hierarchy.getRelation();
+        if (relation instanceof MondrianDef.Table) {
+        	MondrianDef.Table tableRelation = (MondrianDef.Table) relation;
             return tableRelation.name;
         } else {
             return null;

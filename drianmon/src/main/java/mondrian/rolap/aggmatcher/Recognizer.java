@@ -625,7 +625,7 @@ abstract class Recognizer {
                 {
                     JdbcSchema.Table.Column.Usage aggUsage = uit.next();
 
-                    DrianmonDef.Relation rel = hierarchyUsage.getJoinTable();
+                    MondrianDef.Relation rel = hierarchyUsage.getJoinTable();
 
                     if (! aggUsageMatchesHierarchyUsage(aggUsage,
                         hierarchyUsage, levelColumnName))
@@ -668,9 +668,9 @@ abstract class Recognizer {
                 aggUsage.setSymbolicName(symbolicName);
 
                 String tableAlias;
-                if (aggUsage.joinExp instanceof DrianmonDef.Column) {
-                    DrianmonDef.Column mcolumn =
-                        (DrianmonDef.Column) aggUsage.joinExp;
+                if (aggUsage.joinExp instanceof MondrianDef.Column) {
+                    MondrianDef.Column mcolumn =
+                        (MondrianDef.Column) aggUsage.joinExp;
                     tableAlias = mcolumn.table;
                 } else {
                     tableAlias = aggUsage.relation.getAlias();
@@ -762,7 +762,7 @@ abstract class Recognizer {
         HierarchyUsage hierarchyUsage,
         String levelColumnName)
     {
-        DrianmonDef.Relation rel = hierarchyUsage.getJoinTable();
+        MondrianDef.Relation rel = hierarchyUsage.getJoinTable();
 
         JdbcSchema.Table.Column aggColumn = aggUsage.getColumn();
         String aggColumnName = aggColumn.column.name;
@@ -976,8 +976,8 @@ abstract class Recognizer {
         String factCountColumnName = getFactCountColumnName(aggUsage);
 
         // we want the fact count expression
-        DrianmonDef.Column column =
-                new DrianmonDef.Column(tableName, factCountColumnName);
+        MondrianDef.Column column =
+                new MondrianDef.Column(tableName, factCountColumnName);
         SqlQuery sqlQuery = star.getSqlQuery();
         return column.getExpression(sqlQuery);
     }
@@ -1012,24 +1012,24 @@ abstract class Recognizer {
     }
 
     /**
-     * Given a {@link mondrian.olap.DrianmonDef.Expression}, returns
+     * Given a {@link mondrian.olap.MondrianDef.Expression}, returns
      * the associated column name.
      *
-     * <p>Note: if the {@link mondrian.olap.DrianmonDef.Expression} is
-     * not a {@link mondrian.olap.DrianmonDef.Column} or {@link
-     * mondrian.olap.DrianmonDef.KeyExpression}, returns null. This
+     * <p>Note: if the {@link mondrian.olap.MondrianDef.Expression} is
+     * not a {@link mondrian.olap.MondrianDef.Column} or {@link
+     * mondrian.olap.MondrianDef.KeyExpression}, returns null. This
      * will result in an error.
      */
-    protected String getColumnName(DrianmonDef.Expression expr) {
+    protected String getColumnName(MondrianDef.Expression expr) {
         msgRecorder.pushContextName("Recognizer.getColumnName");
 
         try {
-            if (expr instanceof DrianmonDef.Column) {
-                DrianmonDef.Column column = (DrianmonDef.Column) expr;
+            if (expr instanceof MondrianDef.Column) {
+                MondrianDef.Column column = (MondrianDef.Column) expr;
                 return column.getColumnName();
-            } else if (expr instanceof DrianmonDef.KeyExpression) {
-                DrianmonDef.KeyExpression key =
-                    (DrianmonDef.KeyExpression) expr;
+            } else if (expr instanceof MondrianDef.KeyExpression) {
+                MondrianDef.KeyExpression key =
+                    (MondrianDef.KeyExpression) expr;
                 return key.toString();
             }
 

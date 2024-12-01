@@ -14,8 +14,8 @@ import mondrian.olap.MondrianProperties;
 
 import org.apache.logging.log4j.Logger;
 
-import drianmon.rolap.RolapCube;
-import drianmon.rolap.RolapCubeDimension;
+import mondrian.rolap.RolapCube;
+import mondrian.rolap.RolapCubeDimension;
 
 import org.apache.logging.log4j.LogManager;
 

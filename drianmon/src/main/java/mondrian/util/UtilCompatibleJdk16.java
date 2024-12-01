@@ -25,12 +25,12 @@ import javax.script.*;
 // Only in Java6 and above
 
 /**
- * Implementation of {@link drianmon.util.UtilCompatible} that runs in
+ * Implementation of {@link mondrian.util.UtilCompatible} that runs in
  * JDK 1.6.
  *
  * <p>Prior to JDK 1.6, this class should never be loaded. Applications should
  * instantiate this class via {@link Class#forName(String)} or better, use
- * methods in {@link drianmon.olap.Util}, and not instantiate it at all.
+ * methods in {@link mondrian.olap.Util}, and not instantiate it at all.
  *
  * @author jhyde
  */

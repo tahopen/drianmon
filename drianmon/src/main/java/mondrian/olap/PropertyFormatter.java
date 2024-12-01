@@ -18,7 +18,7 @@ package mondrian.olap;
  * exists for temporary backwards compatibility and will be removed
  * in mondrian-4.0.
  */
-public interface PropertyFormatter extends drianmon.spi.PropertyFormatter {
+public interface PropertyFormatter extends mondrian.spi.PropertyFormatter {
 }
 
 // End PropertyFormatter.java

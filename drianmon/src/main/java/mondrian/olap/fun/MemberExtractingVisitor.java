@@ -66,7 +66,7 @@ public class MemberExtractingVisitor extends MdxVisitorImpl {
     public Object visit(ParameterExpr parameterExpr) {
         final Parameter parameter = parameterExpr.getParameter();
         final Type type = parameter.getType();
-        if (type instanceof drianmon.olap.type.MemberType) {
+        if (type instanceof mondrian.olap.type.MemberType) {
             final Object value = parameter.getValue();
             if (value instanceof Member) {
                 final Member member = (Member) value;

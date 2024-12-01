@@ -15,13 +15,13 @@ package mondrian.server.monitor;
 public abstract class ConnectionEvent extends Event {
     /**
      * Server identifier; corresponds to
-     * {@link drianmon.olap.MondrianServer#getId()}.
+     * {@link mondrian.olap.MondrianServer#getId()}.
      */
     public final int serverId;
 
     /**
      * Connection identifier. To retrieve the connection, call
-     * {@link drianmon.olap.MondrianServer#getConnection(int)}
+     * {@link mondrian.olap.MondrianServer#getConnection(int)}
      */
     public final int connectionId;
 

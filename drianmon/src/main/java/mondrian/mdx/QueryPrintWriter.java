@@ -14,7 +14,7 @@ import java.io.Writer;
 import java.util.HashSet;
 import java.util.Set;
 
-import drianmon.olap.Parameter;
+import mondrian.olap.Parameter;
 
 /**
  * PrintWriter used for unparsing queries. Remembers which parameters have

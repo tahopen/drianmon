@@ -21,7 +21,7 @@ package mondrian.olap;
  * @author hhaas
  * @since 6 October, 2004
  */
-public interface MemberFormatter extends drianmon.spi.MemberFormatter {
+public interface MemberFormatter extends mondrian.spi.MemberFormatter {
 }
 
 // End MemberFormatter.java

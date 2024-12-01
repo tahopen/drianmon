@@ -12,7 +12,7 @@ package mondrian.calc;
 import java.util.Iterator;
 import java.util.List;
 
-import drianmon.olap.Member;
+import mondrian.olap.Member;
 
 /**
  * Extension to {@link java.util.Iterator} that returns tuples.

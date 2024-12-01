@@ -48,9 +48,9 @@
 
         <Logger name="org.apache" level="INFO"/>
 
-        <Logger name="drianmon.gui" level="DEBUG"/>
+        <Logger name="mondrian.gui" level="DEBUG"/>
 
-        <Logger name="drianmon" level="INFO"/>
+        <Logger name="mondrian" level="INFO"/>
 
         <!-- ================ -->
         <!-- Setup the Root category -->

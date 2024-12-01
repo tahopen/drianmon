@@ -15,17 +15,17 @@ options {
 
 PARSER_BEGIN(MdxParserImpl)
 
-package drianmon.parser;
+package mondrian.parser;
 
 import java.util.*;
 import java.io.StringReader;
 import java.math.BigDecimal;
 
-import drianmon.olap.*;
-import drianmon.mdx.*;
-import drianmon.parser.*;
-import drianmon.resource.MondrianResource;
-import drianmon.server.Statement;
+import mondrian.olap.*;
+import mondrian.mdx.*;
+import mondrian.parser.*;
+import mondrian.resource.MondrianResource;
+import mondrian.server.Statement;
 
 /**
  * MDX parser, generated from MdxParser.jj.

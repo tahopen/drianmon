@@ -915,8 +915,8 @@ public class RolapCube extends CubeBase {
      *
      * @param xmlCalcMembers XML objects representing members
      * @param xmlNamedSets Array of XML definition of named set
-     * @param memberList Output list of {@link drianmon.olap.Member} objects
-     * @param formulaList Output list of {@link drianmon.olap.Formula} objects
+     * @param memberList Output list of {@link mondrian.olap.Member} objects
+     * @param formulaList Output list of {@link mondrian.olap.Formula} objects
      * @param cube the cube that the calculated members originate from
      * @param errOnDups throws an error if a duplicate member is found
      */
@@ -3182,7 +3182,7 @@ public class RolapCube extends CubeBase {
      * expression. The expression has minimal amounts of metadata, for example
      * type information, but the function has no name or description.
      *
-     * @see drianmon.calc.DummyExp
+     * @see mondrian.calc.DummyExp
      */
     static Exp createDummyExp(final Calc calc) {
         return new ResolvedFunCall(

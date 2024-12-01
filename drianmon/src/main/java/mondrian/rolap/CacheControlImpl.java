@@ -1149,7 +1149,7 @@ public class CacheControlImpl implements CacheControl {
 
     /**
      * Visitor that visits various sub-types of
-     * {@link drianmon.olap.CacheControl.CellRegion}.
+     * {@link mondrian.olap.CacheControl.CellRegion}.
      */
     interface CellRegionVisitor {
         void visit(MemberCellRegion region);
@@ -1197,7 +1197,7 @@ public class CacheControlImpl implements CacheControl {
 
     /**
      * Implementation-specific extensions to the
-     * {@link drianmon.olap.CacheControl.MemberEditCommand} interface.
+     * {@link mondrian.olap.CacheControl.MemberEditCommand} interface.
      */
     interface MemberEditCommandPlus extends MemberEditCommand {
         /**
@@ -1215,7 +1215,7 @@ public class CacheControlImpl implements CacheControl {
 
     /**
      * Implementation-specific extensions to the
-     * {@link drianmon.olap.CacheControl.MemberSet} interface.
+     * {@link mondrian.olap.CacheControl.MemberSet} interface.
      */
     interface MemberSetPlus extends MemberSet {
         /**

@@ -22,9 +22,9 @@ import mondrian.olap.Util;
  * versions of the JDK.
  *
  * <p>The methods should not be called directly, only via the corresponding
- * static methods in {@link drianmon.olap.Util}, namely:<ul>
- * <li>{@link drianmon.olap.Util#makeBigDecimalFromDouble(double)}</li>
- * <li>{@link drianmon.olap.Util#quotePattern(String)}</li>
+ * static methods in {@link mondrian.olap.Util}, namely:<ul>
+ * <li>{@link mondrian.olap.Util#makeBigDecimalFromDouble(double)}</li>
+ * <li>{@link mondrian.olap.Util#quotePattern(String)}</li>
  * </ul></p>
  *
  * <p>This interface could in principle be extended to allow native

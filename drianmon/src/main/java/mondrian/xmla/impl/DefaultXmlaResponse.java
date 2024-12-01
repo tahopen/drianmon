@@ -16,7 +16,7 @@ import mondrian.olap.Util;
 import mondrian.xmla.*;
 
 /**
- * Default implementation of {@link drianmon.xmla.XmlaResponse}.
+ * Default implementation of {@link mondrian.xmla.XmlaResponse}.
  *
  * @author Gang Chen
  */

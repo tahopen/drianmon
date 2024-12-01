@@ -21,14 +21,14 @@ import org.eigenbase.util.property.StringProperty;
 
 import org.olap4j.Scenario;
 
-import drianmon.calc.*;
-import drianmon.calc.impl.DelegatingTupleList;
-import drianmon.olap.*;
-import drianmon.parser.MdxParserValidator;
-import drianmon.server.*;
-import drianmon.spi.*;
-import drianmon.spi.impl.JndiDataSourceResolver;
-import drianmon.util.*;
+import mondrian.calc.*;
+import mondrian.calc.impl.DelegatingTupleList;
+import mondrian.olap.*;
+import mondrian.parser.MdxParserValidator;
+import mondrian.server.*;
+import mondrian.spi.*;
+import mondrian.spi.impl.JndiDataSourceResolver;
+import mondrian.util.*;
 import mondrian.resource.MondrianResource;
 
 import java.io.PrintWriter;

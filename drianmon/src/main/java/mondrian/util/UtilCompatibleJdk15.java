@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
  *
  * <p>Prior to JDK 1.5, this class should never be loaded. Applications should
  * instantiate this class via {@link Class#forName(String)} or better, use
- * methods in {@link drianmon.olap.Util}, and not instantiate it at all.
+ * methods in {@link mondrian.olap.Util}, and not instantiate it at all.
  *
  * @author jhyde
  * @since Feb 5, 2007

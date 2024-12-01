@@ -114,9 +114,9 @@ public class AggGen {
     }
 
     protected String getRolapStarColumnName(RolapStar.Column rColumn) {
-        DrianmonDef.Expression expr = rColumn.getExpression();
-        if (expr instanceof DrianmonDef.Column) {
-            DrianmonDef.Column cx = (DrianmonDef.Column) expr;
+        MondrianDef.Expression expr = rColumn.getExpression();
+        if (expr instanceof MondrianDef.Column) {
+            MondrianDef.Column cx = (MondrianDef.Column) expr;
             return cx.getColumnName();
         }
         return null;
@@ -216,9 +216,9 @@ public class AggGen {
                 }
 
 
-                DrianmonDef.Expression expr = column.getExpression();
-                if (expr instanceof DrianmonDef.Column) {
-                    DrianmonDef.Column exprColumn = (DrianmonDef.Column) expr;
+                MondrianDef.Expression expr = column.getExpression();
+                if (expr instanceof MondrianDef.Column) {
+                    MondrianDef.Column exprColumn = (MondrianDef.Column) expr;
                     String name = exprColumn.getColumnName();
                     JdbcSchema.Table.Column c = getColumn(factTable, name);
                     if (c == null) {
@@ -250,9 +250,9 @@ public class AggGen {
                 if (getLogger().isDebugEnabled()) {
                     getLogger().debug("  RolapStar.Condition: cond=" + cond);
                 }
-                DrianmonDef.Expression left = cond.getLeft();
-                if (left instanceof DrianmonDef.Column) {
-                    DrianmonDef.Column leftColumn = (DrianmonDef.Column) left;
+                MondrianDef.Expression left = cond.getLeft();
+                if (left instanceof MondrianDef.Column) {
+                    MondrianDef.Column leftColumn = (MondrianDef.Column) left;
                     String name = leftColumn.getColumnName();
                     JdbcSchema.Table.Column c = getColumn(factTable, name);
                     if (c == null) {

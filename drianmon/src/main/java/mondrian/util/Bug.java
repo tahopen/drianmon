@@ -31,9 +31,9 @@ import org.apache.logging.log4j.LogManager;
  *
  * <dl>
  *
- * <dt>Obsolete {@link drianmon.olap.Id.Segment}</dt>
+ * <dt>Obsolete {@link mondrian.olap.Id.Segment}</dt>
  * <dd>Replace it by {@link org.olap4j.mdx.IdentifierSegment}. Likewise
- * {@link drianmon.olap.Id.Quoting} with {@link org.olap4j.mdx.Quoting}.
+ * {@link mondrian.olap.Id.Quoting} with {@link org.olap4j.mdx.Quoting}.
  * Should wait until after the mondrian 4 'big bang', because there are ~300
  * uses of Segment in the code.</dd>
  *
@@ -277,7 +277,7 @@ public class Bug {
 
     /**
      * Returns true if we are running against
-     * {@link drianmon.spi.Dialect.DatabaseProduct#LUCIDDB} and we wish to
+     * {@link mondrian.spi.Dialect.DatabaseProduct#LUCIDDB} and we wish to
      * avoid slow tests.
      *
      * <p>This is because some tests involving parent-child hierarchies are

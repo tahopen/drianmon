@@ -14,7 +14,7 @@ package mondrian.server.monitor;
  */
 public interface Message {
   /**
-   * Dispatches a call to the appropriate {@code visit} method on {@link drianmon.server.monitor.Visitor}.
+   * Dispatches a call to the appropriate {@code visit} method on {@link mondrian.server.monitor.Visitor}.
    *
    * @param visitor
    *          Visitor

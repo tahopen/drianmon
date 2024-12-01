@@ -12,7 +12,7 @@ package mondrian.olap.fun;
 
 import mondrian.olap.MondrianProperties;
 
-import static drianmon.olap.fun.sort.Sorter.hierarchizeTupleList;
+import static mondrian.olap.fun.sort.Sorter.hierarchizeTupleList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

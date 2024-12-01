@@ -17,7 +17,7 @@ import mondrian.olap.MondrianProperties;
 
 import org.eigenbase.util.property.StringProperty;
 
-import drianmon.olap.Util;
+import mondrian.olap.Util;
 
 /**
  * The <code>MemoryMonitorFactory</code> is used to get the application's

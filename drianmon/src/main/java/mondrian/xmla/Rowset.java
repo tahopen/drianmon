@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
  * should implement {@link #populateImpl}, calling {@link #addRow} for each row.
  *
  * @author jhyde
- * @see drianmon.xmla.RowsetDefinition
+ * @see mondrian.xmla.RowsetDefinition
  * @since May 2, 2003
  */
 abstract class Rowset implements XmlaConstants {
@@ -242,7 +242,7 @@ abstract class Rowset implements XmlaConstants {
 
     /**
      * Emits a row for this rowset, reading fields from a
-     * {@link drianmon.xmla.Rowset.Row} object.
+     * {@link mondrian.xmla.Rowset.Row} object.
      *
      * @param row Row
      * @param response XMLA response writer
@@ -353,7 +353,7 @@ abstract class Rowset implements XmlaConstants {
      * Creates a condition functor based on the restrictions on a given metadata
      * column specified in an XMLA request.
      *
-     * <p>A condition is a {@link drianmon.olap.Util.Functor1} whose return
+     * <p>A condition is a {@link mondrian.olap.Util.Functor1} whose return
      * type is boolean.
      *
      * Restrictions are used in each Rowset's discovery request. If there is no
@@ -524,7 +524,7 @@ abstract class Rowset implements XmlaConstants {
 
     /**
      * Holder for non-scalar column values of a
-     * {@link drianmon.xmla.Rowset.Row}.
+     * {@link mondrian.xmla.Rowset.Row}.
      */
     protected static class XmlElement {
         private final String tag;

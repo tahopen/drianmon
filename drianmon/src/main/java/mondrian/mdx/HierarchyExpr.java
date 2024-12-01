@@ -17,7 +17,7 @@ import mondrian.olap.type.HierarchyType;
 import mondrian.olap.type.Type;
 
 /**
- * Usage of a {@link drianmon.olap.Hierarchy} as an MDX expression.
+ * Usage of a {@link mondrian.olap.Hierarchy} as an MDX expression.
  *
  * @author jhyde
  * @since Sep 26, 2005

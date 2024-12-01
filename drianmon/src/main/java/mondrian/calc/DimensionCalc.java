@@ -10,13 +10,13 @@
 package mondrian.calc;
 
 import mondrian.olap.Dimension;
-import drianmon.olap.Evaluator;
+import mondrian.olap.Evaluator;
 
 /**
- * Expression which yields a {@link drianmon.olap.Dimension}.
+ * Expression which yields a {@link mondrian..olap.Dimension}.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractDimensionCalc}, but it is not required.
+ * {@link mondrian..calc.impl.AbstractDimensionCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 26, 2005

@@ -12,9 +12,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * Implementation of {@link drianmon.spi.Dialect} for the IBM DB2 database.
+ * Implementation of {@link mondrian.spi.Dialect} for the IBM DB2 database.
  *
- * @see drianmon.spi.impl.Db2OldAs400Dialect
+ * @see mondrian.spi.impl.Db2OldAs400Dialect
  *
  * @author jhyde
  * @since Nov 23, 2008

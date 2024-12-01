@@ -18,7 +18,7 @@ import mondrian.olap.type.Type;
 
 /**
  * Dummy expression which exists only to wrap a
- * {@link drianmon.olap.type.Type}.
+ * {@link mondrian.olap.type.Type}.
  *
  * @author jhyde
  * @since Sep 26, 2005

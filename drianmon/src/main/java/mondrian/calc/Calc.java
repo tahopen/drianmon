@@ -19,7 +19,7 @@ import mondrian.olap.type.Type;
  * <h3>Logical and physical expression languages</h3>
  *
  * Mondrian has two expression languages:<ul>
- * <li>The logical language of parsed MDX fragments ({@link drianmon.olap.Exp}).
+ * <li>The logical language of parsed MDX fragments ({@link mondrian.olap.Exp}).
  * <li>The phyiscal language of compiled expressions ({@link Calc}).
  * </ul></p>
  *
@@ -50,16 +50,16 @@ import mondrian.olap.type.Type;
  * {@link DimensionCalc} yield elements of the OLAP model.<p/>
  *
  * Each of these sub-interfaces has an abstract implementation:
- * {@link drianmon.calc.impl.AbstractIntegerCalc},
- * {@link drianmon.calc.impl.AbstractBooleanCalc},
- * {@link drianmon.calc.impl.AbstractDoubleCalc},
- * {@link drianmon.calc.impl.AbstractStringCalc},
- * {@link drianmon.calc.impl.AbstractMemberCalc},
- * {@link drianmon.calc.impl.AbstractLevelCalc},
- * {@link drianmon.calc.impl.AbstractHierarchyCalc},
- * {@link drianmon.calc.impl.AbstractDimensionCalc}.<p/>
+ * {@link mondrian.calc.impl.AbstractIntegerCalc},
+ * {@link mondrian.calc.impl.AbstractBooleanCalc},
+ * {@link mondrian.calc.impl.AbstractDoubleCalc},
+ * {@link mondrian.calc.impl.AbstractStringCalc},
+ * {@link mondrian.calc.impl.AbstractMemberCalc},
+ * {@link mondrian.calc.impl.AbstractLevelCalc},
+ * {@link mondrian.calc.impl.AbstractHierarchyCalc},
+ * {@link mondrian.calc.impl.AbstractDimensionCalc}.<p/>
  *
- * {@link drianmon.calc.impl.GenericCalc} is an adapter which implements all of these interfaces
+ * {@link mondrian.calc.impl.GenericCalc} is an adapter which implements all of these interfaces
  * and will try to convert any given result to the correct type. Use it
  * sparingly: if you know the expected result type, it is better to write a
  * class which implements a specific <code><em>Type</em>Calc</code> interface.
@@ -132,7 +132,7 @@ public interface Calc {
      * whether the compiled expression is returning a mutable list. If a mutable
      * list is required, the compiler can create a mutable copy.
      *
-     * @see ExpCompiler#compileList(drianmon.olap.Exp, boolean)
+     * @see ExpCompiler#compileList(mondrian.olap.Exp, boolean)
      */
     ResultStyle getResultStyle();
 

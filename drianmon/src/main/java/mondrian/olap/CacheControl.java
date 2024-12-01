@@ -21,15 +21,15 @@ import javax.sql.DataSource;
  * flushed, and the member cache can be edited.
  *
  * <p>To create an instance of this interface, use
- * {@link drianmon.olap.Connection#getCacheControl}.</p>
+ * {@link mondrian.olap.Connection#getCacheControl}.</p>
  *
  * <p>Methods concerning cell cache:<ul>
  * <li>{@link #createMemberRegion(Member, boolean)}</li>
  * <li>{@link #createMemberRegion(boolean, Member, boolean, Member, boolean)}</li>
- * <li>{@link #createUnionRegion(drianmon.olap.CacheControl.CellRegion[])}</li>
- * <li>{@link #createCrossjoinRegion(drianmon.olap.CacheControl.CellRegion[])}</li>
+ * <li>{@link #createUnionRegion(mondrian.olap.CacheControl.CellRegion[])}</li>
+ * <li>{@link #createCrossjoinRegion(mondrian.olap.CacheControl.CellRegion[])}</li>
  * <li>{@link #createMeasuresRegion(Cube)}</li>
- * <li>{@link #flush(drianmon.olap.CacheControl.CellRegion)}</li>
+ * <li>{@link #flush(mondrian.olap.CacheControl.CellRegion)}</li>
  * </ul></p>
  *
  * <p>Methods concerning member cache:<ul>
@@ -37,13 +37,13 @@ import javax.sql.DataSource;
  * <li>{@link #createMemberSet(boolean, Member, boolean, Member, boolean)}</li>
  * <li>{@link #createAddCommand(Member)}</li>
  * <li>{@link #createDeleteCommand(Member)}</li>
- * <li>{@link #createDeleteCommand(drianmon.olap.CacheControl.MemberSet)}</li>
+ * <li>{@link #createDeleteCommand(mondrian.olap.CacheControl.MemberSet)}</li>
  * <li>{@link #createCompoundCommand(java.util.List)}</li>
- * <li>{@link #createCompoundCommand(drianmon.olap.CacheControl.MemberEditCommand[])}</li>
+ * <li>{@link #createCompoundCommand(mondrian.olap.CacheControl.MemberEditCommand[])}</li>
  * <li>{@link #createSetPropertyCommand(Member, String, Object)}</li>
- * <li>{@link #createSetPropertyCommand(drianmon.olap.CacheControl.MemberSet,java.util.Map)}</li>
- * <li>{@link #flush(drianmon.olap.CacheControl.MemberSet)}</li>
- * <li>{@link #execute(drianmon.olap.CacheControl.MemberEditCommand)}</li>
+ * <li>{@link #createSetPropertyCommand(mondrian.olap.CacheControl.MemberSet,java.util.Map)}</li>
+ * <li>{@link #flush(mondrian.olap.CacheControl.MemberSet)}</li>
+ * <li>{@link #execute(mondrian.olap.CacheControl.MemberEditCommand)}</li>
  * </ul></p>
  *
  * @author jhyde
@@ -426,7 +426,7 @@ public interface CacheControl {
     public interface CellRegion {
         /**
          * Returns the dimensionality of a region.
-         * @return a list of {@link drianmon.olap.Dimension} objects.
+         * @return a list of {@link mondrian.olap.Dimension} objects.
          */
         List<Dimension> getDimensionality();
     }
@@ -437,7 +437,7 @@ public interface CacheControl {
      * <p>Member sets can be created using methods
      * {@link CacheControl#createMemberSet(Member, boolean)},
      * {@link CacheControl#createMemberSet(boolean, Member, boolean, Member, boolean)},
-     * {@link CacheControl#createUnionSet(drianmon.olap.CacheControl.MemberSet[])}.
+     * {@link CacheControl#createUnionSet(mondrian.olap.CacheControl.MemberSet[])}.
      */
     public interface MemberSet {
     }

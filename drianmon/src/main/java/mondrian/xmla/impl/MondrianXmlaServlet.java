@@ -23,7 +23,7 @@ import mondrian.spi.impl.ServletContextCatalogLocator;
 import mondrian.xmla.XmlaHandler;
 
 /**
- * Extension to {@link drianmon.xmla.XmlaServlet} that instantiates a
+ * Extension to {@link mondrian.xmla.XmlaServlet} that instantiates a
  * Mondrian engine.
  *
  * @author jhyde

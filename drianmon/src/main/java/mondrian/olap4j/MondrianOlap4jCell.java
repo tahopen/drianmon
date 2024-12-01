@@ -60,7 +60,7 @@ class MondrianOlap4jCell implements Cell {
 
     public int getOrdinal() {
         return (Integer) cell.getPropertyValue(
-            drianmon.olap.Property.CELL_ORDINAL.name);
+            mondrian.olap.Property.CELL_ORDINAL.name);
     }
 
     public List<Integer> getCoordinateList() {

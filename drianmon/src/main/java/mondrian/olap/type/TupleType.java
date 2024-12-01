@@ -15,7 +15,7 @@ import mondrian.resource.MondrianResource;
 
 import java.util.*;
 
-import drianmon.olap.*;
+import mondrian.olap.*;
 
 /**
  * Tuple type.
@@ -186,7 +186,7 @@ public class TupleType implements Type {
     /**
      * Checks that there are no duplicate dimensions in a list of member types.
      * If so, the member types will form a valid tuple type.
-     * If not, throws {@link drianmon.olap.MondrianException}.
+     * If not, throws {@link mondrian.olap.MondrianException}.
      *
      * @param memberTypes Array of member types
      */

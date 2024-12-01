@@ -49,7 +49,7 @@
         resdir="${generated.resources.dir}"
         style="functor"
         locales="en_US,de_DE,de,es_ES">
-      <include name="drianmon/resource/MondrianResource.xml"/>
+      <include name="mondrian/resource/MondrianResource.xml"/>
     </resgen>
 
   </target>

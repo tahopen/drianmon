@@ -12,7 +12,7 @@ package mondrian.calc;
 import mondrian.olap.Parameter;
 
 /**
- * Extension to {@link drianmon.olap.Parameter} which allows compilation.
+ * Extension to {@link mondrian..olap.Parameter} which allows compilation.
  *
  * @author jhyde
  * @since Jul 22, 2006

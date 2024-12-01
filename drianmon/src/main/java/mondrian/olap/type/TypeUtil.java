@@ -520,7 +520,7 @@ public class TypeUtil {
     }
 
     /**
-     * Implementation of {@link drianmon.olap.fun.Resolver.Conversion}.
+     * Implementation of {@link mondrian.olap.fun.Resolver.Conversion}.
      */
     private static class ConversionImpl implements Resolver.Conversion {
         final int from;

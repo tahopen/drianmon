@@ -54,7 +54,7 @@ public class RolapMemberBase
      * Sets a member's parent.
      *
      * <p>Can screw up the caching structure. Only to be called by
-     * {@link drianmon.olap.CacheControl#createMoveCommand}.
+     * {@link mondrian.olap.CacheControl#createMoveCommand}.
      *
      * <p>New parent must be in same level as old parent.
      *
@@ -550,7 +550,7 @@ public class RolapMemberBase
      * <p>This method does not consider {@link #ordinal} field, because
      * ordinal is only unique within a parent. If you want to compare
      * members which may be at any position in the hierarchy, use
-     * {@link drianmon.olap.fun.FunUtil#compareHierarchically}.
+     * {@link mondrian.olap.fun.FunUtil#compareHierarchically}.
      *
      * @return -1 if this is less, 0 if this is the same, 1 if this is greater
      */
@@ -953,7 +953,7 @@ public class RolapMemberBase
         /**
          * Creates a {@link java.util.Map} to be used for storing
          * property string/value pairs for the specified
-         * {@link drianmon.olap.Member}.
+         * {@link mondrian.olap.Member}.
          *
          * @param member Member
          * @return the Map instance to store property/value pairs
@@ -980,7 +980,7 @@ public class RolapMemberBase
          *
          * <p>Guessing the number of properties
          * can be tricky since some subclasses of
-         * {@link drianmon.olap.Member}</p> have additional properties
+         * {@link mondrian.olap.Member}</p> have additional properties
          * that aren't explicitly declared.  The most common offenders
          * are the (@link mondrian.olap.Measure} implementations, which
          * often have 4 or more undeclared properties, so if the member

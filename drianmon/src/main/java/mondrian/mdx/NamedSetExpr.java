@@ -17,7 +17,7 @@ import mondrian.olap.*;
 import mondrian.olap.type.Type;
 
 /**
- * Usage of a {@link drianmon.olap.NamedSet} in an MDX expression.
+ * Usage of a {@link mondrian.olap.NamedSet} in an MDX expression.
  *
  * @author jhyde
  * @since Sep 26, 2005

@@ -14,10 +14,10 @@ import mondrian.xmla.DataSourcesConfig;
 
 import org.apache.logging.log4j.Logger;
 
-import drianmon.olap.*;
-import drianmon.rolap.RolapSchema;
-import drianmon.tui.XmlaSupport;
-import drianmon.util.Pair;
+import mondrian.olap.*;
+import mondrian.rolap.RolapSchema;
+import mondrian.tui.XmlaSupport;
+import mondrian.util.Pair;
 
 import org.apache.logging.log4j.LogManager;
 

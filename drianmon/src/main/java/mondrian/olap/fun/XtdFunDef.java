@@ -104,7 +104,7 @@ class XtdFunDef extends FunDefBase {
           }
 
           public boolean dependsOn( Hierarchy hierarchy ) {
-            return hierarchy.getDimension().getDimensionType() == drianmon.olap.DimensionType.TimeDimension;
+            return hierarchy.getDimension().getDimensionType() == mondrian.olap.DimensionType.TimeDimension;
           }
         };
       default:

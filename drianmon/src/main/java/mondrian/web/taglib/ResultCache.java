@@ -16,8 +16,8 @@ import org.apache.logging.log4j.LogManager;
 
 import org.w3c.dom.Document;
 
-import drianmon.olap.*;
-import drianmon.spi.impl.ServletContextCatalogLocator;
+import mondrian.olap.*;
+import mondrian.spi.impl.ServletContextCatalogLocator;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.*;

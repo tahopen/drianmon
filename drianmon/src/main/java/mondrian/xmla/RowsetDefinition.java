@@ -41,9 +41,9 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static drianmon.olap.Util.filter;
-import static drianmon.xmla.XmlaConstants.*;
-import static drianmon.xmla.XmlaHandler.getExtra;
+import static mondrian.olap.Util.filter;
+import static mondrian.xmla.XmlaConstants.*;
+import static mondrian.xmla.XmlaHandler.getExtra;
 
 /**
  * <code>RowsetDefinition</code> defines a rowset, including the columns it
@@ -1172,7 +1172,7 @@ public enum RowsetDefinition {
      * for example, SchemaRowsets has a element with child elements.
      *
      * @param writer SAX writer
-     * @see XmlaHandler#writeDatasetXmlSchema(SaxWriter, drianmon.xmla.XmlaHandler.SetType)
+     * @see XmlaHandler#writeDatasetXmlSchema(SaxWriter, mondrian.xmla.XmlaHandler.SetType)
      */
     void writeRowsetXmlSchema(SaxWriter writer) {
         writeRowsetXmlSchemaTop(writer);
@@ -1369,7 +1369,7 @@ public enum RowsetDefinition {
          * Creates a column.
          *
          * @param name Name of column
-         * @param type A {@link drianmon.xmla.RowsetDefinition.Type} value
+         * @param type A {@link mondrian.xmla.RowsetDefinition.Type} value
          * @param enumeratedType Must be specified for enumeration or array
          *                       of enumerations
          * @param description Description of column

@@ -13,7 +13,7 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * Implementation of {@link drianmon.spi.Dialect} for the Microsoft Access
+ * Implementation of {@link mondrian.spi.Dialect} for the Microsoft Access
  * database (also called the JET Engine).
  *
  * @author jhyde

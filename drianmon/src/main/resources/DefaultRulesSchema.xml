@@ -97,7 +97,7 @@ and level/measure mapping.
                 }
             }
             private void validate(final Base[] bases,
-                                  final drianmon.recorder.MessageRecorder msgRecorder) {
+                                  final mondrian.recorder.MessageRecorder msgRecorder) {
                 for (int i = 0; i < bases.length; i++) {
                     Base base = bases[i];
                     if (base.isEnabled()) {
@@ -209,7 +209,7 @@ and level/measure mapping.
             }
             protected abstract String getTag();
             public abstract void validate(final AggRules rules,
-                                          final drianmon.recorder.MessageRecorder msgRecorder);
+                                          final mondrian.recorder.MessageRecorder msgRecorder);
         </Code>
     </Element>
 
@@ -242,7 +242,7 @@ and level/measure mapping.
         </Attribute>
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 // empty
             }
             protected String getTag() {
@@ -299,7 +299,7 @@ and level/measure mapping.
         <Code><![CDATA[
             java.util.regex.Pattern baseNamePattern = null;
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     super.validate(rules, msgRecorder);
@@ -459,7 +459,7 @@ and level/measure mapping.
         </Attribute>
         <Code><![CDATA[
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     super.validate(rules, msgRecorder);
@@ -484,7 +484,7 @@ and level/measure mapping.
         </Doc>
         <Code><![CDATA[
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     super.validate(rules, msgRecorder);
@@ -513,7 +513,7 @@ and level/measure mapping.
         </Doc>
         <Code><![CDATA[
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if ((pretemplate == null) && (posttemplate == null)) {
@@ -581,7 +581,7 @@ and level/measure mapping.
             private static final int MAX_SIZE = 50;
 
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     super.validate(rules, msgRecorder);
@@ -653,7 +653,7 @@ and level/measure mapping.
             protected abstract String[] getTemplateNames();
 
             private int convertNameToID(final String name,
-                                        final drianmon.recorder.MessageRecorder msgRecorder) {
+                                        final mondrian.recorder.MessageRecorder msgRecorder) {
 
                 if (name == null) {
                     String msg = "Template name is null";
@@ -870,7 +870,7 @@ and level/measure mapping.
 
             public void validate(final AggRules rules,
                                  final String[] templateNames,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     super.validate(rules, msgRecorder);
@@ -958,7 +958,7 @@ and level/measure mapping.
             }
             private int convertNameToID(final String name,
                                         final String[] templateNames,
-                                        final drianmon.recorder.MessageRecorder msgRecorder) {
+                                        final mondrian.recorder.MessageRecorder msgRecorder) {
 
                 if (name == null) {
                     String msg = "Template name is null";
@@ -1129,7 +1129,7 @@ and level/measure mapping.
             }
 
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
 
@@ -1223,7 +1223,7 @@ and level/measure mapping.
     <Element type="LevelMapRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasLevelMap(getRefId())) {
@@ -1243,7 +1243,7 @@ and level/measure mapping.
     <Element type="MeasureMapRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasMeasureMap(getRefId())) {
@@ -1263,7 +1263,7 @@ and level/measure mapping.
     <Element type="IgnoreMapRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasIgnoreMap(getRefId())) {
@@ -1283,7 +1283,7 @@ and level/measure mapping.
     <Element type="FactCountMatchRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasFactCountMatch(getRefId())) {
@@ -1303,7 +1303,7 @@ and level/measure mapping.
     <Element type="ForeignKeyMatchRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasForeignKeyMatch(getRefId())) {
@@ -1323,7 +1323,7 @@ and level/measure mapping.
     <Element type="TableMatchRef" class="Ref" >
         <Code>
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     if (! rules.hasTableMatch(getRefId())) {
@@ -1507,7 +1507,7 @@ and level/measure mapping.
                 return ((base != null) && base.isEnabled());
             }
             private boolean isRef(final AggRules rules,
-                                  final drianmon.recorder.MessageRecorder msgRecorder,
+                                  final mondrian.recorder.MessageRecorder msgRecorder,
                                   final Base base,
                                   final Base baseRef,
                                   final String baseName) {
@@ -1539,7 +1539,7 @@ and level/measure mapping.
             }
             // called after a constructor is called
             public void validate(final AggRules rules,
-                                 final drianmon.recorder.MessageRecorder msgRecorder) {
+                                 final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     // IgnoreMap is optional

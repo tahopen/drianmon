@@ -25,8 +25,8 @@ import mondrian.server.Statement;
 public interface MdxParserValidator {
 
     /**
-      * Parses a string to create a {@link drianmon.olap.Query}.
-      * Called only by {@link drianmon.olap.ConnectionBase#parseQuery}.
+      * Parses a string to create a {@link mondrian.olap.Query}.
+      * Called only by {@link mondrian.olap.ConnectionBase#parseQuery}.
       */
     QueryPart parseInternal(
         Statement statement,
@@ -44,7 +44,7 @@ public interface MdxParserValidator {
     interface QueryPartFactory {
 
         /**
-         * Creates a {@link drianmon.olap.Query} object.
+         * Creates a {@link mondrian.olap.Query} object.
          * Override this function to make your kind of query.
          */
         Query makeQuery(
@@ -57,7 +57,7 @@ public interface MdxParserValidator {
             boolean strictValidation);
 
         /**
-         * Creates a {@link drianmon.olap.DrillThrough} object.
+         * Creates a {@link mondrian.olap.DrillThrough} object.
          */
         DrillThrough makeDrillThrough(
             Query query,
@@ -66,7 +66,7 @@ public interface MdxParserValidator {
             List<Exp> returnList);
 
         /**
-         * Creates an {@link drianmon.olap.Explain} object.
+         * Creates an {@link mondrian.olap.Explain} object.
          */
         Explain makeExplain(
             QueryPart query);

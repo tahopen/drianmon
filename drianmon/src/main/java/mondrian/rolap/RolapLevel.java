@@ -42,17 +42,17 @@ public class RolapLevel extends LevelBase {
     /**
      * The column or expression which yields the level's key.
      */
-    protected DrianmonDef.Expression keyExp;
+    protected MondrianDef.Expression keyExp;
 
     /**
      * The column or expression which yields the level's ordinal.
      */
-    protected DrianmonDef.Expression ordinalExp;
+    protected MondrianDef.Expression ordinalExp;
 
     /**
      * The column or expression which yields the level members' caption.
      */
-    protected DrianmonDef.Expression captionExp;
+    protected MondrianDef.Expression captionExp;
 
     private final Dialect.Datatype datatype;
 
@@ -76,16 +76,16 @@ public class RolapLevel extends LevelBase {
      * Ths expression which gives the name of members of this level. If null,
      * members are named using the key expression.
      */
-    protected DrianmonDef.Expression nameExp;
+    protected MondrianDef.Expression nameExp;
     /** The expression which joins to the parent member in a parent-child
      * hierarchy, or null if this is a regular hierarchy. */
-    protected DrianmonDef.Expression parentExp;
+    protected MondrianDef.Expression parentExp;
     /** Value which indicates a null parent in a parent-child hierarchy. */
     private final String nullParentValue;
 
     /** Condition under which members are hidden. */
     private final HideMemberCondition hideMemberCondition;
-    protected final DrianmonDef.Closure xmlClosure;
+    protected final MondrianDef.Closure xmlClosure;
     private final Map<String, Annotation> annotationMap;
     private final SqlStatement.Type internalType; // may be null
 
@@ -104,13 +104,13 @@ public class RolapLevel extends LevelBase {
         boolean visible,
         String description,
         int depth,
-        DrianmonDef.Expression keyExp,
-        DrianmonDef.Expression nameExp,
-        DrianmonDef.Expression captionExp,
-        DrianmonDef.Expression ordinalExp,
-        DrianmonDef.Expression parentExp,
+        MondrianDef.Expression keyExp,
+        MondrianDef.Expression nameExp,
+        MondrianDef.Expression captionExp,
+        MondrianDef.Expression ordinalExp,
+        MondrianDef.Expression parentExp,
         String nullParentValue,
-        DrianmonDef.Closure xmlClosure,
+        MondrianDef.Closure xmlClosure,
         RolapProperty[] properties,
         int flags,
         Dialect.Datatype datatype,
@@ -129,8 +129,8 @@ public class RolapLevel extends LevelBase {
             "hideMemberCondition != null");
         Util.assertPrecondition(levelType != null, "levelType != null");
 
-        if (keyExp instanceof DrianmonDef.Column) {
-            checkColumn((DrianmonDef.Column) keyExp);
+        if (keyExp instanceof MondrianDef.Column) {
+            checkColumn((MondrianDef.Column) keyExp);
         }
         this.annotationMap = annotationMap;
         this.approxRowCount = loadApproxRowCount(approxRowCount);
@@ -138,27 +138,27 @@ public class RolapLevel extends LevelBase {
         this.datatype = datatype;
         this.keyExp = keyExp;
         if (nameExp != null) {
-            if (nameExp instanceof DrianmonDef.Column) {
-                checkColumn((DrianmonDef.Column) nameExp);
+            if (nameExp instanceof MondrianDef.Column) {
+                checkColumn((MondrianDef.Column) nameExp);
             }
         }
         this.nameExp = nameExp;
         if (captionExp != null) {
-            if (captionExp instanceof DrianmonDef.Column) {
-                checkColumn((DrianmonDef.Column) captionExp);
+            if (captionExp instanceof MondrianDef.Column) {
+                checkColumn((MondrianDef.Column) captionExp);
             }
         }
         this.captionExp = captionExp;
         if (ordinalExp != null) {
-            if (ordinalExp instanceof DrianmonDef.Column) {
-                checkColumn((DriamonnDef.Column) ordinalExp);
+            if (ordinalExp instanceof MondrianDef.Column) {
+                checkColumn((MondrianDef.Column) ordinalExp);
             }
             this.ordinalExp = ordinalExp;
         } else {
             this.ordinalExp = this.keyExp;
         }
-        if (parentExp instanceof DrianmonDef.Column) {
-            checkColumn((DrianmonDef.Column) parentExp);
+        if (parentExp instanceof MondrianDef.Column) {
+            checkColumn((MondrianDef.Column) parentExp);
         }
         this.parentExp = parentExp;
         if (parentExp != null) {
@@ -176,8 +176,8 @@ public class RolapLevel extends LevelBase {
             "parentExp != null || nullParentValue == null");
         this.xmlClosure = xmlClosure;
         for (RolapProperty property : properties) {
-            if (property.getExp() instanceof DrianmonDef.Column) {
-                checkColumn((DrianmonDef.Column) property.getExp());
+            if (property.getExp() instanceof MondrianDef.Column) {
+                checkColumn((MondrianDef.Column) property.getExp());
             }
         }
         this.properties = properties;
@@ -249,23 +249,23 @@ public class RolapLevel extends LevelBase {
     String getTableName() {
         String tableName = null;
 
-        DrianmonDef.Expression expr = getKeyExp();
-        if (expr instanceof DrianmonDef.Column) {
-            DrianmonDef.Column mc = (DrianmonDef.Column) expr;
+        MondrianDef.Expression expr = getKeyExp();
+        if (expr instanceof MondrianDef.Column) {
+            MondrianDef.Column mc = (MondrianDef.Column) expr;
             tableName = mc.getTableAlias();
         }
         return tableName;
     }
 
-    public DrianmonDef.Expression getKeyExp() {
+    public MondrianDef.Expression getKeyExp() {
         return keyExp;
     }
 
-    public DrianmonDef.Expression getOrdinalExp() {
+    public MondrianDef.Expression getOrdinalExp() {
         return ordinalExp;
     }
 
-    public DrianmonDef.Expression getCaptionExp() {
+    public MondrianDef.Expression getCaptionExp() {
         return captionExp;
     }
 
@@ -304,13 +304,13 @@ public class RolapLevel extends LevelBase {
         return parentExp != null;
     }
 
-    DrianmonDef.Expression getParentExp() {
+    MondrianDef.Expression getParentExp() {
         return parentExp;
     }
 
     // RME: this has to be public for two of the DrillThroughTest test.
     public
-    DrianmonDef.Expression getNameExp() {
+    MondrianDef.Expression getNameExp() {
         return nameExp;
     }
 
@@ -326,7 +326,7 @@ public class RolapLevel extends LevelBase {
     RolapLevel(
         RolapHierarchy hierarchy,
         int depth,
-        DrianmonDef.Level xmlLevel)
+        MondrianDef.Level xmlLevel)
     {
         this(
             hierarchy,
@@ -369,10 +369,10 @@ public class RolapLevel extends LevelBase {
     }
 
     // helper for constructor
-    private static RolapProperty[] createProperties(DrianmonDef.Level xmlLevel)
+    private static RolapProperty[] createProperties(MondrianDef.Level xmlLevel)
     {
         List<RolapProperty> list = new ArrayList<RolapProperty>();
-        final DrianmonDef.Expression nameExp = xmlLevel.getNameExp();
+        final MondrianDef.Expression nameExp = xmlLevel.getNameExp();
 
         if (nameExp != null) {
             list.add(
@@ -382,7 +382,7 @@ public class RolapLevel extends LevelBase {
                     Property.NAME.description));
         }
         for (int i = 0; i < xmlLevel.properties.length; i++) {
-            DrianmonDef.Property xmlProperty = xmlLevel.properties[i];
+            MondrianDef.Property xmlProperty = xmlLevel.properties[i];
 
             FormatterCreateContext formatterContext =
                     new FormatterCreateContext.Builder(xmlProperty.name)
@@ -431,10 +431,10 @@ public class RolapLevel extends LevelBase {
         }
     }
 
-    private void checkColumn(DrianmonDef.Column nameColumn) {
+    private void checkColumn(MondrianDef.Column nameColumn) {
         final RolapHierarchy rolapHierarchy = (RolapHierarchy) hierarchy;
         if (nameColumn.table == null) {
-            final DrianmonDef.Relation table = rolapHierarchy.getUniqueTable();
+            final MondrianDef.Relation table = rolapHierarchy.getUniqueTable();
             if (table == null) {
                 throw Util.newError(
                     "must specify a table for level " + getUniqueName()
@@ -449,7 +449,7 @@ public class RolapLevel extends LevelBase {
         }
     }
 
-    void init(DrianmonDef.CubeDimension xmlDimension) {
+    void init(MondrianDef.CubeDimension xmlDimension) {
         if (xmlClosure != null) {
             final RolapDimension dimension = ((RolapHierarchy) hierarchy)
                 .createClosedPeerDimension(this, xmlClosure, xmlDimension);
@@ -539,7 +539,7 @@ public class RolapLevel extends LevelBase {
                     keyValues.add(keyValue);
                 }
             }
-            final List<DrianmonDef.Expression> keyExps = getInheritedKeyExps();
+            final List<MondrianDef.Expression> keyExps = getInheritedKeyExps();
             if (keyExps.size() != keyValues.size()) {
                 throw Util.newError(
                     "Wrong number of values in member key; "
@@ -574,11 +574,11 @@ public class RolapLevel extends LevelBase {
         return null;
     }
 
-    private List<DrianmonDef.Expression> getInheritedKeyExps() {
-        final List<DrianmonDef.Expression> list =
-            new ArrayList<DrianmonDef.Expression>();
+    private List<MondrianDef.Expression> getInheritedKeyExps() {
+        final List<MondrianDef.Expression> list =
+            new ArrayList<MondrianDef.Expression>();
         for (RolapLevel x = this;; x = (RolapLevel) x.getParentLevel()) {
-            final DrianmonDef.Expression keyExp1 = x.getKeyExp();
+            final MondrianDef.Expression keyExp1 = x.getKeyExp();
             if (keyExp1 != null) {
                 list.add(keyExp1);
             }

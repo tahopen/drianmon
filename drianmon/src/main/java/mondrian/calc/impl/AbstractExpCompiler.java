@@ -21,7 +21,7 @@ import mondrian.olap.fun.*;
 import mondrian.olap.type.*;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.ExpCompiler} interface.
+ * Abstract implementation of the {@link mondrian.calc.ExpCompiler} interface.
  *
  * @author jhyde
  * @since Sep 29, 2005
@@ -146,7 +146,7 @@ public class AbstractExpCompiler implements ExpCompiler {
             final HierarchyCalc hierarchyCalc = compileHierarchy(exp);
             return hierarchyToMember(hierarchyCalc);
         } else if (type instanceof NullType) {
-            throw DrianmonResource.instance().NullNotSupported.ex();
+            throw MondrianResource.instance().NullNotSupported.ex();
         } else if (type instanceof DimensionType) {
             final HierarchyCalc hierarchyCalc = compileHierarchy(exp);
             return hierarchyToMember(hierarchyCalc);

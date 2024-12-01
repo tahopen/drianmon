@@ -2966,7 +2966,7 @@ public class XmlaHandler {
      *
      * <p>If you want to pass in a role object, and you are making the call
      * within the same JVM (i.e. not RPC), register the role using
-     * {@link drianmon.olap.MondrianServer#getLockBox()} and pass in the moniker
+     * {@link mondrian.olap.MondrianServer#getLockBox()} and pass in the moniker
      * for the generated lock box entry. The server will retrieve the role from
      * the moniker.
      *
@@ -2993,7 +2993,7 @@ public class XmlaHandler {
      *
      * <p>If you want to pass in a role object, and you are making the call
      * within the same JVM (i.e. not RPC), register the role using
-     * {@link drianmon.olap.MondrianServer#getLockBox()} and pass in the moniker
+     * {@link mondrian.olap.MondrianServer#getLockBox()} and pass in the moniker
      * for the generated lock box entry. The server will retrieve the role from
      * the moniker.
      *
@@ -3051,7 +3051,7 @@ public class XmlaHandler {
      * the XMLA server will call methods in this interface instead of relying
      * on the core olap4j interface.
      *
-     * <p>The {@link drianmon.xmla.XmlaHandler.XmlaExtraImpl} class provides
+     * <p>The {@link mondrian.xmla.XmlaHandler.XmlaExtraImpl} class provides
      * a default implementation that uses the olap4j interface exclusively.
      */
     public interface XmlaExtra {
@@ -3217,7 +3217,7 @@ public class XmlaHandler {
     }
 
     /**
-     * Default implementation of {@link drianmon.xmla.XmlaHandler.XmlaExtra}.
+     * Default implementation of {@link mondrian.xmla.XmlaHandler.XmlaExtra}.
      * Connections based on mondrian's olap4j driver can do better.
      */
     private static class XmlaExtraImpl implements XmlaExtra {
