@@ -13,7 +13,7 @@
  name="aggregates"
  dtdName="aggregates.dtd"
  className="DefaultDef"
- packageName="drianmon.rolap.aggmatcher"
+ packageName="mondrian.rolap.aggmatcher"
  root="AggRules"
  version="1.0">
     <Doc>
@@ -83,7 +83,7 @@ and level/measure mapping.
                 return null;
             }
 
-            public void validate(final drianmon.recorder.MessageRecorder msgRecorder) {
+            public void validate(final mondrian.recorder.MessageRecorder msgRecorder) {
                 msgRecorder.pushContextName(getName());
                 try {
                     validate(factCountMatches, msgRecorder);

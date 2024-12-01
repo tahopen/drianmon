@@ -8,7 +8,7 @@
   == Copyright (C) 2005-2019 Hitachi Vantara and others
   == All Rights Reserved.
   -->
-<project name="mondrian">
+<project name="drianmon">
   <target name="define-tasks">
     <taskdef name="javacup" classname="java_cup.JavaCUPTask">
       <classpath path="${classpath}"/>
@@ -49,7 +49,7 @@
         resdir="${generated.resources.dir}"
         style="functor"
         locales="en_US,de_DE,de,es_ES">
-      <include name="mondrian/resource/MondrianResource.xml"/>
+      <include name="drianmon/resource/MondrianResource.xml"/>
     </resgen>
 
   </target>
@@ -119,7 +119,7 @@
     <!--<copy file="${generated.java.dir}/mondrian/xmla/datasourcesconfig.dtd"-->
         <!--todir="${project.build.directory}"/>-->
   </target>
-i
+
   <target name="version">
     <echo file="${generated.resources.dir}/VERSION.txt">Title: ${project.artifactId}
 Version: ${project.version}

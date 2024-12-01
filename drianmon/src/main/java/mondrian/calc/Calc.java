@@ -9,9 +9,9 @@
 
 package mondrian.calc;
 
-import drianmon.olap.Evaluator;
-import drianmon.olap.Hierarchy;
-import drianmon.olap.type.Type;
+import mondrian.olap.Evaluator;
+import mondrian.olap.Hierarchy;
+import mondrian.olap.type.Type;
 
 /**
  * <code>Calc</code> is the base class for all calculable expressions.
