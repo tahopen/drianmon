@@ -21,8 +21,8 @@ import mondrian.olap.Member;
  * <ul>
  *
  * <li>Consider changing
- * {@link TupleCalc#evaluateTuple(drianmon.olap.Evaluator)}
- * and {@link drianmon.olap.Evaluator.NamedSetEvaluator#currentTuple()}
+ * {@link TupleCalc#evaluateTuple(mondrian.olap.Evaluator)}
+ * and {@link mondrian.olap.Evaluator.NamedSetEvaluator#currentTuple()}
  * to List&lt;Member&gt;</li>
  *
  * <li>Search for potential uses of {@link TupleList#get(int, int)}</li>

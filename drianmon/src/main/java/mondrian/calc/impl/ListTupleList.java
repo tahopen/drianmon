@@ -17,7 +17,7 @@ import mondrian.olap.Member;
 import mondrian.olap.Util;
 
 /**
- * Implementation of {@link drianmon.calc.TupleList} that stores tuples
+ * Implementation of {@link mondrian.calc.TupleList} that stores tuples
  * end-to-end in a backing list.
  *
  * <pre>

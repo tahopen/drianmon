@@ -181,7 +181,7 @@ public class UnaryTupleList
     }
 
     /**
-     * Implementation of {@link drianmon.calc.TupleIterator} for {@link UnaryTupleList}.
+     * Implementation of {@link mondrian.calc.TupleIterator} for {@link UnaryTupleList}.
      * Based upon AbstractList.Itr, but with concurrent modification checking
      * removed.
      */

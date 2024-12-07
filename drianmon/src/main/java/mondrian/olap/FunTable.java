@@ -45,7 +45,7 @@ public interface FunTable {
     List<String> getReservedWords();
 
     /**
-     * Returns a list of {@link drianmon.olap.fun.Resolver} objects.
+     * Returns a list of {@link mondrian.olap.fun.Resolver} objects.
      */
     List<Resolver> getResolvers();
 
@@ -62,7 +62,7 @@ public interface FunTable {
         Syntax syntax);
 
     /**
-     * Returns a list of {@link drianmon.olap.fun.FunInfo} objects.
+     * Returns a list of {@link mondrian.olap.fun.FunInfo} objects.
      */
     List<FunInfo> getFunInfoList();
 
@@ -84,9 +84,9 @@ public interface FunTable {
      * Builder that assists with the construction of a function table by
      * providing callbacks to define functions.
      *
-     * <p>An implementation of {@link drianmon.olap.FunTable} must register all
+     * <p>An implementation of {@link mondrian.olap.FunTable} must register all
      * of its functions and operators by making callbacks during its
-     * {@link drianmon.olap.FunTable#defineFunctions(drianmon.olap.FunTable.Builder)}
+     * {@link mondrian.olap.FunTable#defineFunctions(mondrian.olap.FunTable.Builder)}
      * method.
      */
     public interface Builder {
@@ -119,7 +119,7 @@ public interface FunTable {
          *
          * @param keyword Reserved word
          *
-         * @see drianmon.olap.FunTable#isReserved
+         * @see mondrian.olap.FunTable#isReserved
          */
         void defineReserved(String keyword);
     }

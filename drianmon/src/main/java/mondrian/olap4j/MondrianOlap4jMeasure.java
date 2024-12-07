@@ -19,7 +19,7 @@ import mondrian.rolap.*;
  * Implementation of {@link org.olap4j.metadata.Measure}
  * for the Mondrian OLAP engine,
  * as a wrapper around a mondrian
- * {@link drianmon.rolap.RolapStoredMeasure}.
+ * {@link mondrian.rolap.RolapStoredMeasure}.
  *
  * @author jhyde
  * @since Dec 10, 2007

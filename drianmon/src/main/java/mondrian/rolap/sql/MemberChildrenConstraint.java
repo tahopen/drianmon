@@ -19,7 +19,7 @@ import mondrian.rolap.aggmatcher.AggStar;
 /**
  * Restricts the SQL result of a MembersChildren query in SqlMemberSource.
  *
- * @see drianmon.rolap.SqlMemberSource
+ * @see mondrian.rolap.SqlMemberSource
  *
  * @author av
  * @since Nov 2, 2005

@@ -12,9 +12,6 @@
 */
 package mondrian.rolap;
 
-import mondrian.olap.MondrianDef;
-import mondrian.olap.MondrianProperties;
-
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -22,6 +19,7 @@ import org.eigenbase.util.property.StringProperty;
 
 import mondrian.calc.ExpCompiler;
 import mondrian.olap.*;
+import mondrian.olap.Member;
 import mondrian.olap.fun.FunUtil;
 import mondrian.rolap.RolapHierarchy.LimitedRollupMember;
 import mondrian.server.*;
@@ -124,7 +122,7 @@ public class RolapUtil {
 
     /**
      * Sets the query-execution hook used by tests. This method and
-     * {@link #setHook(drianmon.rolap.RolapUtil.ExecuteQueryHook)} are
+     * {@link #setHook(mondrian.rolap.RolapUtil.ExecuteQueryHook)} are
      * synchronized to ensure a memory barrier.
      *
      * @return Query execution hook
@@ -422,7 +420,7 @@ public class RolapUtil {
     /**
      * Creates a compiler which will generate programs which will test
      * whether the dependencies declared via
-     * {@link drianmon.calc.Calc#dependsOn(Hierarchy)} are accurate.
+     * {@link mondrian.calc.Calc#dependsOn(Hierarchy)} are accurate.
      */
     public static ExpCompiler createDependencyTestingCompiler(
         ExpCompiler compiler)
@@ -517,11 +515,11 @@ public class RolapUtil {
         return bestMatch;
     }
 
-    public static DrianmonDef.Relation convertInlineTableToRelation(
-        DrianmonDef.InlineTable inlineTable,
+    public static MondrianDef.Relation convertInlineTableToRelation(
+        MondrianDef.InlineTable inlineTable,
         final Dialect dialect)
     {
-        DrianmonDef.View view = new DrianmonDef.View();
+        MondrianDef.View view = new MondrianDef.View();
         view.alias = inlineTable.alias;
 
         final int columnCount = inlineTable.columnDefs.array.length;
@@ -532,9 +530,9 @@ public class RolapUtil {
             columnTypes.add(inlineTable.columnDefs.array[i].type);
         }
         List<String[]> valueList = new ArrayList<String[]>();
-        for (DrianmonDef.Row row : inlineTable.rows.array) {
+        for (MondrianDef.Row row : inlineTable.rows.array) {
             String[] values = new String[columnCount];
-            for (DrianmonDef.Value value : row.values) {
+            for (MondrianDef.Value value : row.values) {
                 final int columnOrdinal = columnNames.indexOf(value.column);
                 if (columnOrdinal < 0) {
                     throw Util.newError(
@@ -716,13 +714,13 @@ public class RolapUtil {
      * @return the rolap star key
      */
     public static List<String> makeRolapStarKey(
-        final DrianmonDef.Relation fact)
+        final MondrianDef.Relation fact)
     {
       List<String> rlStarKey = new ArrayList<String>();
-      DrianmonDef.Table table = null;
+      MondrianDef.Table table = null;
       rlStarKey.add(fact.getAlias());
-      if (fact instanceof DrianmonDef.Table) {
-        table = (DrianmonDef.Table) fact;
+      if (fact instanceof MondrianDef.Table) {
+        table = (MondrianDef.Table) fact;
       }
       // Add SQL filter to the key
       if (!Util.isNull(table) && !Util.isNull(table.filter)

@@ -196,7 +196,7 @@ public class SchemaPropertyCellEditor
     }
 
 
-    public MOndrianGuiDef.RelationOrJoin getRelation(
+    public MondrianGuiDef.RelationOrJoin getRelation(
         final JTable table,
         final int row,
         final int column)
@@ -206,22 +206,22 @@ public class SchemaPropertyCellEditor
         Class<?> targetClassz = tableModel.target.getClass();
         Object parent = this.getParentObject();
 
-        MOndrianGuiDef.RelationOrJoin relation = null;
+        MondrianGuiDef.RelationOrJoin relation = null;
 
-        if (targetClassz == MOndrianGuiDef.Table.class) {
-            relation = (MOndrianGuiDef.Table) value;
-        } else if (targetClassz == MOndrianGuiDef.View.class) {
-            relation = (MOndrianGuiDef.View) value;
-        } else if (targetClassz == MOndrianGuiDef.Join.class) {
-            relation = (MOndrianGuiDef.Join) value;
-        } else if (targetClassz == MOndrianGuiDef.Hierarchy.class) {
-            MOndrianGuiDef.Hierarchy hProps = (MOndrianGuiDef.Hierarchy) value;
+        if (targetClassz == MondrianGuiDef.Table.class) {
+            relation = (MondrianGuiDef.Table) value;
+        } else if (targetClassz == MondrianGuiDef.View.class) {
+            relation = (MondrianGuiDef.View) value;
+        } else if (targetClassz == MondrianGuiDef.Join.class) {
+            relation = (MondrianGuiDef.Join) value;
+        } else if (targetClassz == MondrianGuiDef.Hierarchy.class) {
+            MondrianGuiDef.Hierarchy hProps = (MondrianGuiDef.Hierarchy) value;
             relation = hProps.relation;
-        } else if (targetClassz == MOndrianGuiDef.Level.class) {
-            MOndrianGuiDef.Hierarchy hProps = (MOndrianGuiDef.Hierarchy) parent;
+        } else if (targetClassz == MondrianGuiDef.Level.class) {
+            MondrianGuiDef.Hierarchy hProps = (MondrianGuiDef.Hierarchy) parent;
             relation = hProps.relation;
-        } else if (targetClassz == MOndrianGuiDef.Cube.class) {
-            MOndrianGuiDef.Cube hProps = (MOndrianGuiDef.Cube) value;
+        } else if (targetClassz == MondrianGuiDef.Cube.class) {
+            MondrianGuiDef.Cube hProps = (MondrianGuiDef.Cube) value;
             relation = hProps.fact;
         }
 
@@ -247,15 +247,15 @@ public class SchemaPropertyCellEditor
         listEditorValue = null;  // reset value of combo-box
         Object parent = this.getParentObject();
 
-        MOndrianGuiDef.RelationOrJoin currentRelation =
+        MondrianGuiDef.RelationOrJoin currentRelation =
             getRelation(table, row, column);
 
         boolean nonTableRelation =
             currentRelation != null
-            && !(currentRelation instanceof MOndrianGuiDef.Table
-                 || currentRelation instanceof MOndrianGuiDef.Join);
+            && !(currentRelation instanceof MondrianGuiDef.Table
+                 || currentRelation instanceof MondrianGuiDef.Join);
 
-        if (targetClassz == MOndrianGuiDef.UserDefinedFunction.class
+        if (targetClassz == MondrianGuiDef.UserDefinedFunction.class
             && propertyName.equals("className"))
         {
             List<String> udfs = getUdfs();
@@ -270,7 +270,7 @@ public class SchemaPropertyCellEditor
             listEditor.setSelectedItem((String) value);
             listEditorValue = (String) value;
             activeEditor = listEditor;
-        } else if (targetClassz == MOndrianGuiDef.Measure.class
+        } else if (targetClassz == MondrianGuiDef.Measure.class
                    && propertyName.equals("formatString"))
         {
             List<String> formatStrs = getFormatStrings();
@@ -285,7 +285,7 @@ public class SchemaPropertyCellEditor
             listEditor.setSelectedItem((String) value);
             listEditorValue = (String) value;
             activeEditor = listEditor;
-        } else if (targetClassz == MOndrianGuiDef.Measure.class
+        } else if (targetClassz == MondrianGuiDef.Measure.class
                    && propertyName.equals("aggregator"))
         {
             listEditor.setEditable(false);
@@ -293,11 +293,11 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Measure._aggregator_values));
+                    MondrianGuiDef.Measure._aggregator_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Measure.class
+        } else if (targetClassz == MondrianGuiDef.Measure.class
                    && propertyName.equals("datatype"))
         {
             listEditor.setEditable(false);
@@ -305,11 +305,11 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Measure._datatype_values));
+                    MondrianGuiDef.Measure._datatype_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Parameter.class
+        } else if (targetClassz == MondrianGuiDef.Parameter.class
                    && propertyName.equals("parameter"))
         {
             listEditor.setEditable(false);
@@ -317,22 +317,22 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Parameter._type_values));
+                    MondrianGuiDef.Parameter._type_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.SQL.class
+        } else if (targetClassz == MondrianGuiDef.SQL.class
                    && propertyName.equals("dialect"))
         {
             listEditor.setEditable(false);
             listEditor.setToolTipText(null);
             listEditor.removeActionListener(al);
             listEditor.setModel(
-                new DefaultComboBoxModel(MOndrianGuiDef.SQL._dialect_values));
+                new DefaultComboBoxModel(MondrianGuiDef.SQL._dialect_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Level.class
+        } else if (targetClassz == MondrianGuiDef.Level.class
                    && propertyName.equals("hideMemberIf"))
         {
             listEditor.setEditable(false);
@@ -340,11 +340,11 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Level._hideMemberIf_values));
+                    MondrianGuiDef.Level._hideMemberIf_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Level.class
+        } else if (targetClassz == MondrianGuiDef.Level.class
                    && propertyName.equals("levelType"))
         {
             listEditor.setEditable(false);
@@ -352,22 +352,22 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Level._levelType_values));
+                    MondrianGuiDef.Level._levelType_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Level.class
+        } else if (targetClassz == MondrianGuiDef.Level.class
                    && propertyName.equals("type"))
         {
             listEditor.setEditable(false);
             listEditor.setToolTipText(null);
             listEditor.removeActionListener(al);
             listEditor.setModel(
-                new DefaultComboBoxModel(MOndrianGuiDef.Level._type_values));
+                new DefaultComboBoxModel(MondrianGuiDef.Level._type_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Level.class
+        } else if (targetClassz == MondrianGuiDef.Level.class
             && propertyName.equals("internalType"))
         {
             listEditor.setEditable(false);
@@ -375,11 +375,11 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Level._internalType_values));
+                    MondrianGuiDef.Level._internalType_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Dimension.class
+        } else if (targetClassz == MondrianGuiDef.Dimension.class
                    && propertyName.equals("type"))
         {
             listEditor.setEditable(false);
@@ -387,11 +387,11 @@ public class SchemaPropertyCellEditor
             listEditor.removeActionListener(al);
             listEditor.setModel(
                 new DefaultComboBoxModel(
-                    MOndrianGuiDef.Dimension._type_values));
+                    MondrianGuiDef.Dimension._type_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.DimensionUsage.class
+        } else if (targetClassz == MondrianGuiDef.DimensionUsage.class
                    && propertyName.equals("source"))
         {
             List<String> source = getSource();
@@ -407,8 +407,8 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if ((tableModel.target instanceof MOndrianGuiDef.Grant
-            || tableModel.target instanceof MOndrianGuiDef.MemberGrant)
+        } else if ((tableModel.target instanceof MondrianGuiDef.Grant
+            || tableModel.target instanceof MondrianGuiDef.MemberGrant)
             && propertyName.equals("access"))
         {
             listEditor.setEditable(false);
@@ -419,21 +419,21 @@ public class SchemaPropertyCellEditor
                 new DefaultComboBoxModel(
                     new String[]{"all", "none"});
 
-            if (targetClassz == MOndrianGuiDef.SchemaGrant.class) {
+            if (targetClassz == MondrianGuiDef.SchemaGrant.class) {
                 cAccess = new DefaultComboBoxModel(
                     new String[]{
                         "all", "custom", "none", "all_dimensions"
                     });
-            } else if (targetClassz == MOndrianGuiDef.CubeGrant.class
-                       || targetClassz == MOndrianGuiDef.DimensionGrant.class
-                       || targetClassz == MOndrianGuiDef.MemberGrant.class)
+            } else if (targetClassz == MondrianGuiDef.CubeGrant.class
+                       || targetClassz == MondrianGuiDef.DimensionGrant.class
+                       || targetClassz == MondrianGuiDef.MemberGrant.class)
             {
                 cAccess =
                     new DefaultComboBoxModel(
                         new String[]{"all", "custom", "none"});
 
-            } else if (targetClassz == MOndrianGuiDef.HierarchyGrant.class
-                || targetClassz == MOndrianGuiDef.DimensionGrant.class)
+            } else if (targetClassz == MondrianGuiDef.HierarchyGrant.class
+                || targetClassz == MondrianGuiDef.DimensionGrant.class)
             {
                 cAccess = new DefaultComboBoxModel(
                     new String[]{
@@ -445,7 +445,7 @@ public class SchemaPropertyCellEditor
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.HierarchyGrant.class
+        } else if (targetClassz == MondrianGuiDef.HierarchyGrant.class
             && propertyName.equals("rollupPolicy"))
         {
             ComboBoxModel cRollupPolicy =
@@ -454,7 +454,7 @@ public class SchemaPropertyCellEditor
             listEditor.setModel(cRollupPolicy);
             listEditor.setSelectedItem(value);
             activeEditor = listEditor;
-        } else if (targetClassz == MOndrianGuiDef.DimensionGrant.class
+        } else if (targetClassz == MondrianGuiDef.DimensionGrant.class
                     && propertyName.equals("dimension"))
         {
             List<String> source = getDimensions();
@@ -470,7 +470,7 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.HierarchyGrant.class
+        } else if (targetClassz == MondrianGuiDef.HierarchyGrant.class
                        && propertyName.equals("hierarchy"))
         {
             List<String> source = getHierarchies();
@@ -486,12 +486,12 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if ((targetClassz == MOndrianGuiDef.HierarchyGrant.class
+        } else if ((targetClassz == MondrianGuiDef.HierarchyGrant.class
                     && (propertyName.equals("topLevel")
                         || propertyName.equals("bottomLevel"))))
         {
             List<String> source = getLevels(
-                ((MOndrianGuiDef.HierarchyGrant) tableModel.target).hierarchy);
+                ((MondrianGuiDef.HierarchyGrant) tableModel.target).hierarchy);
             ComboBoxModel cAllsource =
                 new DefaultComboBoxModel(new Vector<String>(source));
 
@@ -504,10 +504,10 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if (((targetClassz == MOndrianGuiDef.VirtualCubeDimension.class
-                     || targetClassz == MOndrianGuiDef.VirtualCubeMeasure.class)
+        } else if (((targetClassz == MondrianGuiDef.VirtualCubeDimension.class
+                     || targetClassz == MondrianGuiDef.VirtualCubeMeasure.class)
                     && propertyName.equals("cubeName"))
-                   || (targetClassz == MOndrianGuiDef.CubeGrant.class
+                   || (targetClassz == MondrianGuiDef.CubeGrant.class
                        && propertyName.equals("cube")))
         {
             List<String> source = getCubes();
@@ -522,11 +522,11 @@ public class SchemaPropertyCellEditor
             listEditor.setSelectedItem((String) value);
             listEditorValue = (String) value;
             activeEditor = listEditor;
-        } else if ((targetClassz == MOndrianGuiDef.Dimension.class
+        } else if ((targetClassz == MondrianGuiDef.Dimension.class
                     && propertyName.equals("foreignKey"))
-                   || (targetClassz == MOndrianGuiDef.DimensionUsage.class
+                   || (targetClassz == MondrianGuiDef.DimensionUsage.class
                        && propertyName.equals("foreignKey"))
-                   || (targetClassz == MOndrianGuiDef.Measure.class
+                   || (targetClassz == MondrianGuiDef.Measure.class
                        && propertyName.equals("column")))
         {
             Vector<String> fks = new Vector<String>(
@@ -563,11 +563,11 @@ public class SchemaPropertyCellEditor
             listEditor.setSelectedItem((String) value);
             listEditorValue = (String) value;
             activeEditor = listEditor;
-        } else if (targetClassz == MOndrianGuiDef.Hierarchy.class
+        } else if (targetClassz == MondrianGuiDef.Hierarchy.class
                    && propertyName.equals("primaryKey"))
         {
-            MOndrianGuiDef.Hierarchy hProps =
-                (MOndrianGuiDef.Hierarchy) tableModel.getValue();
+            MondrianGuiDef.Hierarchy hProps =
+                (MondrianGuiDef.Hierarchy) tableModel.getValue();
             String pkTable = hProps.primaryKeyTable;
 
             String schemaName = null;
@@ -575,12 +575,12 @@ public class SchemaPropertyCellEditor
             String pk = "";
             List<String> allcols;
 
-            MOndrianGuiDef.RelationOrJoin relation = hProps.relation;
-            if (relation instanceof MOndrianGuiDef.Table) {
-                pkTable = ((MOndrianGuiDef.Table) relation).name;
-                schemaName = ((MOndrianGuiDef.Table) relation).schema;
+            MondrianGuiDef.RelationOrJoin relation = hProps.relation;
+            if (relation instanceof MondrianGuiDef.Table) {
+                pkTable = ((MondrianGuiDef.Table) relation).name;
+                schemaName = ((MondrianGuiDef.Table) relation).schema;
                 pk = jdbcMetaData.getTablePK(schemaName, pkTable);
-            } else if (relation instanceof MOndrianGuiDef.Join) {
+            } else if (relation instanceof MondrianGuiDef.Join) {
                 String[] schemaAndTable =
                     SchemaExplorer.getTableNameForAlias(
                         hProps.relation, pkTable);
@@ -588,8 +588,8 @@ public class SchemaPropertyCellEditor
                 pkTable = schemaAndTable[1];
             }
 
-            if (relation instanceof MOndrianGuiDef.Table
-                || relation instanceof MOndrianGuiDef.Join)
+            if (relation instanceof MondrianGuiDef.Table
+                || relation instanceof MondrianGuiDef.Join)
             {
                 allcols = jdbcMetaData.getAllColumns(schemaName, pkTable);
                 pk = jdbcMetaData.getTablePK(schemaName, pkTable);
@@ -612,28 +612,28 @@ public class SchemaPropertyCellEditor
                 listEditorValue = (String) value;
             }
             activeEditor = listEditor;
-        } else if ((targetClassz == MOndrianGuiDef.Level.class
+        } else if ((targetClassz == MondrianGuiDef.Level.class
                     && propertyName.equals("column"))
-                   || (targetClassz == MOndrianGuiDef.Level.class
+                   || (targetClassz == MondrianGuiDef.Level.class
                        && propertyName.equals("nameColumn"))
-                   || (targetClassz == MOndrianGuiDef.Level.class
+                   || (targetClassz == MondrianGuiDef.Level.class
                        && propertyName.equals("parentColumn"))
-                   || (targetClassz == MOndrianGuiDef.Level.class
+                   || (targetClassz == MondrianGuiDef.Level.class
                        && propertyName.equals("ordinalColumn"))
-                   || (targetClassz == MOndrianGuiDef.Level.class
+                   || (targetClassz == MondrianGuiDef.Level.class
                        && propertyName.equals("captionColumn"))
-                   || (targetClassz == MOndrianGuiDef.Closure.class
+                   || (targetClassz == MondrianGuiDef.Closure.class
                        && propertyName.equals("parentColumn"))
-                   || (targetClassz == MOndrianGuiDef.Closure.class
+                   || (targetClassz == MondrianGuiDef.Closure.class
                        && propertyName.equals("childColumn"))
-                   || (targetClassz == MOndrianGuiDef.Property.class
+                   || (targetClassz == MondrianGuiDef.Property.class
                        && propertyName.equals("column")))
         {
-            MOndrianGuiDef.Level lProps;
-            if (targetClassz == MOndrianGuiDef.Level.class) {
-                lProps = (MOndrianGuiDef.Level) tableModel.getValue();
+            MondrianGuiDef.Level lProps;
+            if (targetClassz == MondrianGuiDef.Level.class) {
+                lProps = (MondrianGuiDef.Level) tableModel.getValue();
             } else {
-                lProps = (MOndrianGuiDef.Level) this.getParentObject();
+                lProps = (MondrianGuiDef.Level) this.getParentObject();
             }
 
             String schemaName = null;
@@ -642,14 +642,14 @@ public class SchemaPropertyCellEditor
 
             // Sets the corresponding columns on the selection dropdown for the
             // specified table.
-            if (targetClassz == MOndrianGuiDef.Level.class && parent != null) {
-                if (parent instanceof MOndrianGuiDef.Hierarchy) {
-                    MOndrianGuiDef.RelationOrJoin relation =
-                        ((MOndrianGuiDef.Hierarchy) parent).relation;
-                    if (relation instanceof MOndrianGuiDef.Table) {
-                        lTable = ((MOndrianGuiDef.Table) relation).name;
-                        schemaName = ((MOndrianGuiDef.Table) relation).schema;
-                    } else if (relation instanceof MOndrianGuiDef.Join) {
+            if (targetClassz == MondrianGuiDef.Level.class && parent != null) {
+                if (parent instanceof MondrianGuiDef.Hierarchy) {
+                    MondrianGuiDef.RelationOrJoin relation =
+                        ((MondrianGuiDef.Hierarchy) parent).relation;
+                    if (relation instanceof MondrianGuiDef.Table) {
+                        lTable = ((MondrianGuiDef.Table) relation).name;
+                        schemaName = ((MondrianGuiDef.Table) relation).schema;
+                    } else if (relation instanceof MondrianGuiDef.Join) {
                         String[] schemaAndTable =
                             SchemaExplorer.getTableNameForAlias(
                                 relation, lTable);
@@ -675,34 +675,34 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Property.class
+        } else if (targetClassz == MondrianGuiDef.Property.class
                    && propertyName.equals("type"))
         {
             listEditor.setEditable(false);
             listEditor.setToolTipText(null);
             listEditor.removeActionListener(al);
             listEditor.setModel(
-                new DefaultComboBoxModel(MOndrianGuiDef.Property._type_values));
+                new DefaultComboBoxModel(MondrianGuiDef.Property._type_values));
             listEditor.setSelectedItem((String) value);
             activeEditor = listEditor;
 
-        } else if ((targetClassz == MOndrianGuiDef.AggFactCount.class
+        } else if ((targetClassz == MondrianGuiDef.AggFactCount.class
             && propertyName.equals("column"))
-            || (targetClassz == MOndrianGuiDef.AggMeasureFactCount.class
+            || (targetClassz == MondrianGuiDef.AggMeasureFactCount.class
             && propertyName.equals("column"))
-            || (targetClassz == MOndrianGuiDef.AggIgnoreColumn.class
+            || (targetClassz == MondrianGuiDef.AggIgnoreColumn.class
             && propertyName.equals("column"))
-            || (targetClassz == MOndrianGuiDef.AggLevelProperty.class
+            || (targetClassz == MondrianGuiDef.AggLevelProperty.class
             && propertyName.equals("column"))
-            || (targetClassz == MOndrianGuiDef.AggLevel.class
+            || (targetClassz == MondrianGuiDef.AggLevel.class
             && Arrays.asList(
                 "column", "ordinalColumn",
                 "captionColumn", "nameColumn").contains(propertyName))
-            || (targetClassz == MOndrianGuiDef.AggMeasure.class
+            || (targetClassz == MondrianGuiDef.AggMeasure.class
             && propertyName.equals("column"))
-            || (targetClassz == MOndrianGuiDef.AggForeignKey.class
+            || (targetClassz == MondrianGuiDef.AggForeignKey.class
             && propertyName.equals("factColumn"))
-            || (targetClassz == MOndrianGuiDef.AggForeignKey.class
+            || (targetClassz == MondrianGuiDef.AggForeignKey.class
             && propertyName.equals("aggColumn")))
         {
             List<String> allcols = jdbcMetaData.getAllColumns(null, null);
@@ -719,7 +719,7 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
 
-        } else if (targetClassz == MOndrianGuiDef.Table.class && propertyName
+        } else if (targetClassz == MondrianGuiDef.Table.class && propertyName
             .equals("schema"))
         {
             List<String> allschemas = jdbcMetaData.getAllSchemas();
@@ -736,9 +736,9 @@ public class SchemaPropertyCellEditor
             activeEditor = listEditor;
         } else if (currentRelation != null
                    && nonTableRelation
-                   && ((targetClassz == MOndrianGuiDef.Hierarchy.class
+                   && ((targetClassz == MondrianGuiDef.Hierarchy.class
                         && propertyName.equals("primaryKeyTable"))
-                       || (targetClassz == MOndrianGuiDef.Level.class
+                       || (targetClassz == MondrianGuiDef.Level.class
                            && propertyName.equals("table"))))
         {
             // Can't set a table on a non table relation
@@ -746,17 +746,17 @@ public class SchemaPropertyCellEditor
             listEditor.setToolTipText(null);
             listEditor.removeActionListener(al);
             activeEditor = listEditor;
-        } else if ((targetClassz == MOndrianGuiDef.Table.class
+        } else if ((targetClassz == MondrianGuiDef.Table.class
                     && propertyName.equals("name"))
-                   || (targetClassz == MOndrianGuiDef.Hierarchy.class
+                   || (targetClassz == MondrianGuiDef.Hierarchy.class
                        && propertyName.equals("primaryKeyTable"))
-                   || (targetClassz == MOndrianGuiDef.Level.class
+                   || (targetClassz == MondrianGuiDef.Level.class
                        && propertyName.equals("table")))
         {
             String schema = "";
-            if (targetClassz == MOndrianGuiDef.Table.class) {
-                MOndrianGuiDef.Table tProps =
-                    (MOndrianGuiDef.Table) tableModel.getValue();
+            if (targetClassz == MondrianGuiDef.Table.class) {
+                MondrianGuiDef.Table tProps =
+                    (MondrianGuiDef.Table) tableModel.getValue();
                 schema = tProps.schema;
             }
             Vector<String> factTables =
@@ -788,19 +788,19 @@ public class SchemaPropertyCellEditor
 
             // Sets the corresponding join tables on selection dropdown when
             // using joins.
-            if (targetClassz == MOndrianGuiDef.Level.class
-                || targetClassz == MOndrianGuiDef.Hierarchy.class)
+            if (targetClassz == MondrianGuiDef.Level.class
+                || targetClassz == MondrianGuiDef.Hierarchy.class)
             {
-                MOndrianGuiDef.RelationOrJoin relation = null;
+                MondrianGuiDef.RelationOrJoin relation = null;
                 if (parent != null
-                    && parent instanceof MOndrianGuiDef.Hierarchy)
+                    && parent instanceof MondrianGuiDef.Hierarchy)
                 {
-                    relation = ((MOndrianGuiDef.Hierarchy) parent).relation;
+                    relation = ((MondrianGuiDef.Hierarchy) parent).relation;
                 } else {
                     relation =
-                        ((MOndrianGuiDef.Hierarchy) tableModel.target).relation;
+                        ((MondrianGuiDef.Hierarchy) tableModel.target).relation;
                 }
-                if (relation instanceof MOndrianGuiDef.Join) {
+                if (relation instanceof MondrianGuiDef.Join) {
                     TreeSet<String> joinTables = new TreeSet<String>();
                     // getTableNamesForJoin calls itself recursively and
                     // collects table names in joinTables.
@@ -818,7 +818,7 @@ public class SchemaPropertyCellEditor
             listEditor.setModel(cAllTables);
             allOptions = cAllTables;
             boolean toggleModel = false;
-            if (parentClassz == MOndrianGuiDef.Cube.class) {
+            if (parentClassz == MondrianGuiDef.Cube.class) {
                 cAllTables = new DefaultComboBoxModel(allTables);
                 allOptions = cAllTables;
                 if (factTables.size() > 0) {
@@ -857,21 +857,21 @@ public class SchemaPropertyCellEditor
             listEditorValue = (String) value;
             activeEditor = listEditor;
             // Disables table selection when not using joins.
-            if ((targetClassz == MOndrianGuiDef.Level.class
+            if ((targetClassz == MondrianGuiDef.Level.class
                  && propertyName.equals(SchemaExplorer.DEF_LEVEL[1])
                  && parent != null)
-                || (targetClassz == MOndrianGuiDef.Hierarchy.class
+                || (targetClassz == MondrianGuiDef.Hierarchy.class
                     && propertyName.equals(SchemaExplorer.DEF_HIERARCHY[7])
                     && parent != null))
             {
-                MOndrianGuiDef.RelationOrJoin relation = null;
-                if (parent instanceof MOndrianGuiDef.Hierarchy) {
-                    relation = ((MOndrianGuiDef.Hierarchy) parent).relation;
-                } else if (parent instanceof MOndrianGuiDef.Dimension) {
+                MondrianGuiDef.RelationOrJoin relation = null;
+                if (parent instanceof MondrianGuiDef.Hierarchy) {
+                    relation = ((MondrianGuiDef.Hierarchy) parent).relation;
+                } else if (parent instanceof MondrianGuiDef.Dimension) {
                     relation =
-                        ((MOndrianGuiDef.Hierarchy) tableModel.target).relation;
+                        ((MondrianGuiDef.Hierarchy) tableModel.target).relation;
                 }
-                if (relation instanceof MOndrianGuiDef.Table) {
+                if (relation instanceof MondrianGuiDef.Table) {
                     activeEditor = stringEditor;
                     stringEditor.setText((String) value);
                 }
@@ -896,7 +896,7 @@ public class SchemaPropertyCellEditor
             value = "";
             activeEditor = stringEditor;
             stringEditor.setText((String) value);
-        } else if (value.getClass() == MOndrianGuiDef.Join.class) {
+        } else if (value.getClass() == MondrianGuiDef.Join.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench);
             tableEditor.setDefaultEditor(Object.class, spce);
@@ -908,9 +908,9 @@ public class SchemaPropertyCellEditor
                     workbench, value, SchemaExplorer.DEF_JOIN);
             tableEditor.setModel(ptm);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.NameExpression.class) {
+        } else if (value.getClass() == MondrianGuiDef.NameExpression.class) {
             return null;
-        } else if (value.getClass() == MOndrianGuiDef.RelationOrJoin.class) {
+        } else if (value.getClass() == MondrianGuiDef.RelationOrJoin.class) {
             // REVIEW: I don't think this code will ever be executed, because
             // class RelationOrJoin is abstract.
             SchemaPropertyCellEditor spce =
@@ -925,7 +925,7 @@ public class SchemaPropertyCellEditor
             tableEditor.setModel(ptm);
             activeEditor = tableEditor;
             return null;
-        } else if (value.getClass() == MOndrianGuiDef.OrdinalExpression.class) {
+        } else if (value.getClass() == MondrianGuiDef.OrdinalExpression.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench);
             tableEditor.setDefaultEditor(Object.class, spce);
@@ -935,12 +935,12 @@ public class SchemaPropertyCellEditor
             PropertyTableModel ptm =
                 new PropertyTableModel(
                     workbench,
-                    ((MOndrianGuiDef.OrdinalExpression) value).expressions[0],
+                    ((MondrianGuiDef.OrdinalExpression) value).expressions[0],
                     SchemaExplorer.DEF_SQL);
             ptm.setParentTarget(((PropertyTableModel) table.getModel()).target);
             tableEditor.setModel(ptm);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.CaptionExpression.class) {
+        } else if (value.getClass() == MondrianGuiDef.CaptionExpression.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench);
             tableEditor.setDefaultEditor(Object.class, spce);
@@ -950,12 +950,12 @@ public class SchemaPropertyCellEditor
             PropertyTableModel ptm =
                 new PropertyTableModel(
                     workbench,
-                    ((MOndrianGuiDef.CaptionExpression) value).expressions[0],
+                    ((MondrianGuiDef.CaptionExpression) value).expressions[0],
                     SchemaExplorer.DEF_SQL);
             ptm.setParentTarget(((PropertyTableModel) table.getModel()).target);
             tableEditor.setModel(ptm);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.Formula.class) {
+        } else if (value.getClass() == MondrianGuiDef.Formula.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(
                     workbench, jdbcMetaData);
@@ -971,7 +971,7 @@ public class SchemaPropertyCellEditor
             tableEditor.getColumnModel().getColumn(0).setMinWidth(100);
             activeEditor = tableEditor;
         } else if (value.getClass()
-                   == MOndrianGuiDef.CalculatedMemberProperty.class)
+                   == MondrianGuiDef.CalculatedMemberProperty.class)
         {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench, jdbcMetaData);
@@ -988,7 +988,7 @@ public class SchemaPropertyCellEditor
             tableEditor.getColumnModel().getColumn(0).setMaxWidth(100);
             tableEditor.getColumnModel().getColumn(0).setMinWidth(100);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.Table.class) {
+        } else if (value.getClass() == MondrianGuiDef.Table.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench, jdbcMetaData);
             // Adding cell editing stopped listeners to nested property of type
@@ -1004,7 +1004,7 @@ public class SchemaPropertyCellEditor
             PropertyTableModel ptm = new PropertyTableModel(
                 workbench, value, SchemaExplorer.DEF_TABLE);
             ptm.setFactTable(selectedFactTable);
-            if (targetClassz == MOndrianGuiDef.Cube.class) {
+            if (targetClassz == MondrianGuiDef.Cube.class) {
                 ptm.setParentTarget(
                     ((PropertyTableModel) table.getModel()).target);
             }
@@ -1012,7 +1012,7 @@ public class SchemaPropertyCellEditor
             tableEditor.getColumnModel().getColumn(0).setMaxWidth(100);
             tableEditor.getColumnModel().getColumn(0).setMinWidth(100);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.AggFactCount.class) {
+        } else if (value.getClass() == MondrianGuiDef.AggFactCount.class) {
             SchemaPropertyCellEditor spce = new SchemaPropertyCellEditor(
                 workbench, jdbcMetaData);
             // Adding cell editing stopped listeners to nested property of type
@@ -1032,7 +1032,7 @@ public class SchemaPropertyCellEditor
             tableEditor.getColumnModel().getColumn(0).setMaxWidth(100);
             tableEditor.getColumnModel().getColumn(0).setMinWidth(100);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.Closure.class) {
+        } else if (value.getClass() == MondrianGuiDef.Closure.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench, jdbcMetaData);
             // Adding cell editing stopped listeners to nested property of type
@@ -1049,7 +1049,7 @@ public class SchemaPropertyCellEditor
                 new PropertyTableModel(
                     workbench, value, SchemaExplorer.DEF_CLOSURE);
             ptm.setFactTable(selectedFactTable);
-            if (targetClassz == MOndrianGuiDef.Level.class) {
+            if (targetClassz == MondrianGuiDef.Level.class) {
                 ptm.setParentTarget(
                     ((PropertyTableModel) table.getModel()).target);
             }
@@ -1058,7 +1058,7 @@ public class SchemaPropertyCellEditor
             tableEditor.getColumnModel().getColumn(0).setMinWidth(100);
             spcr.setTableRendererHeight(tableEditor, null);
             activeEditor = tableEditor;
-        } else if (value.getClass() == MOndrianGuiDef.Property.class) {
+        } else if (value.getClass() == MondrianGuiDef.Property.class) {
             SchemaPropertyCellEditor spce =
                 new SchemaPropertyCellEditor(workbench);
             tableEditor.setDefaultEditor(Object.class, spce);
@@ -1281,9 +1281,9 @@ public class SchemaPropertyCellEditor
 
     private List<String> getUdfs() {
         List<String> udfs = new ArrayList<String>();
-        MOndrianGuiDef.Schema s = this.getSchema();
+        MondrianGuiDef.Schema s = this.getSchema();
         if (s != null) {
-            MOndrianGuiDef.UserDefinedFunction[] u = s.userDefinedFunctions;
+            MondrianGuiDef.UserDefinedFunction[] u = s.userDefinedFunctions;
             for (int i = 0; i < u.length; i++) {
                 if (!(u[i].className == null
                       || udfs.contains(u[i].className)))
@@ -1298,11 +1298,11 @@ public class SchemaPropertyCellEditor
 
     private List<String> getFormatStrings() {
         List<String> fs = new ArrayList<String>();
-        MOndrianGuiDef.Schema s = this.getSchema();
+        MondrianGuiDef.Schema s = this.getSchema();
         if (s != null) {
-            MOndrianGuiDef.Cube[] c = s.cubes;
+            MondrianGuiDef.Cube[] c = s.cubes;
             for (int i = 0; i < c.length; i++) {
-                MOndrianGuiDef.Measure[] m = c[i].measures;
+                MondrianGuiDef.Measure[] m = c[i].measures;
                 for (int j = 0; j < m.length; j++) {
                     if (!(m[j].formatString == null
                           || fs.contains(m[j].formatString)))
@@ -1315,7 +1315,7 @@ public class SchemaPropertyCellEditor
         return fs;
     }
 
-    private MOndrianGuiDef.Schema getSchema() {
+    private MondrianGuiDef.Schema getSchema() {
         SchemaExplorer se = this.getSchemaExplorer();
         return (se == null)
             ? null
@@ -1344,9 +1344,9 @@ public class SchemaPropertyCellEditor
     // shared dimensions in schema
     private List<String> getSource() {
         List<String> source = new ArrayList<String>();
-        MOndrianGuiDef.Schema s = this.getSchema();
+        MondrianGuiDef.Schema s = this.getSchema();
         if (s != null) {
-            MOndrianGuiDef.Dimension[] u = s.dimensions;
+            MondrianGuiDef.Dimension[] u = s.dimensions;
             for (int i = 0; i < u.length; i++) {
                 source.add(u[i].name);
             }
@@ -1357,9 +1357,9 @@ public class SchemaPropertyCellEditor
     private List<String> getCubes() {
         List<String> source = new ArrayList<String>();
         //===source.add(noSelect);
-        MOndrianGuiDef.Schema s = this.getSchema();
+        MondrianGuiDef.Schema s = this.getSchema();
         if (s != null) {
-            MOndrianGuiDef.Cube[] u = s.cubes;
+            MondrianGuiDef.Cube[] u = s.cubes;
             for (int i = 0; i < u.length; i++) {
                 source.add(u[i].name);
             }
@@ -1371,15 +1371,15 @@ public class SchemaPropertyCellEditor
         if (relation == null) {
             return;
         }
-        if (relation instanceof MOndrianGuiDef.Table) {
-            String sname = ((MOndrianGuiDef.Table) relation).schema;
+        if (relation instanceof MondrianGuiDef.Table) {
+            String sname = ((MondrianGuiDef.Table) relation).schema;
             v.add(
                 ((sname == null || sname.equals(""))
                     ? ""
-                    : sname + "->") + ((MOndrianGuiDef.Table) relation).name);
+                    : sname + "->") + ((MondrianGuiDef.Table) relation).name);
             return;
         }
-        MOndrianGuiDef.Join currentJoin = (MOndrianGuiDef.Join) relation;
+        MondrianGuiDef.Join currentJoin = (MondrianGuiDef.Join) relation;
         generatePrimaryKeyTables(currentJoin.left, v);
         generatePrimaryKeyTables(currentJoin.right, v);
         return;
@@ -1389,9 +1389,9 @@ public class SchemaPropertyCellEditor
         List<String> dims = new ArrayList<String>();
         Object po = getParentObject(); // cubegrant
         if (po != null) {
-            MOndrianGuiDef.CubeGrant parent = (MOndrianGuiDef.CubeGrant) po;
+            MondrianGuiDef.CubeGrant parent = (MondrianGuiDef.CubeGrant) po;
             if (!(parent.cube == null || parent.cube.equals(""))) {
-                MOndrianGuiDef.Schema s = getSchema();
+                MondrianGuiDef.Schema s = getSchema();
                 if (s != null) {
                     for (int i = 0; i < s.cubes.length; i++) {
                         if (s.cubes[i].name.equals(parent.cube)) {
@@ -1414,16 +1414,16 @@ public class SchemaPropertyCellEditor
         List<String> hiers = new ArrayList<String>();
         Object po = getParentObject(); // cubegrant
         if (po != null) {
-            MOndrianGuiDef.CubeGrant parent = (MOndrianGuiDef.CubeGrant) po;
+            MondrianGuiDef.CubeGrant parent = (MondrianGuiDef.CubeGrant) po;
             if (!(parent.cube == null || parent.cube.equals(""))) {
-                MOndrianGuiDef.Schema s = getSchema();
+                MondrianGuiDef.Schema s = getSchema();
                 if (s != null) {
                     for (int i = 0; i < s.cubes.length; i++) {
                         if (s.cubes[i].name.equals(parent.cube)) {
                             for (int j = 0; j < s.cubes[i].dimensions.length;
                                 j++)
                             {
-                                MOndrianGuiDef.Dimension sharedDim =
+                                MondrianGuiDef.Dimension sharedDim =
                                     lookupDimension(
                                         s, s.cubes[i].dimensions[j]);
                                 NodeDef[] children = sharedDim.getChildren();
@@ -1499,7 +1499,7 @@ public class SchemaPropertyCellEditor
         if (po == null) {
             return hlevels;
         }
-        MOndrianGuiDef.CubeGrant parent = (MOndrianGuiDef.CubeGrant) po;
+        MondrianGuiDef.CubeGrant parent = (MondrianGuiDef.CubeGrant) po;
         if (parent.cube == null || parent.cube.equals("")) {
             return hlevels;
         }
@@ -1509,24 +1509,24 @@ public class SchemaPropertyCellEditor
         hlevels = new ArrayList<String>();
         cacheCube = parent.cube;
         cacheHierarchy = hierarchy;
-        MOndrianGuiDef.Schema s = getSchema();
+        MondrianGuiDef.Schema s = getSchema();
         if (s == null) {
             return hlevels;
         }
         for (int i = 0; i < s.cubes.length; i++) {
-            final MOndrianGuiDef.Cube cube = s.cubes[i];
+            final MondrianGuiDef.Cube cube = s.cubes[i];
             if (!cube.name.equals(parent.cube)) {
                 continue;
             }
             for (int j = 0; j < cube.dimensions.length; j++) {
-                final MOndrianGuiDef.CubeDimension dimension =
+                final MondrianGuiDef.CubeDimension dimension =
                     cube.dimensions[j];
                 if (!segments.get(0).matches(dimension.name)) {
                     continue;
                 }
-                MOndrianGuiDef.Dimension d = lookupDimension(s, dimension);
+                MondrianGuiDef.Dimension d = lookupDimension(s, dimension);
                 NodeDef[] children = d.getChildren();
-                MOndrianGuiDef.Hierarchy hierarchyObj = null;
+                MondrianGuiDef.Hierarchy hierarchyObj = null;
                 for (int k = 0; k < children.length; k++) {
                     if (children[k] instanceof Hierarchy) {
                         if ((segments.size() == 1
@@ -1554,17 +1554,17 @@ public class SchemaPropertyCellEditor
         return hlevels;
     }
 
-    private static MOndrianGuiDef.Dimension lookupDimension(
-        MOndrianGuiDef.Schema schema,
-        MOndrianGuiDef.CubeDimension cubeDimension)
+    private static MondrianGuiDef.Dimension lookupDimension(
+        MondrianGuiDef.Schema schema,
+        MondrianGuiDef.CubeDimension cubeDimension)
     {
-        if (cubeDimension instanceof MOndrianGuiDef.Dimension) {
-            return (MOndrianGuiDef.Dimension) cubeDimension;
+        if (cubeDimension instanceof MondrianGuiDef.Dimension) {
+            return (MondrianGuiDef.Dimension) cubeDimension;
         } else {
-            MOndrianGuiDef.DimensionUsage dimensionUsage =
-                (MOndrianGuiDef.DimensionUsage) cubeDimension;
+            MondrianGuiDef.DimensionUsage dimensionUsage =
+                (MondrianGuiDef.DimensionUsage) cubeDimension;
             for (int m = 0; m < schema.dimensions.length; m++) {
-                final MOndrianGuiDef.Dimension dimension =
+                final MondrianGuiDef.Dimension dimension =
                     schema.dimensions[m];
                 if (dimension.name.equals(dimensionUsage.source)) {
                     return dimension;

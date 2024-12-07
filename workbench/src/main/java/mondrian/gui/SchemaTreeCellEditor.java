@@ -52,7 +52,7 @@ public class SchemaTreeCellEditor
         boolean leaf,
         int row)
     {
-        if (value instanceof MOndrianGuiDef.RelationOrJoin) {
+        if (value instanceof MondrianGuiDef.RelationOrJoin) {
             String valueClass = value.getClass().getName();
             String simpleName[] = valueClass.split("[$.]", 0);
 
@@ -89,20 +89,20 @@ public class SchemaTreeCellEditor
 
     public void setValueAt(JTree tree) {
         String retValue;
-        MOndrianGuiDef.RelationOrJoin relationObj = null;
+        MondrianGuiDef.RelationOrJoin relationObj = null;
 
         retValue = (String) getCellEditorValue();
         if (retValue.equals("Join")) {
             relationObj =
-                new MOndrianGuiDef.Join(
+                new MondrianGuiDef.Join(
                     "", "",
-                    new MOndrianGuiDef.Table(
+                    new MondrianGuiDef.Table(
                         "", "Table 1", "", null),
                     "", "",
-                    new MOndrianGuiDef.Table(
+                    new MondrianGuiDef.Table(
                         "", "Table 2", "", null));
         } else if (retValue.equals("Table")) {
-            relationObj = new MOndrianGuiDef.Table("", "Table", "", null);
+            relationObj = new MondrianGuiDef.Table("", "Table", "", null);
         }
 
         TreePath tpath = tree.getSelectionPath();
@@ -111,20 +111,20 @@ public class SchemaTreeCellEditor
             TreePath parentpath = tpath.getParentPath();
             if (parentpath != null) {
                 Object parent = parentpath.getLastPathComponent();
-                if (parent instanceof MOndrianGuiDef.Hierarchy) {
-                    ((MOndrianGuiDef.Hierarchy) parent).relation = relationObj;
-                } else if (parent instanceof MOndrianGuiDef.Closure) {
-                    ((MOndrianGuiDef.Closure) parent).table =
-                        (MOndrianGuiDef.Table)relationObj;
-                } else if (parent instanceof MOndrianGuiDef.Join) {
+                if (parent instanceof MondrianGuiDef.Hierarchy) {
+                    ((MondrianGuiDef.Hierarchy) parent).relation = relationObj;
+                } else if (parent instanceof MondrianGuiDef.Closure) {
+                    ((MondrianGuiDef.Closure) parent).table =
+                        (MondrianGuiDef.Table)relationObj;
+                } else if (parent instanceof MondrianGuiDef.Join) {
                     int indexOfChild =
                         tree.getModel().getIndexOfChild(parent, value);
                     switch (indexOfChild) {
                     case 0:
-                        ((MOndrianGuiDef.Join) parent).left = relationObj;
+                        ((MondrianGuiDef.Join) parent).left = relationObj;
                         break;
                     case 1:
-                        ((MOndrianGuiDef.Join) parent).right = relationObj;
+                        ((MondrianGuiDef.Join) parent).right = relationObj;
                         break;
                     }
                 }

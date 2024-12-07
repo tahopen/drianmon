@@ -271,7 +271,7 @@ public class UdfResolver implements Resolver {
 
     /**
      * Wrapper around a {@link Calc} to make it appear as an {@link Exp}.
-     * Only the {@link #evaluate(drianmon.olap.Evaluator)}
+     * Only the {@link #evaluate(mondrian.olap.Evaluator)}
      * and {@link #evaluateScalar(drianmon.olap.Evaluator)} methods are
      * supported.
      */

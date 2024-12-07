@@ -38,8 +38,8 @@ public interface ParameterSlot {
      * Sets the value of this parameter.
      *
      * <p>NOTE: This method will be removed when we store parameter values
-     * in the {@link drianmon.olap.Result} rather than in the
-     * {@link drianmon.olap.Query}.
+     * in the {@link mondrian.olap.Result} rather than in the
+     * {@link mondrian.olap.Query}.
      *
      * @param value New value
      * @param assigned Whether {@link #isParameterSet()} should return true;
@@ -52,8 +52,8 @@ public interface ParameterSlot {
      * Returns the value of this parameter.
      *
      * <p>NOTE: This method will be removed when we store parameter values
-     * in the {@link drianmon.olap.Result} rather than in the
-     * {@link drianmon.olap.Query}.
+     * in the {@link mondrian.olap.Result} rather than in the
+     * {@link mondrian.olap.Query}.
      */
     Object getParameterValue();
 
@@ -61,7 +61,7 @@ public interface ParameterSlot {
      * Returns whether the parameter has been assigned a value. (That value
      * may be null.)
      *
-     * @return Whether parmaeter has been assigned a value.
+     * @return Whether parameter has been assigned a value.
      */
     boolean isParameterSet();
 

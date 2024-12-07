@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.concurrent.Executor;
 
 /**
- * Implementation of {@link drianmon.olap4j.Factory} for JDBC 4.1.
+ * Implementation of {@link mondrian.olap4j.Factory} for JDBC 4.1.
  *
  * @author jhyde
  */

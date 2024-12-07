@@ -20,14 +20,14 @@ import mondrian.util.Pair;
  * Abstract implementation of {@link FunTable}.
  *
  * <p>The derived class must implement
- * {@link #defineFunctions(drianmon.olap.FunTable.Builder)} to define
+ * {@link #defineFunctions(mondrian.olap.FunTable.Builder)} to define
  * each function which will be recognized by this table. This method is called
  * from the constructor, after which point, no further functions can be added.
  */
 public abstract class FunTableImpl implements FunTable {
     /**
      * Maps the upper-case name of a function plus its
-     * {@link drianmon.olap.Syntax} to an array of
+     * {@link mondrian.olap.Syntax} to an array of
      * {@link Resolver} objects for that name.
      */
     private Map<Pair<String, Syntax>, List<Resolver>> mapNameToResolvers;
@@ -113,7 +113,7 @@ public abstract class FunTableImpl implements FunTable {
     }
 
     /**
-     * Implementation of {@link drianmon.olap.FunTable.Builder}.
+     * Implementation of {@link mondrian.olap.FunTable.Builder}.
      * Functions are added to lists each time {@link #define(Resolver)} is
      * called, then {@link #organizeFunctions()} sorts and indexes the map.
      */

@@ -429,7 +429,7 @@ public class CrossJoinArgFactory {
      * Checks for a set constructor, <code>{member1, member2,
      * &#46;&#46;&#46;}</code> that does not contain calculated members.
      *
-     * @return an {@link drianmon.rolap.sql.CrossJoinArg} instance describing the enumeration,
+     * @return an {@link mondrian.rolap.sql.CrossJoinArg} instance describing the enumeration,
      *         or null if <code>fun</code> represents something else.
      */
     private CrossJoinArg[] checkEnumeration(
@@ -482,7 +482,7 @@ public class CrossJoinArgFactory {
     /**
      * Checks for <code>&lt;Member&gt;.Children</code>.
      *
-     * @return an {@link drianmon.rolap.sql.CrossJoinArg} instance describing the member.children
+     * @return an {@link mondrian.rolap.sql.CrossJoinArg} instance describing the member.children
      *         function, or null if <code>fun</code> represents something else.
      */
     private CrossJoinArg[] checkMemberChildren(
@@ -537,7 +537,7 @@ public class CrossJoinArgFactory {
     /**
      * Checks for <code>&lt;Level&gt;.Members</code>.
      *
-     * @return an {@link drianmon.rolap.sql.CrossJoinArg} instance describing the Level.members
+     * @return an {@link mondrian.rolap.sql.CrossJoinArg} instance describing the Level.members
      *         function, or null if <code>fun</code> represents something else.
      */
     private CrossJoinArg[] checkLevelMembers(
@@ -605,7 +605,7 @@ public class CrossJoinArgFactory {
     /**
      * Checks for Descendants(&lt;member&gt;, &lt;Level&gt;)
      *
-     * @return an {@link drianmon.rolap.sql.CrossJoinArg} instance describing the Descendants
+     * @return an {@link mondrian.rolap.sql.CrossJoinArg} instance describing the Descendants
      *         function, or null if <code>fun</code> represents something else.
      */
     private CrossJoinArg[] checkDescendants(
@@ -884,7 +884,7 @@ public class CrossJoinArgFactory {
 
         // Input to CurremntMember should be either Dimension or Hierarchy type.
         if (!(currentMemberArgType
-            instanceof drianmon.olap.type.DimensionType
+            instanceof mondrian.olap.type.DimensionType
             || currentMemberArgType instanceof HierarchyType))
         {
             return null;

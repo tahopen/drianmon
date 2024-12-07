@@ -27,7 +27,7 @@ import java.util.List;
  * Implementation of {@link Member}
  * for the Mondrian OLAP engine,
  * as a wrapper around a mondrian
- * {@link drianmon.olap.Member}.
+ * {@link mondrian.olap.Member}.
  *
  * @author jhyde
  * @since May 25, 2007
@@ -37,13 +37,13 @@ class MondrianOlap4jMember
     implements Member, Named
 {
 
-    final drianmon.olap.Member member;
+    final mondrian.olap.Member member;
 
     final MondrianOlap4jSchema olap4jSchema;
 
     MondrianOlap4jMember(
         MondrianOlap4jSchema olap4jSchema,
-        drianmon.olap.Member mondrianMember)
+        mondrian.olap.Member mondrianMember)
     {
         assert mondrianMember != null;
         assert mondrianMember instanceof RolapMeasure
@@ -71,12 +71,12 @@ class MondrianOlap4jMember
         final RolapConnection conn =
             olap4jSchema.olap4jCatalog.olap4jDatabaseMetaData
                 .olap4jConnection.getMondrianConnection();
-        final List<drianmon.olap.Member> children =
+        final List<mondrian.olap.Member> children =
             Locus.execute(
                 conn,
                 "MondrianOlap4jMember.getChildMembers",
-                new Locus.Action<List<drianmon.olap.Member>>() {
-                    public List<drianmon.olap.Member> execute() {
+                new Locus.Action<List<mondrian.olap.Member>>() {
+                    public List<mondrian.olap.Member> execute() {
                         return
                             conn.getSchemaReader()
                                 .getMemberChildren(member);
@@ -116,7 +116,7 @@ class MondrianOlap4jMember
     }
 
     public MondrianOlap4jMember getParentMember() {
-        final drianmon.olap.Member parentMember = member.getParentMember();
+        final mondrian.olap.Member parentMember = member.getParentMember();
         if (parentMember == null) {
             return null;
         }
@@ -226,7 +226,7 @@ class MondrianOlap4jMember
     }
 
     public Member getDataMember() {
-        final drianmon.olap.Member dataMember = member.getDataMember();
+        final mondrian.olap.Member dataMember = member.getDataMember();
         if (dataMember == null) {
             return null;
         }
@@ -251,7 +251,7 @@ class MondrianOlap4jMember
 
     public boolean isVisible() {
         return (Boolean) member.getPropertyValue(
-            drianmon.olap.Property.VISIBLE.getName());
+            mondrian.olap.Property.VISIBLE.getName());
     }
 
     protected OlapElement getOlapElement() {

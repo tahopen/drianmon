@@ -103,7 +103,7 @@ public class RolapStar {
     RolapStar(
         final RolapSchema schema,
         final DataSource dataSource,
-        final DrianmonDef.Relation fact)
+        final MondrianDef.Relation fact)
     {
         this.cacheAggregations = true;
         this.schema = schema;
@@ -227,14 +227,14 @@ public class RolapStar {
 
     private static class StarNetworkNode {
         private StarNetworkNode parent;
-        private DrianmonDef.Relation origRel;
+        private MondrianDef.Relation origRel;
         private String foreignKey;
         private String joinKey;
 
         private StarNetworkNode(
             StarNetworkNode parent,
             String alias,
-            DrianmonDef.Relation origRel,
+            MondrianDef.Relation origRel,
             String foreignKey,
             String joinKey)
         {
@@ -246,7 +246,7 @@ public class RolapStar {
 
         private boolean isCompatible(
             StarNetworkNode compatibleParent,
-            DrianmonDef.Relation rel,
+            MondrianDef.Relation rel,
             String compatibleForeignKey,
             String compatibleJoinKey)
         {
@@ -257,25 +257,25 @@ public class RolapStar {
         }
     }
 
-    protected DrianmonDef.RelationOrJoin cloneRelation(
-        DrianmonDef.Relation rel,
+    protected MondrianDef.RelationOrJoin cloneRelation(
+        MondrianDef.Relation rel,
         String possibleName)
     {
-        if (rel instanceof DrianmonDef.Table) {
-            DrianmonDef.Table tbl = (DrianmonDef.Table)rel;
-            return new DrianmonDef.Table(
+        if (rel instanceof MondrianDef.Table) {
+            MondrianDef.Table tbl = (MondrianDef.Table)rel;
+            return new MondrianDef.Table(
                 tbl,
                 possibleName);
-        } else if (rel instanceof DrianmonDef.View) {
-            DrianmonDef.View view = (DrianmonDef.View)rel;
-            DrianmonDef.View newView = new DrianmonDef.View(view);
+        } else if (rel instanceof MondrianDef.View) {
+            MondrianDef.View view = (MondrianDef.View)rel;
+            MondrianDef.View newView = new MondrianDef.View(view);
             newView.alias = possibleName;
             return newView;
-        } else if (rel instanceof DrianmonDef.InlineTable) {
-            DrianmonDef.InlineTable inlineTable =
-                (DrianmonDef.InlineTable) rel;
-            DrianmonDef.InlineTable newInlineTable =
-                new DrianmonDef.InlineTable(inlineTable);
+        } else if (rel instanceof MondrianDef.InlineTable) {
+            MondrianDef.InlineTable inlineTable =
+                (MondrianDef.InlineTable) rel;
+            MondrianDef.InlineTable newInlineTable =
+                new MondrianDef.InlineTable(inlineTable);
             newInlineTable.alias = possibleName;
             return newInlineTable;
         } else {
@@ -285,7 +285,7 @@ public class RolapStar {
 
     /**
      * Generates a unique relational join to the fact table via re-aliasing
-     * DrianmonDef.Relations
+     * MondrianDef.Relations
      *
      * currently called in the RolapCubeHierarchy constructor.  This should
      * eventually be phased out and replaced with RolapStar.Table and
@@ -297,8 +297,8 @@ public class RolapStar {
      * @param primaryKeyTable the join table of the relation
      * @return if necessary a new relation that has been re-aliased
      */
-    public DrianmonDef.RelationOrJoin getUniqueRelation(
-        DrianmonDef.RelationOrJoin rel,
+    public MondrianDef.RelationOrJoin getUniqueRelation(
+        MondrianDef.RelationOrJoin rel,
         String factForeignKey,
         String primaryKey,
         String primaryKeyTable)
@@ -307,26 +307,26 @@ public class RolapStar {
             factNode, rel, factForeignKey, primaryKey, primaryKeyTable);
     }
 
-    private DrianmonDef.RelationOrJoin getUniqueRelation(
+    private MondrianDef.RelationOrJoin getUniqueRelation(
         StarNetworkNode parent,
-        DrianmonDef.RelationOrJoin relOrJoin,
+        MondrianDef.RelationOrJoin relOrJoin,
         String foreignKey,
         String joinKey,
         String joinKeyTable)
     {
         if (relOrJoin == null) {
             return null;
-        } else if (relOrJoin instanceof DrianmonDef.Relation) {
+        } else if (relOrJoin instanceof MondrianDef.Relation) {
             int val = 0;
-            DrianmonDef.Relation rel =
-                (DrianmonDef.Relation) relOrJoin;
+            MondrianDef.Relation rel =
+                (MondrianDef.Relation) relOrJoin;
             String newAlias =
                 joinKeyTable != null ? joinKeyTable : rel.getAlias();
             while (true) {
                 StarNetworkNode node = nodeLookup.get(newAlias);
                 if (node == null) {
                     if (val != 0) {
-                        rel = (DrianmonDef.Relation)
+                        rel = (MondrianDef.Relation)
                             cloneRelation(rel, newAlias);
                     }
                     node =
@@ -341,14 +341,14 @@ public class RolapStar {
                 }
                 newAlias = rel.getAlias() + "_" + (++val);
             }
-        } else if (relOrJoin instanceof DrianmonDef.Join) {
+        } else if (relOrJoin instanceof MondrianDef.Join) {
             // determine if the join starts from the left or right side
-            DrianmonDef.Join join = (DrianmonDef.Join)relOrJoin;
-            if (join.left instanceof DrianmonDef.Join) {
+            MondrianDef.Join join = (MondrianDef.Join)relOrJoin;
+            if (join.left instanceof MondrianDef.Join) {
                 throw MondrianResource.instance().IllegalLeftDeepJoin.ex();
             }
-            final DrianmonDef.RelationOrJoin left;
-            final DrianmonDef.RelationOrJoin right;
+            final MondrianDef.RelationOrJoin left;
+            final MondrianDef.RelationOrJoin right;
             if (join.getLeftAlias().equals(joinKeyTable)) {
                 // first manage left then right
                 left =
@@ -356,7 +356,7 @@ public class RolapStar {
                         parent, join.left, foreignKey,
                         joinKey, joinKeyTable);
                 parent = nodeLookup.get(
-                    ((DrianmonDef.Relation) left).getAlias());
+                    ((MondrianDef.Relation) left).getAlias());
                 right =
                     getUniqueRelation(
                         parent, join.right, join.leftKey,
@@ -368,7 +368,7 @@ public class RolapStar {
                         parent, join.right, foreignKey,
                         joinKey, joinKeyTable);
                 parent = nodeLookup.get(
-                    ((DrianmonDef.Relation) right).getAlias());
+                    ((MondrianDef.Relation) right).getAlias());
                 left =
                     getUniqueRelation(
                         parent, join.left, join.rightKey,
@@ -380,14 +380,14 @@ public class RolapStar {
 
             if (join.left != left || join.right != right) {
                 join =
-                    new DrianmonDef.Join(
-                        left instanceof DrianmonDef.Relation
-                            ? ((DrianmonDef.Relation) left).getAlias()
+                    new MondrianDef.Join(
+                        left instanceof MondrianDef.Relation
+                            ? ((MondrianDef.Relation) left).getAlias()
                             : null,
                         join.leftKey,
                         left,
-                        right instanceof DrianmonDef.Relation
-                            ? ((DrianmonDef.Relation) right).getAlias()
+                        right instanceof MondrianDef.Relation
+                            ? ((MondrianDef.Relation) right).getAlias()
                             : null,
                         join.rightKey,
                         right);
@@ -684,7 +684,7 @@ public class RolapStar {
     public static void collectColumns(
         Collection<Column> columnList,
         Table table,
-        DrianmonDef.Column joinColumn)
+        MondrianDef.Column joinColumn)
     {
         if (joinColumn == null) {
             columnList.addAll(table.columnList);
@@ -851,7 +851,7 @@ public class RolapStar {
         };
 
         private final Table table;
-        private final DrianmonDef.Expression expression;
+        private final MondrianDef.Expression expression;
         private final Dialect.Datatype datatype;
         private final SqlStatement.Type internalType;
         private final String name;
@@ -890,7 +890,7 @@ public class RolapStar {
         private Column(
             String name,
             Table table,
-            DrianmonDef.Expression expression,
+            MondrianDef.Expression expression,
             Dialect.Datatype datatype)
         {
             this(
@@ -901,7 +901,7 @@ public class RolapStar {
         private Column(
             String name,
             Table table,
-            DrianmonDef.Expression expression,
+            MondrianDef.Expression expression,
             Dialect.Datatype datatype,
             SqlStatement.Type internalType,
             Column nameColumn,
@@ -1005,7 +1005,7 @@ public class RolapStar {
             return isNameColumn;
         }
 
-        public DrianmonDef.Expression getExpression() {
+        public MondrianDef.Expression getExpression() {
             return expression;
         }
 
@@ -1185,7 +1185,7 @@ public class RolapStar {
             String cubeName,
             RolapAggregator aggregator,
             Table table,
-            DrianmonDef.Expression expression,
+            MondrianDef.Expression expression,
             Dialect.Datatype datatype)
         {
             super(name, table, expression, datatype);
@@ -1244,7 +1244,7 @@ public class RolapStar {
      * Definition of a table in a star schema.
      *
      * <p>A 'table' is defined by a
-     * {@link mondrian.olap.DrianmonDef.RelationOrJoin} so may, in fact, be a
+     * {@link mondrian.olap.MondrianDef.RelationOrJoin} so may, in fact, be a
      * view.
      *
      * <p>Every table in the star schema except the fact table has a parent
@@ -1254,7 +1254,7 @@ public class RolapStar {
      */
     public static class Table {
         private final RolapStar star;
-        private final DrianmonDef.Relation relation;
+        private final MondrianDef.Relation relation;
         private final List<Column> columnList;
         private final Table parent;
         private List<Table> children;
@@ -1263,7 +1263,7 @@ public class RolapStar {
 
         private Table(
             RolapStar star,
-            DrianmonDef.Relation relation,
+            MondrianDef.Relation relation,
             Table parent,
             Condition joinCondition)
         {
@@ -1327,17 +1327,17 @@ public class RolapStar {
         public Column[] lookupColumns(String columnName) {
             List<Column> l = new ArrayList<Column>();
             for (Column column : getColumns()) {
-                if (column.getExpression() instanceof DrianmonDef.Column) {
-                    DrianmonDef.Column columnExpr =
-                        (DrianmonDef.Column) column.getExpression();
+                if (column.getExpression() instanceof MondrianDef.Column) {
+                    MondrianDef.Column columnExpr =
+                        (MondrianDef.Column) column.getExpression();
                     if (columnExpr.name.equals(columnName)) {
                         l.add(column);
                     }
                 } else if (column.getExpression()
-                        instanceof DrianmonDef.KeyExpression)
+                        instanceof MondrianDef.KeyExpression)
                 {
-                    DrianmonDef.KeyExpression columnExpr =
-                        (DrianmonDef.KeyExpression) column.getExpression();
+                    MondrianDef.KeyExpression columnExpr =
+                        (MondrianDef.KeyExpression) column.getExpression();
                     if (columnExpr.toString().equals(columnName)) {
                         l.add(column);
                     }
@@ -1348,17 +1348,17 @@ public class RolapStar {
 
         public Column lookupColumn(String columnName) {
             for (Column column : getColumns()) {
-                if (column.getExpression() instanceof DrianmonDef.Column) {
-                    DrianmonDef.Column columnExpr =
-                        (DrianmonDef.Column) column.getExpression();
+                if (column.getExpression() instanceof MondrianDef.Column) {
+                    MondrianDef.Column columnExpr =
+                        (MondrianDef.Column) column.getExpression();
                     if (columnExpr.name.equals(columnName)) {
                         return column;
                     }
                 } else if (column.getExpression()
-                        instanceof DrianmonDef.KeyExpression)
+                        instanceof MondrianDef.KeyExpression)
                 {
-                    DrianmonDef.KeyExpression columnExpr =
-                        (DrianmonDef.KeyExpression) column.getExpression();
+                    MondrianDef.KeyExpression columnExpr =
+                        (MondrianDef.KeyExpression) column.getExpression();
                     if (columnExpr.toString().equals(columnName)) {
                         return column;
                     }
@@ -1370,10 +1370,10 @@ public class RolapStar {
         }
 
         /**
-         * Given a DrianmonDef.Expression return a column with that expression
+         * Given a MondrianDef.Expression return a column with that expression
          * or null.
          */
-        public Column lookupColumnByExpression(DrianmonDef.Expression xmlExpr) {
+        public Column lookupColumnByExpression(MondrianDef.Expression xmlExpr) {
             for (Column column : getColumns()) {
                 if (column instanceof Measure) {
                     continue;
@@ -1413,7 +1413,7 @@ public class RolapStar {
         private SqlQuery getSqlQuery() {
             return getStar().getSqlQuery();
         }
-        public DrianmonDef.Relation getRelation() {
+        public MondrianDef.Relation getRelation() {
             return relation;
         }
 
@@ -1440,8 +1440,8 @@ public class RolapStar {
          * been given an alias.
          */
         public String getTableName() {
-            if (relation instanceof DrianmonDef.Table) {
-                DrianmonDef.Table t = (DrianmonDef.Table) relation;
+            if (relation instanceof MondrianDef.Table) {
+                MondrianDef.Table t = (MondrianDef.Table) relation;
                 return t.name;
             } else {
                 return null;
@@ -1457,7 +1457,7 @@ public class RolapStar {
                 measure.getCube().getName(),
                 measure.getAggregator(),
                 this,
-                measure.getDrianmonDefExpression(),
+                measure.getMondrianDefExpression(),
                 measure.getDatatype());
 
             measure.setStarMeasure(starMeasure); // reverse mapping
@@ -1530,7 +1530,7 @@ public class RolapStar {
             RolapCube cube,
             RolapLevel level,
             String name,
-            DrianmonDef.Expression xmlExpr,
+            MondrianDef.Expression xmlExpr,
             Dialect.Datatype datatype,
             SqlStatement.Type internalType,
             Column nameColumn,
@@ -1538,9 +1538,9 @@ public class RolapStar {
             String usagePrefix)
         {
             Table table = this;
-            if (xmlExpr instanceof DrianmonDef.Column) {
-                final DrianmonDef.Column xmlColumn =
-                    (DrianmonDef.Column) xmlExpr;
+            if (xmlExpr instanceof MondrianDef.Column) {
+                final MondrianDef.Column xmlColumn =
+                    (MondrianDef.Column) xmlExpr;
 
                 String tableName = xmlColumn.table;
                 table = findAncestor(tableName);
@@ -1601,12 +1601,12 @@ public class RolapStar {
          */
         synchronized Table addJoin(
             RolapCube cube,
-            DrianmonDef.RelationOrJoin relationOrJoin,
+            MondrianDef.RelationOrJoin relationOrJoin,
             RolapStar.Condition joinCondition)
         {
-            if (relationOrJoin instanceof DrianmonDef.Relation) {
-                final DrianmonDef.Relation relation =
-                    (DrianmonDef.Relation) relationOrJoin;
+            if (relationOrJoin instanceof MondrianDef.Relation) {
+                final MondrianDef.Relation relation =
+                    (MondrianDef.Relation) relationOrJoin;
                 RolapStar.Table starTable =
                     findChild(relation, joinCondition);
                 if (starTable == null) {
@@ -1618,14 +1618,14 @@ public class RolapStar {
                     this.children.add(starTable);
                 }
                 return starTable;
-            } else if (relationOrJoin instanceof DrianmonDef.Join) {
-                DrianmonDef.Join join = (DrianmonDef.Join) relationOrJoin;
+            } else if (relationOrJoin instanceof MondrianDef.Join) {
+                MondrianDef.Join join = (MondrianDef.Join) relationOrJoin;
                 RolapStar.Table leftTable =
                     addJoin(cube, join.left, joinCondition);
                 String leftAlias = join.leftAlias;
                 if (leftAlias == null) {
                     // REVIEW: is cast to Relation valid?
-                    leftAlias = ((DrianmonDef.Relation) join.left).getAlias();
+                    leftAlias = ((MondrianDef.Relation) join.left).getAlias();
                     if (leftAlias == null) {
                         throw Util.newError(
                             "missing leftKeyAlias in " + relationOrJoin);
@@ -1640,17 +1640,17 @@ public class RolapStar {
                     // the right relation of a join may be a join
                     // if so, we need to use the right relation join's
                     // left relation's alias.
-                    if (join.right instanceof DrianmonDef.Join) {
-                        DrianmonDef.Join joinright =
-                            (DrianmonDef.Join) join.right;
+                    if (join.right instanceof MondrianDef.Join) {
+                        MondrianDef.Join joinright =
+                            (MondrianDef.Join) join.right;
                         // REVIEW: is cast to Relation valid?
                         rightAlias =
-                            ((DrianmonDef.Relation) joinright.left)
+                            ((MondrianDef.Relation) joinright.left)
                                 .getAlias();
                     } else {
                         // REVIEW: is cast to Relation valid?
                         rightAlias =
-                            ((DrianmonDef.Relation) join.right)
+                            ((MondrianDef.Relation) join.right)
                                 .getAlias();
                     }
                     if (rightAlias == null) {
@@ -1659,8 +1659,8 @@ public class RolapStar {
                     }
                 }
                 joinCondition = new RolapStar.Condition(
-                    new DrianmonDef.Column(leftAlias, join.leftKey),
-                    new DrianmonDef.Column(rightAlias, join.rightKey));
+                    new MondrianDef.Column(leftAlias, join.leftKey),
+                    new MondrianDef.Column(rightAlias, join.rightKey));
                 RolapStar.Table rightTable = leftTable.addJoin(
                     cube, join.right, joinCondition);
                 return rightTable;
@@ -1675,7 +1675,7 @@ public class RolapStar {
          * if there is none.
          */
         public Table findChild(
-            DrianmonDef.Relation relation,
+            MondrianDef.Relation relation,
             Condition joinCondition)
         {
             for (Table child : getChildren()) {
@@ -1726,8 +1726,8 @@ public class RolapStar {
         }
 
         public boolean equalsTableName(String tableName) {
-            if (this.relation instanceof DrianmonDef.Table) {
-                DrianmonDef.Table mt = (DrianmonDef.Table) this.relation;
+            if (this.relation instanceof MondrianDef.Table) {
+                MondrianDef.Table mt = (MondrianDef.Table) this.relation;
                 if (mt.name.equals(tableName)) {
                     return true;
                 }
@@ -1787,9 +1787,9 @@ public class RolapStar {
             for (Table child : getChildren()) {
                 Condition condition = child.joinCondition;
                 if (condition != null) {
-                    if (condition.left instanceof DrianmonDef.Column) {
-                        DrianmonDef.Column mcolumn =
-                            (DrianmonDef.Column) condition.left;
+                    if (condition.left instanceof MondrianDef.Column) {
+                        MondrianDef.Column mcolumn =
+                            (MondrianDef.Column) condition.left;
                         if (mcolumn.name.equals(columnName)) {
                             return child;
                         }
@@ -1805,14 +1805,14 @@ public class RolapStar {
          * the child table with the matching left join condition.
          */
         public RolapStar.Table findTableWithLeftCondition(
-            final DrianmonDef.Expression left)
+            final MondrianDef.Expression left)
         {
             for (Table child : getChildren()) {
                 Condition condition = child.joinCondition;
                 if (condition != null) {
-                    if (condition.left instanceof DrianmonDef.Column) {
-                        DrianmonDef.Column mcolumn =
-                            (DrianmonDef.Column) condition.left;
+                    if (condition.left instanceof MondrianDef.Column) {
+                        MondrianDef.Column mcolumn =
+                            (MondrianDef.Column) condition.left;
                         if (mcolumn.equals(left)) {
                             return child;
                         }
@@ -1887,9 +1887,9 @@ public class RolapStar {
          * Returns whether this table has a column with the given name.
          */
         public boolean containsColumn(String columnName) {
-            if (relation instanceof DrianmonDef.Relation) {
+            if (relation instanceof MondrianDef.Relation) {
                 return star.containsColumn(
-                    ((DrianmonDef.Relation) relation).getAlias(),
+                    ((MondrianDef.Relation) relation).getAlias(),
                     columnName);
             } else {
                 // todo: Deal with join.
@@ -1901,21 +1901,21 @@ public class RolapStar {
     public static class Condition {
         private static final Logger LOGGER = LogManager.getLogger(Condition.class);
 
-        private final DrianmonDef.Expression left;
-        private final DrianmonDef.Expression right;
+        private final MondrianDef.Expression left;
+        private final MondrianDef.Expression right;
         // set in Table constructor
         Table table;
 
         Condition(
-            DrianmonDef.Expression left,
-            DrianmonDef.Expression right)
+            MondrianDef.Expression left,
+            MondrianDef.Expression right)
         {
             assert left != null;
             assert right != null;
 
-            if (!(left instanceof DrianmonDef.Column)) {
+            if (!(left instanceof MondrianDef.Column)) {
                 // TODO: Will this ever print?? if not then left should be
-                // of type DrianmonDef.Column.
+                // of type MondrianDef.Column.
                 LOGGER.debug(
                     "Condition.left NOT Column: "
                     + left.getClass().getName());
@@ -1923,13 +1923,13 @@ public class RolapStar {
             this.left = left;
             this.right = right;
         }
-        public DrianmonDef.Expression getLeft() {
+        public MondrianDef.Expression getLeft() {
             return left;
         }
         public String getLeft(final SqlQuery query) {
             return this.left.getExpression(query);
         }
-        public DrianmonDef.Expression getRight() {
+        public MondrianDef.Expression getRight() {
             return right;
         }
         public String getRight(final SqlQuery query) {
@@ -1972,8 +1972,8 @@ public class RolapStar {
             pw.print(subprefix);
             pw.print("left=");
             // print the foreign key bit position if we can figure it out
-            if (left instanceof DrianmonDef.Column) {
-                DrianmonDef.Column c = (DrianmonDef.Column) left;
+            if (left instanceof MondrianDef.Column) {
+                MondrianDef.Column c = (MondrianDef.Column) left;
                 Column col = table.star.getFactTable().lookupColumn(c.name);
                 if (col != null) {
                     pw.print(" (");
@@ -2014,16 +2014,16 @@ public class RolapStar {
                 visit(condition.right));
         }
 
-        public DrianmonDef.Expression visit(DrianmonDef.Expression expression) {
+        public MondrianDef.Expression visit(MondrianDef.Expression expression) {
             if (expression == null) {
                 return null;
             }
             if (newAlias.equals(oldAlias)) {
                 return expression;
             }
-            if (expression instanceof DrianmonDef.Column) {
-                DrianmonDef.Column column = (DrianmonDef.Column) expression;
-                return new DrianmonDef.Column(visit(column.table), column.name);
+            if (expression instanceof MondrianDef.Column) {
+                MondrianDef.Column column = (MondrianDef.Column) expression;
+                return new MondrianDef.Column(visit(column.table), column.name);
             } else {
                 throw Util.newInternal("need to implement " + expression);
             }

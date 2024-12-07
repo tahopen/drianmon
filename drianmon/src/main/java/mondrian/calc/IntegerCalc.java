@@ -15,7 +15,7 @@ import mondrian.olap.Evaluator;
  * Compiled expression whose result is an <code>int</code>.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractIntegerCalc}, but it is not required.
+ * {@link mondrian.calc.impl.AbstractIntegerCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 27, 2005
@@ -24,7 +24,7 @@ public interface IntegerCalc extends Calc {
     /**
      * Evaluates this expression to yield an <code>int</code> value.
      * If the result is null, returns the special
-     * {@link drianmon.olap.fun.FunUtil#IntegerNull} value.
+     * {@link mondrian.olap.fun.FunUtil#IntegerNull} value.
      *
      * @param evaluator Evaluation context
      * @return evaluation result

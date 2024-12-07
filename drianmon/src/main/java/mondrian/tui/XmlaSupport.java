@@ -8,6 +8,17 @@
 */
 package mondrian.tui;
 
+import mondrian.olap.*;
+import mondrian.olap.Util.ByteMatcher;
+import mondrian.rolap.RolapConnectionProperties;
+import mondrian.server.StringRepositoryContentFinder;
+import mondrian.spi.CatalogLocator;
+import mondrian.spi.impl.CatalogLocatorImpl;
+import mondrian.util.LockBox;
+import mondrian.xmla.*;
+import mondrian.xmla.Enumeration;
+import mondrian.xmla.impl.*;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -17,17 +28,6 @@ import org.eigenbase.xom.Parser;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
-import mondrian.olap.*;
-import mondrian.olap.Util.ByteMatcher;
-import mondrian.rolap.RolapConnectionProperties;
-import mondrian.server.StringRepositoryContentFinder;
-import mondrian.spi.CatalogLocator;
-import mondrian.spi.impl.CatalogLocatorImpl;
-import mondrian.util.LockBox;
-import mondrian.xmla.*;
-import mondrian.xmla.impl.*;
-import mondrian.xmla.DataSourcesConfig;
-
 import java.io.*;
 import java.util.*;
 
@@ -36,7 +36,6 @@ import javax.servlet.ServletException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathException;
-
 /**
  * Support for making XMLA requests and looking at the responses.
  *

@@ -18,7 +18,7 @@ import java.util.List;
 import mondrian.olap.*;
 
 /**
- * Support class for the {@link drianmon.tui.CmdRunner} allowing one to view
+ * Support class for the {@link mondrian.tui.CmdRunner} allowing one to view
  * available functions and their syntax.
  *
  * @author Richard M. Emberson
@@ -149,7 +149,7 @@ public class FunInfo implements Comparable<FunInfo> {
 
     /**
      * Returns the type of value returned by this function. Values are the same
-     * as those returned by {@link drianmon.olap.Exp#getCategory()}.
+     * as those returned by {@link mondrian.olap.Exp#getCategory()}.
      */
     public int[] getReturnCategories() {
         return this.returnTypes;
@@ -157,7 +157,7 @@ public class FunInfo implements Comparable<FunInfo> {
 
     /**
      * Returns the types of the arguments of this function. Values are the same
-     * as those returned by {@link drianmon.olap.Exp#getCategory()}. The
+     * as those returned by {@link mondrian.olap.Exp#getCategory()}. The
      * 0<sup>th</sup> argument of methods and properties are the object they
      * are applied to. Infix operators have two arguments, and prefix operators
      * have one argument.

@@ -13,11 +13,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * Implementation of {@link drianmon.spi.Dialect} for old versions of the IBM
+ * Implementation of {@link mondrian.spi.Dialect} for old versions of the IBM
  * DB2/AS400 database. Modern versions of DB2/AS400 use
- * {@link drianmon.spi.impl.Db2Dialect}.
+ * {@link mondrian.spi.impl.Db2Dialect}.
  *
- * @see drianmon.spi.impl.Db2Dialect
+ * @see mondrian.spi.impl.Db2Dialect
  *
  * @author jhyde
  * @since Nov 23, 2008

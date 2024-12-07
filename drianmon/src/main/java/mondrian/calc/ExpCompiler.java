@@ -22,7 +22,7 @@ import mondrian.util.ObjectFactory;
 import java.util.List;
 
 /**
- * Mediates the compilation of an expression ({@link drianmon.olap.Exp})
+ * Mediates the compilation of an expression ({@link mondrian.olap.Exp})
  * into a compiled expression ({@link Calc}).
  *
  * @author jhyde
@@ -128,7 +128,7 @@ public interface ExpCompiler {
      * <p>Such an expression is generally a list of {@link Member} objects or a
      * list of tuples (each represented by a {@link Member} array).
      *
-     * <p>See {@link #compileList(drianmon.olap.Exp)}.
+     * <p>See {@link #compileList(mondrian.olap.Exp)}.
      *
      * @param exp Expression
      * @param mutable Whether resulting list is mutable
@@ -178,7 +178,7 @@ public interface ExpCompiler {
      * @param specific Whether to try to use the specific compile method for
      *   scalar types. For example, if <code>specific</code> is true and
      *   <code>exp</code> is a string expression, calls
-     *   {@link #compileString(drianmon.olap.Exp)}
+     *   {@link #compileString(mondrian.olap.Exp)}
      * @return Calculation which returns the scalar value of the expression
      */
     Calc compileScalar(Exp exp, boolean specific);

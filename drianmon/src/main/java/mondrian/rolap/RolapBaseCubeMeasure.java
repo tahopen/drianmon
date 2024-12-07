@@ -40,7 +40,7 @@ public class RolapBaseCubeMeasure
     /**
      * For SQL generator. Column which holds the value of the measure.
      */
-    private final DrianmonDef.Expression expression;
+    private final MondrianDef.Expression expression;
 
     /**
      * For SQL generator. Has values "SUM", "COUNT", etc.
@@ -51,7 +51,7 @@ public class RolapBaseCubeMeasure
     private final Map<String, Annotation> annotationMap;
 
     /**
-     * Holds the {@link drianmon.rolap.RolapStar.Measure} from which this
+     * Holds the {@link mondrian.rolap.RolapStar.Measure} from which this
      * member is computed. Untyped, because another implementation might store
      * it somewhere else.
      */
@@ -82,7 +82,7 @@ public class RolapBaseCubeMeasure
         String caption,
         String description,
         String formatString,
-        DrianmonDef.Expression expression,
+        MondrianDef.Expression expression,
         String aggregatorName,
         String datatype,
         Map<String, Annotation> annotationMap)
@@ -146,7 +146,7 @@ public class RolapBaseCubeMeasure
         setProperty(Property.DATATYPE.name, datatype);
     }
 
-    public DrianmonDef.Expression getDrianmonDefExpression() {
+    public MondrianDef.Expression getMondrianDefExpression() {
         return expression;
     }
 

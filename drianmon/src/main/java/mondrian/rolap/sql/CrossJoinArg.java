@@ -17,7 +17,7 @@ import mondrian.rolap.*;
 import mondrian.rolap.aggmatcher.AggStar;
 
 /**
- * "Light version" of a {@link drianmon.rolap.sql.TupleConstraint},
+ * "Light version" of a {@link mondrian.rolap.sql.TupleConstraint},
  * represents one of
  * member.children, level.members, member.descendants, {enumeration}.
  */

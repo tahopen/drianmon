@@ -10,7 +10,7 @@
 */
 package mondrian.rolap.sql;
 
-import mondrian.olap.DrianmonDef;
+import mondrian.olap.MondrianDef;
 import mondrian.olap.MondrianProperties;
 
 import java.util.*;
@@ -110,16 +110,16 @@ public class SqlQuery {
     /** Scratch buffer. Clear it before use. */
     private final StringBuilder buf;
 
-    private final Set<DrianmonDef.Relation> relations =
-        new HashSet<DrianmonDef.Relation>();
+    private final Set<MondrianDef.Relation> relations =
+        new HashSet<MondrianDef.Relation>();
 
-    private final Map<DrianmonDef.Relation, DrianmonDef.RelationOrJoin>
+    private final Map<MondrianDef.Relation, MondrianDef.RelationOrJoin>
         mapRelationToRoot =
-        new HashMap<DrianmonDef.Relation, DrianmonDef.RelationOrJoin>();
+        new HashMap<MondrianDef.Relation, MondrianDef.RelationOrJoin>();
 
-    private final Map<DrianmonDef.RelationOrJoin, List<RelInfo>>
+    private final Map<MondrianDef.RelationOrJoin, List<RelInfo>>
         mapRootToRelations =
-        new HashMap<DrianmonDef.RelationOrJoin, List<RelInfo>>();
+        new HashMap<MondrianDef.RelationOrJoin, List<RelInfo>>();
 
     private final Map<String, String> columnAliases =
         new HashMap<String, String>();
@@ -320,14 +320,14 @@ public class SqlQuery {
      * @return true, if relation *was* added to query
      */
     public boolean addFrom(
-        final DrianmonDef.RelationOrJoin relation,
+        final MondrianDef.RelationOrJoin relation,
         final String alias,
         final boolean failIfExists)
     {
         registerRootRelation(relation);
 
-        if (relation instanceof DrianmonDef.Relation) {
-            DrianmonDef.Relation relation1 = (DrianmonDef.Relation) relation;
+        if (relation instanceof MondrianDef.Relation) {
+            MondrianDef.Relation relation1 = (MondrianDef.Relation) relation;
             if (relations.add(relation1)
                 && !MondrianProperties.instance()
                 .FilterChildlessSnowflakeMembers.get())
@@ -338,11 +338,11 @@ public class SqlQuery {
                 // (If FilterChildlessSnowflakeMembers were false,
                 // this would be unnecessary. Adding a relation automatically
                 // adds all relations between it and the fact table.)
-                DrianmonDef.RelationOrJoin root =
+                MondrianDef.RelationOrJoin root =
                     mapRelationToRoot.get(relation1);
-                List<DrianmonDef.Relation> relationsCopy =
-                    new ArrayList<DrianmonDef.Relation>(relations);
-                for (DrianmonDef.Relation relation2 : relationsCopy) {
+                List<MondrianDef.Relation> relationsCopy =
+                    new ArrayList<MondrianDef.Relation>(relations);
+                for (MondrianDef.Relation relation2 : relationsCopy) {
                     if (relation2 != relation1
                         && mapRelationToRoot.get(relation2) == root)
                     {
@@ -352,8 +352,8 @@ public class SqlQuery {
             }
         }
 
-        if (relation instanceof DrianmonDef.View) {
-            final DrianmonDef.View view = (DrianmonDef.View) relation;
+        if (relation instanceof MondrianDef.View) {
+            final MondrianDef.View view = (MondrianDef.View) relation;
             final String viewAlias =
                 (alias == null)
                 ? view.getAlias()
@@ -361,14 +361,14 @@ public class SqlQuery {
             final String sqlString = view.getCodeSet().chooseQuery(dialect);
             return addFromQuery(sqlString, viewAlias, false);
 
-        } else if (relation instanceof DrianmonDef.InlineTable) {
-            final DrianmonDef.Relation relation1 =
+        } else if (relation instanceof MondrianDef.InlineTable) {
+            final MondrianDef.Relation relation1 =
                 RolapUtil.convertInlineTableToRelation(
-                    (DrianmonDef.InlineTable) relation, dialect);
+                    (MondrianDef.InlineTable) relation, dialect);
             return addFrom(relation1, alias, failIfExists);
 
-        } else if (relation instanceof DrianmonDef.Table) {
-            final DrianmonDef.Table table = (DrianmonDef.Table) relation;
+        } else if (relation instanceof MondrianDef.Table) {
+            final MondrianDef.Table table = (MondrianDef.Table) relation;
             final String tableAlias =
                 (alias == null)
                 ? table.getAlias()
@@ -381,8 +381,8 @@ public class SqlQuery {
                 table.getHintMap(),
                 failIfExists);
 
-        } else if (relation instanceof DrianmonDef.Join) {
-            final DrianmonDef.Join join = (DrianmonDef.Join) relation;
+        } else if (relation instanceof MondrianDef.Join) {
+            final MondrianDef.Join join = (MondrianDef.Join) relation;
             return addJoin(
                 join.left,
                 join.getLeftAlias(),
@@ -397,10 +397,10 @@ public class SqlQuery {
     }
 
     private boolean addJoin(
-        DrianmonDef.RelationOrJoin left,
+        MondrianDef.RelationOrJoin left,
         String leftAlias,
         String leftKey,
-        DrianmonDef.RelationOrJoin right,
+        MondrianDef.RelationOrJoin right,
         String rightAlias,
         String rightKey,
         boolean failIfExists)
@@ -428,9 +428,9 @@ public class SqlQuery {
     }
 
     private void addJoinBetween(
-        DrianmonDef.RelationOrJoin root,
-        DrianmonDef.Relation relation1,
-        DrianmonDef.Relation relation2)
+        MondrianDef.RelationOrJoin root,
+        MondrianDef.Relation relation1,
+        MondrianDef.Relation relation2)
     {
         List<RelInfo> relations = mapRootToRelations.get(root);
         int index1 = find(relations, relation1);
@@ -456,7 +456,7 @@ public class SqlQuery {
         }
     }
 
-    private int find(List<RelInfo> relations, DrianmonDef.Relation relation) {
+    private int find(List<RelInfo> relations, MondrianDef.Relation relation) {
         for (int i = 0, n = relations.size(); i < n; i++) {
             RelInfo relInfo = relations.get(i);
             if (relInfo.relation.equals(relation)) {
@@ -742,7 +742,7 @@ public class SqlQuery {
         return Pair.of(toString(), types);
     }
 
-    public void registerRootRelation(DrianmonDef.RelationOrJoin root) {
+    public void registerRootRelation(MondrianDef.RelationOrJoin root) {
         // REVIEW: In this method, we are building data structures about the
         // structure of a star schema. These should be built into the schema,
         // not constructed afresh for each SqlQuery. In mondrian-4.0,
@@ -764,14 +764,14 @@ public class SqlQuery {
 
     private void flatten(
         List<RelInfo> relations,
-        DrianmonDef.RelationOrJoin root,
+        MondrianDef.RelationOrJoin root,
         String leftKey,
         String leftAlias,
         String rightKey,
         String rightAlias)
     {
-        if (root instanceof DrianmonDef.Join) {
-            DrianmonDef.Join join = (DrianmonDef.Join) root;
+        if (root instanceof MondrianDef.Join) {
+            MondrianDef.Join join = (MondrianDef.Join) root;
             flatten(
                 relations, join.left, join.leftKey, join.leftAlias,
                 join.rightKey, join.rightAlias);
@@ -781,7 +781,7 @@ public class SqlQuery {
         } else {
             relations.add(
                 new RelInfo(
-                    (DrianmonDef.Relation) root,
+                    (MondrianDef.Relation) root,
                     leftKey,
                     leftAlias,
                     rightKey,
@@ -1043,14 +1043,14 @@ public class SqlQuery {
     }
 
     private static class RelInfo {
-        final DrianmonDef.Relation relation;
+        final MondrianDef.Relation relation;
         final String leftKey;
         final String leftAlias;
         final String rightKey;
         final String rightAlias;
 
         public RelInfo(
-            DrianmonDef.Relation relation,
+            MondrianDef.Relation relation,
             String leftKey,
             String leftAlias,
             String rightKey,

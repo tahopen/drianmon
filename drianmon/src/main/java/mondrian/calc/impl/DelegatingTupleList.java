@@ -17,7 +17,7 @@ import mondrian.olap.Member;
 import mondrian.olap.Util;
 
 /**
- * Implementation of {@link drianmon.calc.TupleList} based on a list of
+ * Implementation of {@link mondrian.calc.TupleList} based on a list of
  * {@code List<Member>} tuples.
  *
  * @author jhyde

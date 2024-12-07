@@ -15,7 +15,7 @@ import mondrian.olap.Evaluator;
  * Compiled expression whose result is a {@link String}.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractStringCalc}, but it is not required.
+ * {@link mondrian.calc.impl.AbstractStringCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 26, 2005

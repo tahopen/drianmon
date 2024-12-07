@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * <p>The property
  * {@link mondrian.olap.MondrianProperties#DataSourceResolverClass} determines
  * which class to use. The default implementation is
- * {@link drianmon.spi.impl.JndiDataSourceResolver}.
+ * {@link mondrian.spi.impl.JndiDataSourceResolver}.
  *
  * @author jhyde
  */

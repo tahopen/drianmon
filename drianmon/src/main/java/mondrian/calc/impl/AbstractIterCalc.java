@@ -15,13 +15,13 @@ import mondrian.olap.Exp;
 import mondrian.olap.type.SetType;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.IterCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.IterCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateIterable(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it.
+ * implement the {@link #evaluateIterable(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it.
  *
- * @see drianmon.calc.impl.AbstractListCalc
+ * @see mondrian.calc.impl.AbstractListCalc
  *
  * @author jhyde
  * @since Oct 24, 2008

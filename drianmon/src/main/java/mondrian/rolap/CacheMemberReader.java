@@ -20,7 +20,7 @@ import mondrian.rolap.sql.TupleConstraint;
 
 /**
  * <code>CacheMemberReader</code> implements {@link MemberReader} by reading
- * from a pre-populated array of {@link drianmon.olap.Member}s.
+ * from a pre-populated array of {@link mondrian.olap.Member}s.
  * <p>Note: CacheMemberReader can not handle ragged hierarchies. (HR
  * Tests fail if {@link SmartMemberReader} is replaced with
  * CacheMemberReader).

@@ -18,7 +18,7 @@ import mondrian.olap.*;
 import mondrian.olap.type.Type;
 
 /**
- * Abstract implementation of {@link drianmon.calc.ExpCompiler}
+ * Abstract implementation of {@link mondrian.calc.ExpCompiler}
  *
  * @author jhyde
  * @since Jan 2, 2006
@@ -151,7 +151,7 @@ public class DelegatingExpCompiler implements ExpCompiler {
      * <p>If we didn't do this, the decorator would get forgotten at the first
      * level of recursion. It's not pretty, and I thought about other ways
      * of combining Visitor + Decorator. For instance, I tried replacing
-     * {@link #afterCompile(drianmon.olap.Exp, drianmon.calc.Calc, boolean)}
+     * {@link #afterCompile(mondrian.olap.Exp, mondrian.calc.Calc, boolean)}
      * with a callback (Strategy), but the exit points in ExpCompiler not
      * clear because there are so many methods.
      *
@@ -163,7 +163,7 @@ public class DelegatingExpCompiler implements ExpCompiler {
     }
 
     /**
-     * See {@link drianmon.calc.impl.DelegatingExpCompiler#wrap}.
+     * See {@link mondrian.calc.impl.DelegatingExpCompiler#wrap}.
      */
     private static class WrapExp implements Exp {
         private final Exp e;

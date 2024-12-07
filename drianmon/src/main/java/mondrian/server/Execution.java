@@ -347,7 +347,7 @@ public class Execution {
     return startTimeMillis;
   }
 
-  public final drianmon.server.Statement getMondrianStatement() {
+  public final mondrian.server.Statement getMondrianStatement() {
     return statement;
   }
 

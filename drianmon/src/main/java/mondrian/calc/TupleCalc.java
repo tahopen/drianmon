@@ -19,7 +19,7 @@ import mondrian.olap.Member;
  * <code>null</code> to represent the null tuple.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractTupleCalc}, but it is not required.
+ * {@link mondrian.calc.impl.AbstractTupleCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 27, 2005

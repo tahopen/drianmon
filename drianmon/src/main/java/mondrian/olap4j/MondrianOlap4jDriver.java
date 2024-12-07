@@ -51,7 +51,7 @@ import mondrian.rolap.RolapConnectionProperties;
  * <h3>Connection properties</h3>
  *
  * <p>The driver supports the same set of properties as a traditional mondrian
- * connection. See {@link drianmon.rolap.RolapConnectionProperties}.
+ * connection. See {@link mondrian.rolap.RolapConnectionProperties}.
  *
  * <h3>Catalogs and schemas</h3>
  *

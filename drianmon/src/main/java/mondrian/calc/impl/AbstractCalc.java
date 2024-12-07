@@ -27,7 +27,7 @@ import mondrian.rolap.RolapEvaluator;
 import mondrian.rolap.RolapHierarchy;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.Calc} interface.
+ * Abstract implementation of the {@link mondrian.calc.Calc} interface.
  *
  * @author jhyde
  * @since Sep 27, 2005

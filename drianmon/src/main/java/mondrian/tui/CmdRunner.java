@@ -9,8 +9,6 @@
 
 package mondrian.tui;
 
-import mondrian.olap.MondrianProperties;
-
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.config.LoggerConfig;
@@ -26,6 +24,8 @@ import org.olap4j.OlapWrapper;
 import org.olap4j.layout.RectangularCellSetFormatter;
 
 import mondrian.olap.*;
+import mondrian.olap.Connection;
+import mondrian.olap.DriverManager;
 import mondrian.olap.fun.FunInfo;
 import mondrian.olap.type.TypeUtil;
 import mondrian.rolap.RolapConnectionProperties;

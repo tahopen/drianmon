@@ -19,7 +19,7 @@ import mondrian.olap.fun.FunUtil;
  * Adapter which computes a scalar or tuple expression and converts it to any
  * required type.
  *
- * @see drianmon.calc.impl.GenericIterCalc
+ * @see mondrian.calc.impl.GenericIterCalc
  *
  * @author jhyde
  * @since Sep 26, 2005

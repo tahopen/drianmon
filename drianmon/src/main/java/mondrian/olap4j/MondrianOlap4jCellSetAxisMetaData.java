@@ -99,7 +99,7 @@ class MondrianOlap4jCellSetAxisMetaData implements CellSetAxisMetaData {
             return Collections.emptyList();
         }
         List<Hierarchy> hierarchyList = new ArrayList<Hierarchy>();
-        for (drianmon.olap.Hierarchy hierarchy
+        for (mondrian.olap.Hierarchy hierarchy
             : TypeUtil.getHierarchies(exp.getType()))
         {
             hierarchyList.add(

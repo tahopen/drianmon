@@ -24,7 +24,7 @@ import mondrian.olap.type.Type;
  * <p>The evaluator's context is preserved.
  *
  * <p>Note that a MemberValueCalc with 0 member expressions is equivalent to a
- * {@link drianmon.calc.impl.ValueCalc}; see also {@link drianmon.calc.impl.TupleValueCalc}.
+ * {@link mondrian.calc.impl.ValueCalc}; see also {@link mondrian.calc.impl.TupleValueCalc}.
  *
  * @author jhyde
  * @since Sep 27, 2005
@@ -37,8 +37,8 @@ public class MemberValueCalc extends GenericCalc {
      * Creates a MemberArrayValueCalc.
      *
      * <p>Clients outside this package should use the
-     * {@link MemberValueCalc#create(drianmon.olap.Exp,
-     * drianmon.calc.MemberCalc[], boolean)}
+     * {@link MemberValueCalc#create(mondrian.olap.Exp,
+     * mondrian.calc.MemberCalc[], boolean)}
      * factory method.
      *
      * @param exp Expression

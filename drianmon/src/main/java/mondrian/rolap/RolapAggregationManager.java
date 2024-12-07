@@ -23,11 +23,11 @@ import java.util.*;
 
 /**
  * <code>RolapAggregationManager</code> manages all
- * {@link drianmon.rolap.agg.Segment}s in the system.
+ * {@link mondrian.rolap.agg.Segment}s in the system.
  *
  * <p> The bits of the implementation which depend upon dimensional concepts
  * <code>RolapMember</code>, etc.) live in this class, and the other bits live
- * in the derived class, {@link drianmon.rolap.agg.AggregationManager}.
+ * in the derived class, {@link mondrian.rolap.agg.AggregationManager}.
  *
  * @author jhyde
  * @since 30 August, 2001

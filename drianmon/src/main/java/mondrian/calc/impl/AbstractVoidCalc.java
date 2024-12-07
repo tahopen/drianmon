@@ -15,11 +15,11 @@ import mondrian.olap.Evaluator;
 import mondrian.olap.Exp;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.VoidCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.VoidCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateVoid(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it
+ * implement the {@link #evaluateVoid(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it
  * and return <code>null</code>.
  *
  * @author jhyde

@@ -193,7 +193,7 @@ public class Util extends XOMUtil {
     /**
      * Whether the code base has re-engineered using retroweaver.
      * If this is the case, some functionality is not available, but a lot of
-     * things are available via {@link drianmon.util.UtilCompatible}.
+     * things are available via {@link mondrian.util.UtilCompatible}.
      * Retroweaver has some problems involving {@link java.util.EnumSet}.
      */
     public static final boolean Retrowoven =
@@ -962,7 +962,7 @@ public class Util extends XOMUtil {
      * <p>If <code>allowProp</code> is true, also allows property references
      * from valid members, for example
      * <code>[Measures].[Unit Sales].FORMATTED_VALUE</code>.
-     * In this case, the result will be a {@link drianmon.mdx.ResolvedFunCall}.
+     * In this case, the result will be a {@link mondrian.mdx.ResolvedFunCall}.
      *
      * @param q Query expression belongs to
      * @param nameParts Parts of the identifier
@@ -3140,8 +3140,8 @@ public class Util extends XOMUtil {
     /**
      * Returns the cumulative amount of time spent accessing the database.
      *
-     * @deprecated Use {@link drianmon.server.monitor.Monitor#getServer()} and
-     *  {@link drianmon.server.monitor.ServerInfo#sqlStatementExecuteNanos};
+     * @deprecated Use {@link mondrian.server.monitor.Monitor#getServer()} and
+     *  {@link mondrian.server.monitor.ServerInfo#sqlStatementExecuteNanos};
      *  will be removed in 4.0.
      */
     public static long dbTimeMillis() {
@@ -4083,7 +4083,7 @@ public class Util extends XOMUtil {
      *
      * <p>The list is created via {@link Util#flatList(Object[])}.
      *
-     * @see drianmon.olap.Util.Flat3List
+     * @see mondrian.olap.Util.Flat3List
      * @param <T>
      */
     protected static class Flat2List<T> extends AbstractFlatList<T> {
@@ -4176,7 +4176,7 @@ public class Util extends XOMUtil {
      *
      * <p>The list is created via {@link Util#flatList(Object[])}.
      *
-     * @see drianmon.olap.Util.Flat2List
+     * @see mondrian.olap.Util.Flat2List
      * @param <T>
      */
     protected static class Flat3List<T> extends AbstractFlatList<T> {
@@ -4376,7 +4376,7 @@ public class Util extends XOMUtil {
     /**
      * Information about memory usage.
      *
-     * @see drianmon.olap.Util#getMemoryInfo()
+     * @see mondrian.olap.Util#getMemoryInfo()
      */
     public interface MemoryInfo {
         Usage get();

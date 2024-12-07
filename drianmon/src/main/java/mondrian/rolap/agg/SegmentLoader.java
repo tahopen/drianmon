@@ -797,7 +797,7 @@ public class SegmentLoader {
 
     abstract Object[] getValuesForColumn( SegmentColumn cc );
 
-    abstract drianmon.spi.SegmentColumn getHeader();
+    abstract mondrian.spi.SegmentColumn getHeader();
 
     public int hashCode() {
       return getHeader().hashCode();

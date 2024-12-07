@@ -15,12 +15,12 @@ import mondrian.rolap.*;
 import mondrian.rolap.aggmatcher.AggStar;
 
 /**
- * Restricts the SQL result of {@link drianmon.rolap.TupleReader}. This is also
+ * Restricts the SQL result of {@link mondrian.rolap.TupleReader}. This is also
  * used by
  * {@link SqlMemberSource#getMembersInLevel(RolapLevel, TupleConstraint)}.
  *
- * @see drianmon.rolap.TupleReader
- * @see drianmon.rolap.SqlMemberSource
+ * @see mondrian.rolap.TupleReader
+ * @see mondrian.rolap.SqlMemberSource
  *
  * @author av
  */

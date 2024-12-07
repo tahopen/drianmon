@@ -77,7 +77,7 @@ public class PropertyTableModel extends javax.swing.table.AbstractTableModel {
     public boolean isCellEditable(int row, int col) {
         if (col == 1) {
             Object cellObj = getValueAt(row, col);
-            if (cellObj instanceof MOndrianGuiDef.Join) {
+            if (cellObj instanceof MondrianGuiDef.Join) {
                 return false;
             } else {
                 return true;
@@ -237,21 +237,21 @@ public class PropertyTableModel extends javax.swing.table.AbstractTableModel {
 //                ((DrianmonGuiDef.PropertyFormatter) target).script =
 //                    (DrianmonGuiDef.Script) value;
 
-            } else if ((target instanceof MOndrianGuiDef.Level)
+            } else if ((target instanceof MondrianGuiDef.Level)
                 && (pName.equals("ordinalExp")))
             {
-                ((MOndrianGuiDef.Level) target).ordinalExp.expressions[0] =
-                    (MOndrianGuiDef.SQL) value;
-            } else if ((target instanceof MOndrianGuiDef.Level)
+                ((MondrianGuiDef.Level) target).ordinalExp.expressions[0] =
+                    (MondrianGuiDef.SQL) value;
+            } else if ((target instanceof MondrianGuiDef.Level)
                 && (pName.equals("captionExp")))
             {
-                ((MOndrianGuiDef.Level) target).captionExp.expressions[0] =
-                    (MOndrianGuiDef.SQL) value;
-            } else if ((target instanceof MOndrianGuiDef.Table
+                ((MondrianGuiDef.Level) target).captionExp.expressions[0] =
+                    (MondrianGuiDef.SQL) value;
+            } else if ((target instanceof MondrianGuiDef.Table
                         && pName.equals("name"))
-                       || (target instanceof MOndrianGuiDef.Hierarchy
+                       || (target instanceof MondrianGuiDef.Hierarchy
                            && pName.equals("primaryKeyTable"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("table")))
             {
                 // updating all table values
@@ -260,9 +260,9 @@ public class PropertyTableModel extends javax.swing.table.AbstractTableModel {
                     String[] aValues =
                         ((String) value).split(JdbcMetaData.LEVEL_SEPARATOR);
                     if (aValues.length == 2) {
-                        if (target instanceof MOndrianGuiDef.Table) {
-                            ((MOndrianGuiDef.Table) target).name = aValues[1];
-                            ((MOndrianGuiDef.Table) target).schema = aValues[0];
+                        if (target instanceof MondrianGuiDef.Table) {
+                            ((MondrianGuiDef.Table) target).name = aValues[1];
+                            ((MondrianGuiDef.Table) target).schema = aValues[0];
                             // to refresh the value in schema field also
                             // alongwith table name
                             fireTableDataChanged();
@@ -280,29 +280,29 @@ public class PropertyTableModel extends javax.swing.table.AbstractTableModel {
                     }
                 }
 
-            } else if ((target instanceof MOndrianGuiDef.Dimension
+            } else if ((target instanceof MondrianGuiDef.Dimension
                         && pName.equals("foreignKey"))
-                       || (target instanceof MOndrianGuiDef.DimensionUsage
+                       || (target instanceof MondrianGuiDef.DimensionUsage
                            && pName.equals("foreignKey"))
-                       || (target instanceof MOndrianGuiDef.Measure
+                       || (target instanceof MondrianGuiDef.Measure
                            && pName.equals("column"))
-                       || (target instanceof MOndrianGuiDef.Hierarchy
+                       || (target instanceof MondrianGuiDef.Hierarchy
                            && pName.equals("primaryKey"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("column"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("nameColumn"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("ordinalColumn"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("parentColumn"))
-                       || (target instanceof MOndrianGuiDef.Level
+                       || (target instanceof MondrianGuiDef.Level
                            && pName.equals("captionColumn"))
-                       || (target instanceof MOndrianGuiDef.Closure
+                       || (target instanceof MondrianGuiDef.Closure
                            && pName.equals("parentColumn"))
-                       || (target instanceof MOndrianGuiDef.Closure
+                       || (target instanceof MondrianGuiDef.Closure
                            && pName.equals("childColumn"))
-                       || (target instanceof MOndrianGuiDef.Property
+                       || (target instanceof MondrianGuiDef.Property
                            && pName.equals("column")))
             {
                 // updating all column values
@@ -320,7 +320,7 @@ public class PropertyTableModel extends javax.swing.table.AbstractTableModel {
 
             } else {
                 if (propertyNames[rowIndex].equals("name")
-                    && (!(target instanceof MOndrianGuiDef.Table))
+                    && (!(target instanceof MondrianGuiDef.Table))
                     && (!value.equals(
                         target.getClass().getField(
                             propertyNames[rowIndex]).get(target)))

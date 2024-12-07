@@ -23,8 +23,8 @@ import mondrian.olap.type.Type;
  *
  * <p>The evaluator's context is preserved.
  *
- * @see drianmon.calc.impl.ValueCalc
- * @see drianmon.calc.impl.MemberValueCalc
+ * @see mondrian.calc.impl.ValueCalc
+ * @see mondrian.calc.impl.MemberValueCalc
  *
  * @author jhyde
  * @since Sep 27, 2005

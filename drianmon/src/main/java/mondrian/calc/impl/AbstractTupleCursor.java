@@ -14,7 +14,7 @@ import mondrian.olap.Evaluator;
 import mondrian.olap.Member;
 
 /**
- * Abstract implementation of {@link drianmon.calc.TupleIterator}.
+ * Abstract implementation of {@link mondrian.calc.TupleIterator}.
  *
  * <p>Derived classes need to implement only {@link #forward()}.
  *

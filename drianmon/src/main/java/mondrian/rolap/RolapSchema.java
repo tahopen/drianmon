@@ -136,7 +136,7 @@ public class RolapSchema implements Schema {
      */
     private FunTable funTable;
 
-    private DrianmonDef.Schema xmlSchema;
+    private MondrianDef.Schema xmlSchema;
 
     final List<RolapSchemaParameter > parameterList =
         new ArrayList<RolapSchemaParameter >();
@@ -371,7 +371,7 @@ public class RolapSchema implements Schema {
             // throw error if we have an incompatible schema
             checkSchemaVersion(def);
 
-            xmlSchema = new DrianmonDef.Schema(def);
+            xmlSchema = new MondrianDef.Schema(def);
 
             if (getLogger().isDebugEnabled()) {
                 StringWriter sw = new StringWriter(4096);
@@ -456,7 +456,7 @@ public class RolapSchema implements Schema {
         return defaultRole;
     }
 
-    public DrianmonDef.Schema getXMLSchema() {
+    public MondrianDef.Schema getXMLSchema() {
         return xmlSchema;
     }
 
@@ -499,7 +499,7 @@ public class RolapSchema implements Schema {
         return DialectManager.createDialect(dataSource, null);
     }
 
-    private void load(DrianmonDef.Schema xmlSchema) {
+    private void load(MondrianDef.Schema xmlSchema) {
         this.name = xmlSchema.name;
         if (name == null || name.equals("")) {
             throw Util.newError("<Schema> name must be set");
@@ -512,7 +512,7 @@ public class RolapSchema implements Schema {
         // function table.
         final Map<String, UdfResolver.UdfFactory> mapNameToUdf =
             new HashMap<String, UdfResolver.UdfFactory>();
-        for (DrianmonDef.UserDefinedFunction udf
+        for (MondrianDef.UserDefinedFunction udf
             : xmlSchema.userDefinedFunctions)
         {
             final Scripts.ScriptDefinition scriptDef = toScriptDef(udf.script);
@@ -524,7 +524,7 @@ public class RolapSchema implements Schema {
         this.funTable = funTable;
 
         // Validate public dimensions.
-        for (DrianmonDef.Dimension xmlDimension : xmlSchema.dimensions) {
+        for (MondrianDef.Dimension xmlDimension : xmlSchema.dimensions) {
             if (xmlDimension.foreignKey != null) {
                 throw MondrianResource.instance()
                     .PublicDimensionMustNotHaveForeignKey.ex(
@@ -534,7 +534,7 @@ public class RolapSchema implements Schema {
 
         // Create parameters.
         Set<String> parameterNames = new HashSet<String>();
-        for (DrianmonDef.Parameter xmlParameter : xmlSchema.parameters) {
+        for (MondrianDef.Parameter xmlParameter : xmlSchema.parameters) {
             String name = xmlParameter.name;
             if (!parameterNames.add(name)) {
                 throw MondrianResource.instance().DuplicateSchemaParameter.ex(
@@ -558,7 +558,7 @@ public class RolapSchema implements Schema {
         }
 
         // Create cubes.
-        for (DrianmonDef.Cube xmlCube : xmlSchema.cubes) {
+        for (MondrianDef.Cube xmlCube : xmlSchema.cubes) {
             if (xmlCube.isEnabled()) {
                 RolapCube cube = new RolapCube(this, xmlSchema, xmlCube, true);
                 Util.discard(cube);
@@ -566,7 +566,7 @@ public class RolapSchema implements Schema {
         }
 
         // Create virtual cubes.
-        for (DrianmonDef.VirtualCube xmlVirtualCube : xmlSchema.virtualCubes) {
+        for (MondrianDef.VirtualCube xmlVirtualCube : xmlSchema.virtualCubes) {
             if (xmlVirtualCube.isEnabled()) {
                 RolapCube cube =
                     new RolapCube(this, xmlSchema, xmlVirtualCube, true);
@@ -575,12 +575,12 @@ public class RolapSchema implements Schema {
         }
 
         // Create named sets.
-        for (DrianmonDef.NamedSet xmlNamedSet : xmlSchema.namedSets) {
+        for (MondrianDef.NamedSet xmlNamedSet : xmlSchema.namedSets) {
             mapNameToSet.put(xmlNamedSet.name, createNamedSet(xmlNamedSet));
         }
 
         // Create roles.
-        for (DrianmonDef.Role xmlRole : xmlSchema.roles) {
+        for (MondrianDef.Role xmlRole : xmlSchema.roles) {
             Role role = createRole(xmlRole);
             mapNameToRole.put(xmlRole.name, role);
         }
@@ -600,7 +600,7 @@ public class RolapSchema implements Schema {
         }
     }
 
-    static Scripts.ScriptDefinition toScriptDef(DrianmonDef.Script script) {
+    static Scripts.ScriptDefinition toScriptDef(MondrianDef.Script script) {
         if (script == null) {
             return null;
         }
@@ -652,7 +652,7 @@ public class RolapSchema implements Schema {
         }
     }
 
-    private NamedSet createNamedSet(DrianmonDef.NamedSet xmlNamedSet) {
+    private NamedSet createNamedSet(MondrianDef.NamedSet xmlNamedSet) {
         final String formulaString = xmlNamedSet.getFormula();
         final Exp exp;
         try {
@@ -671,13 +671,13 @@ public class RolapSchema implements Schema {
         return formula.getNamedSet();
     }
 
-    private Role createRole(DrianmonDef.Role xmlRole) {
+    private Role createRole(MondrianDef.Role xmlRole) {
         if (xmlRole.union != null) {
             return createUnionRole(xmlRole);
         }
 
         RoleImpl role = new RoleImpl();
-        for (DrianmonDef.SchemaGrant schemaGrant : xmlRole.schemaGrants) {
+        for (MondrianDef.SchemaGrant schemaGrant : xmlRole.schemaGrants) {
             handleSchemaGrant(role, schemaGrant);
         }
         role.makeImmutable();
@@ -685,14 +685,14 @@ public class RolapSchema implements Schema {
     }
 
     // package-local visibility for testing purposes
-    Role createUnionRole(DrianmonDef.Role xmlRole) {
+    Role createUnionRole(MondrianDef.Role xmlRole) {
         if (xmlRole.schemaGrants != null && xmlRole.schemaGrants.length > 0) {
             throw MondrianResource.instance().RoleUnionGrants.ex();
         }
 
-        DrianmonDef.RoleUsage[] usages = xmlRole.union.roleUsages;
+        MondrianDef.RoleUsage[] usages = xmlRole.union.roleUsages;
         List<Role> roleList = new ArrayList<Role>(usages.length);
-        for (DrianmonDef.RoleUsage roleUsage : usages) {
+        for (MondrianDef.RoleUsage roleUsage : usages) {
             Role role = mapNameToRole.get(roleUsage.roleName);
             if (role == null) {
                 throw MondrianResource.instance().UnknownRole.ex(
@@ -704,15 +704,15 @@ public class RolapSchema implements Schema {
     }
 
     // package-local visibility for testing purposes
-    void handleSchemaGrant(RoleImpl role, DrianmonDef.SchemaGrant schemaGrant) {
+    void handleSchemaGrant(RoleImpl role, MondrianDef.SchemaGrant schemaGrant) {
         role.grant(this, getAccess(schemaGrant.access, schemaAllowed));
-        for (DrianmonDef.CubeGrant cubeGrant : schemaGrant.cubeGrants) {
+        for (MondrianDef.CubeGrant cubeGrant : schemaGrant.cubeGrants) {
             handleCubeGrant(role, cubeGrant);
         }
     }
 
     // package-local visibility for testing purposes
-    void handleCubeGrant(RoleImpl role, DrianmonDef.CubeGrant cubeGrant) {
+    void handleCubeGrant(RoleImpl role, MondrianDef.CubeGrant cubeGrant) {
         RolapCube cube = lookupCube(cubeGrant.cube);
         if (cube == null) {
             throw Util.newError("Unknown cube '" + cubeGrant.cube + "'");
@@ -720,7 +720,7 @@ public class RolapSchema implements Schema {
         role.grant(cube, getAccess(cubeGrant.access, cubeAllowed));
 
         SchemaReader reader = cube.getSchemaReader(null);
-        for (DrianmonDef.DimensionGrant grant
+        for (MondrianDef.DimensionGrant grant
             : cubeGrant.dimensionGrants)
         {
             Dimension dimension =
@@ -730,7 +730,7 @@ public class RolapSchema implements Schema {
                 getAccess(grant.access, dimensionAllowed));
         }
 
-        for (DrianmonDef.HierarchyGrant hierarchyGrant
+        for (MondrianDef.HierarchyGrant hierarchyGrant
             : cubeGrant.hierarchyGrants)
         {
             handleHierarchyGrant(role, cube, reader, hierarchyGrant);
@@ -742,7 +742,7 @@ public class RolapSchema implements Schema {
         RoleImpl role,
         RolapCube cube,
         SchemaReader reader,
-        DrianmonDef.HierarchyGrant grant)
+        MondrianDef.HierarchyGrant grant)
     {
         Hierarchy hierarchy =
             lookup(cube, reader, Category.Hierarchy, grant.hierarchy);
@@ -782,7 +782,7 @@ public class RolapSchema implements Schema {
                     + "<Hierarchy> has access='custom'");
             }
 
-            for (DrianmonDef.MemberGrant memberGrant
+            for (MondrianDef.MemberGrant memberGrant
                 : grant.memberGrants)
             {
                 Member member = reader.withLocus()
@@ -859,15 +859,15 @@ public class RolapSchema implements Schema {
     }
 
     public Dimension createDimension(Cube cube, String xml) {
-        DrianmonDef.CubeDimension xmlDimension;
+        MondrianDef.CubeDimension xmlDimension;
         try {
             final Parser xmlParser = XOMUtil.createDefaultParser();
             final DOMWrapper def = xmlParser.parse(xml);
             final String tagName = def.getTagName();
             if (tagName.equals("Dimension")) {
-                xmlDimension = new DrianmonDef.Dimension(def);
+                xmlDimension = new MondrianDef.Dimension(def);
             } else if (tagName.equals("DimensionUsage")) {
-                xmlDimension = new DrianmonDef.DimensionUsage(def);
+                xmlDimension = new MondrianDef.DimensionUsage(def);
             } else {
                 throw new XOMException(
                     "Got <" + tagName
@@ -891,14 +891,14 @@ public class RolapSchema implements Schema {
             if (tagName.equals("Cube")) {
                 // Create empty XML schema, to keep the method happy. This is
                 // okay, because there are no forward-references to resolve.
-                final DrianmonDef.Schema xmlSchema = new DrianmonDef.Schema();
-                DrianmonDef.Cube xmlDimension = new DrianmonDef.Cube(def);
+                final MondrianDef.Schema xmlSchema = new MondrianDef.Schema();
+                MondrianDef.Cube xmlDimension = new MondrianDef.Cube(def);
                 cube = new RolapCube(this, xmlSchema, xmlDimension, false);
             } else if (tagName.equals("VirtualCube")) {
                 // Need the real schema here.
-                DrianmonDef.Schema xmlSchema = getXMLSchema();
-                DrianmonDef.VirtualCube xmlDimension =
-                        new DrianmonDef.VirtualCube(def);
+                MondrianDef.Schema xmlSchema = getXMLSchema();
+                MondrianDef.VirtualCube xmlDimension =
+                        new MondrianDef.VirtualCube(def);
                 cube = new RolapCube(this, xmlSchema, xmlDimension, false);
             } else {
                 throw new XOMException(
@@ -941,15 +941,15 @@ public class RolapSchema implements Schema {
      * cube called 'cubeName' or return null if no calculatedMember or
      * xmlCube by those name exists.
      */
-    protected DrianmonDef.CalculatedMember lookupXmlCalculatedMember(
+    protected MondrianDef.CalculatedMember lookupXmlCalculatedMember(
         final String calcMemberName,
         final String cubeName)
     {
-        for (final DrianmonDef.Cube cube : xmlSchema.cubes) {
+        for (final MondrianDef.Cube cube : xmlSchema.cubes) {
             if (!Util.equalName(cube.name, cubeName)) {
                 continue;
             }
-            for (DrianmonDef.CalculatedMember xmlCalcMember
+            for (MondrianDef.CalculatedMember xmlCalcMember
                 : cube.calculatedMembers)
             {
                 // FIXME: Since fully-qualified names are not unique, we
@@ -968,7 +968,7 @@ public class RolapSchema implements Schema {
         return null;
     }
 
-    public static String calcMemberFqName(DrianmonDef.CalculatedMember xmlCalcMember)
+    public static String calcMemberFqName(MondrianDef.CalculatedMember xmlCalcMember)
     {
         if (xmlCalcMember.dimension != null) {
             return Util.makeFqName(
@@ -1345,7 +1345,7 @@ System.out.println("RolapSchema.createMemberReader: CONTAINS NAME");
     }
 
  // package-local visibility for testing purposes
-    RolapStar makeRolapStar(final DrianmonDef.Relation fact) {
+    RolapStar makeRolapStar(final MondrianDef.Relation fact) {
         DataSource dataSource = getInternalConnection().getDataSource();
         return new RolapStar(this, dataSource, fact);
     }
@@ -1366,7 +1366,7 @@ System.out.println("RolapSchema.createMemberReader: CONTAINS NAME");
          * <p> {@link RolapStar.Table#addJoin} works in a similar way.
          */
         synchronized RolapStar getOrCreateStar(
-            final DrianmonDef.Relation fact)
+            final MondrianDef.Relation fact)
         {
             final List<String> rolapStarKey = RolapUtil.makeRolapStarKey(fact);
             RolapStar star = stars.get(rolapStarKey);

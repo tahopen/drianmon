@@ -60,7 +60,7 @@ public interface Cell {
      * Returns the cell's value formatted according to the current format
      * string, and locale-specific settings such as currency symbol. The
      * current format string may itself be derived via an expression. For more
-     * information about format strings, see {@link drianmon.util.Format}.
+     * information about format strings, see {@link mondrian.util.Format}.
      */
     String getFormattedValue();
 

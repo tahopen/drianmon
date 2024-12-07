@@ -203,7 +203,7 @@ public abstract class RolapAggregator extends EnumeratedValues.BasicValue implem
     }
 
     @Override
-    public boolean supportsFastAggregates( drianmon.spi.Dialect.Datatype dataType ) {
+    public boolean supportsFastAggregates( mondrian.spi.Dialect.Datatype dataType ) {
       // We can't rollup using the raw data, because this is
       // a distinct-count operation.
       return false;

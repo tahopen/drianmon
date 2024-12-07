@@ -17,11 +17,11 @@ import mondrian.olap.fun.FunUtil;
 import mondrian.olap.type.NumericType;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.DoubleCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.DoubleCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateDouble(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it.
+ * implement the {@link #evaluateDouble(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it.
  *
  * @author jhyde
  * @since Sep 27, 2005

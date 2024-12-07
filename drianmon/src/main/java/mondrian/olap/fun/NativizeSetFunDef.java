@@ -1109,7 +1109,7 @@ public class NativizeSetFunDef extends FunDefBase {
          * simply call Util.checkCJResultLimit.
          *
          * @param resultSize Result limit
-         * @throws drianmon.olap.ResourceLimitExceededException
+         * @throws mondrian.olap.ResourceLimitExceededException
          *
          */
         private void checkNativeResultLimit(int resultSize) {

@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 
 import mondrian.calc.*;
 import mondrian.mdx.*;
+import mondrian.olap.type.DimensionType;
 import mondrian.olap.type.*;
 import mondrian.resource.MondrianResource;
 

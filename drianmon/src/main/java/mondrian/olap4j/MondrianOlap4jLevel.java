@@ -47,7 +47,7 @@ class MondrianOlap4jLevel
      */
     MondrianOlap4jLevel(
         MondrianOlap4jSchema olap4jSchema,
-        drianmon.olap.Level level)
+        mondrian.olap.Level level)
     {
         this.olap4jSchema = olap4jSchema;
         this.level = level;
@@ -148,7 +148,7 @@ class MondrianOlap4jLevel
             list.addAll(MondrianOlap4jProperty.MEMBER_EXTENSIONS.values());
         }
         // then level-specific properties
-        for (drianmon.olap.Property property : level.getProperties()) {
+        for (mondrian.olap.Property property : level.getProperties()) {
             list.add(new MondrianOlap4jProperty(property));
         }
         return list;
@@ -164,9 +164,9 @@ class MondrianOlap4jLevel
             "Reading members of level",
             new Locus.Action<List<Member>>() {
                 public List<Member> execute() {
-                    final drianmon.olap.SchemaReader schemaReader =
+                    final mondrian.olap.SchemaReader schemaReader =
                         mondrianConnection.getSchemaReader().withLocus();
-                    final List<drianmon.olap.Member> levelMembers =
+                    final List<mondrian.olap.Member> levelMembers =
                         schemaReader.getLevelMembers(level, true);
                     return new AbstractList<Member>() {
                         public Member get(int index) {

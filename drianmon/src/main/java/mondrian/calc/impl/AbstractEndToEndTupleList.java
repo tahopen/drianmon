@@ -15,7 +15,7 @@ import mondrian.calc.TupleList;
 import mondrian.olap.Member;
 
 /**
- * Abstract implementation of a {@link drianmon.calc.TupleList} that stores
+ * Abstract implementation of a {@link mondrian.calc.TupleList} that stores
  * tuples in end-to-end format.
  *
  * <p>For example, if the arity is 3, the tuples {(A1, B1, C1), (A1, B2, C2)}

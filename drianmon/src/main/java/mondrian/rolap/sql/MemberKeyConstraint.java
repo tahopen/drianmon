@@ -8,7 +8,7 @@
 */
 package mondrian.rolap.sql;
 
-import mondrian.olap.DrianmonDef;
+import mondrian.olap.MondrianDef;
 
 import java.util.List;
 
@@ -27,13 +27,13 @@ import mondrian.util.Pair;
 public class MemberKeyConstraint
     implements TupleConstraint
 {
-    private final Pair<List<DrianmonDef.Expression>, List<Comparable>> cacheKey;
-    private final List<DrianmonDef.Expression> columnList;
+    private final Pair<List<MondrianDef.Expression>, List<Comparable>> cacheKey;
+    private final List<MondrianDef.Expression> columnList;
     private final List<Dialect.Datatype> datatypeList;
     private final List<Comparable> valueList;
 
     public MemberKeyConstraint(
-        List<DrianmonDef.Expression> columnList,
+        List<MondrianDef.Expression> columnList,
         List<Dialect.Datatype> datatypeList,
         List<Comparable> valueList)
     {
@@ -47,7 +47,7 @@ public class MemberKeyConstraint
         SqlQuery sqlQuery, RolapCube baseCube, AggStar aggStar)
     {
         for (int i = 0; i < columnList.size(); i++) {
-            DrianmonDef.Expression expression = columnList.get(i);
+            MondrianDef.Expression expression = columnList.get(i);
             final Comparable value = valueList.get(i);
             final Dialect.Datatype datatype = datatypeList.get(i);
             sqlQuery.addWhere(

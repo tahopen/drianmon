@@ -15,11 +15,11 @@ import mondrian.olap.Evaluator;
 import mondrian.olap.Exp;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.TupleCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.TupleCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateTuple(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it.
+ * implement the {@link #evaluateTuple(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it.
  *
  * @author jhyde
  * @since Sep 27, 2005

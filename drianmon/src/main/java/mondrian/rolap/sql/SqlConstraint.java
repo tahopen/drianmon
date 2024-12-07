@@ -14,7 +14,7 @@ package mondrian.rolap.sql;
 /**
  * Restricts the members that are fetched by SqlMemberSource.
  *
- * @see drianmon.rolap.SqlMemberSource
+ * @see mondrian.rolap.SqlMemberSource
  *
  * @author av
  * @since Nov 2, 2005

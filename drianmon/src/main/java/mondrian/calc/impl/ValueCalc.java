@@ -16,7 +16,7 @@ import mondrian.olap.*;
  * Expression which yields the value of the current member in the current
  * dimensional context.
  *
- * @see drianmon.calc.impl.MemberValueCalc
+ * @see mondrian.calc.impl.MemberValueCalc
  *
  * @author jhyde
  * @since Sep 27, 2005

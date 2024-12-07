@@ -16,11 +16,11 @@ import mondrian.olap.Exp;
 import mondrian.olap.type.HierarchyType;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.HierarchyCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.HierarchyCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateHierarchy(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it.
+ * implement the {@link #evaluateHierarchy(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it.
  *
  * @author jhyde
  * @since Sep 26, 2005

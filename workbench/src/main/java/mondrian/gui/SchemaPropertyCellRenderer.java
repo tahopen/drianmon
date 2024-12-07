@@ -80,7 +80,7 @@ public class SchemaPropertyCellRenderer
         integerRenderer.setFont(Font.decode("Courier"));
 
 
-        listRenderer = new JComboBox(MOndrianGuiDef.Measure._aggregator_values);
+        listRenderer = new JComboBox(MondrianGuiDef.Measure._aggregator_values);
         listRenderer.setMaximumSize(stringRenderer.getMaximumSize());
         listRenderer.setFont(Font.decode("Dialog"));
         listRenderer.setBackground(Color.white);
@@ -187,7 +187,7 @@ public class SchemaPropertyCellRenderer
                 return integerRenderer;
             } else if (value == null) {
                 return null;
-            } else if (value.getClass() == MOndrianGuiDef.Join.class) {
+            } else if (value.getClass() == MondrianGuiDef.Join.class) {
                 stringRenderer.setText(generateJoinStr(value));
 
                 stringRenderer.setToolTipText(
@@ -212,34 +212,34 @@ public class SchemaPropertyCellRenderer
                 return relationRenderer;
                  */
             } else if (value.getClass()
-                       == MOndrianGuiDef.OrdinalExpression.class)
+                       == MondrianGuiDef.OrdinalExpression.class)
             {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
                 PropertyTableModel ptm = new PropertyTableModel(
                     workbench,
-                    ((MOndrianGuiDef.OrdinalExpression) value).expressions[0],
+                    ((MondrianGuiDef.OrdinalExpression) value).expressions[0],
                     SchemaExplorer.DEF_SQL);
                 tableRenderer.setModel(ptm);
                 tableRenderer.getColumnModel().getColumn(0).setMaxWidth(100);
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
             } else if (value.getClass()
-                    == MOndrianGuiDef.OrdinalExpression.class)
+                    == MondrianGuiDef.OrdinalExpression.class)
             {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
                 PropertyTableModel ptm = new PropertyTableModel(
                     workbench,
-                    ((MOndrianGuiDef.CaptionExpression) value).expressions[0],
+                    ((MondrianGuiDef.CaptionExpression) value).expressions[0],
                     SchemaExplorer.DEF_SQL);
                 tableRenderer.setModel(ptm);
                 tableRenderer.getColumnModel().getColumn(0).setMaxWidth(100);
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
-            } else if (value.getClass() == MOndrianGuiDef.Formula.class) {
+            } else if (value.getClass() == MondrianGuiDef.Formula.class) {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
@@ -250,7 +250,7 @@ public class SchemaPropertyCellRenderer
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
             } else if (value.getClass()
-                       == MOndrianGuiDef.CalculatedMemberProperty.class)
+                       == MondrianGuiDef.CalculatedMemberProperty.class)
             {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
@@ -263,7 +263,7 @@ public class SchemaPropertyCellRenderer
                 tableRenderer.getColumnModel().getColumn(0).setMaxWidth(100);
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
-            } else if (value.getClass() == MOndrianGuiDef.Table.class) {
+            } else if (value.getClass() == MondrianGuiDef.Table.class) {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
@@ -274,7 +274,7 @@ public class SchemaPropertyCellRenderer
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
             } else if (value.getClass()
-                       == MOndrianGuiDef.RelationOrJoin.class)
+                       == MondrianGuiDef.RelationOrJoin.class)
             {
                 // REVIEW: Covers View and InlineTable, since Table and Join are
                 // managed above.
@@ -285,7 +285,7 @@ public class SchemaPropertyCellRenderer
                     workbench, value, SchemaExplorer.DEF_RELATION);
                 tableRenderer.setModel(ptm);
                 return tableRenderer;
-            } else if (value.getClass() == MOndrianGuiDef.AggFactCount.class) {
+            } else if (value.getClass() == MondrianGuiDef.AggFactCount.class) {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
@@ -295,7 +295,7 @@ public class SchemaPropertyCellRenderer
                 tableRenderer.getColumnModel().getColumn(0).setMaxWidth(100);
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 return tableRenderer;
-            } else if (value.getClass() == MOndrianGuiDef.Closure.class) {
+            } else if (value.getClass() == MondrianGuiDef.Closure.class) {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
@@ -306,7 +306,7 @@ public class SchemaPropertyCellRenderer
                 tableRenderer.getColumnModel().getColumn(0).setMinWidth(100);
                 setTableRendererHeight(tableRenderer, null);
                 return tableRenderer;
-            } else if (value.getClass() == MOndrianGuiDef.Property.class) {
+            } else if (value.getClass() == MondrianGuiDef.Property.class) {
                 SchemaPropertyCellRenderer spcr =
                     new SchemaPropertyCellRenderer(workbench);
                 tableRenderer.setDefaultRenderer(Object.class, spcr);
@@ -348,7 +348,7 @@ public class SchemaPropertyCellRenderer
     }
 
     private String generateJoinStr(Object value) {
-        MOndrianGuiDef.Join currentJoin = (MOndrianGuiDef.Join) value;
+        MondrianGuiDef.Join currentJoin = (MondrianGuiDef.Join) value;
         String joinStr = "<html>"
             + generateLeftRightStr(currentJoin.left)
             + " <b>JOIN</b> "
@@ -358,15 +358,15 @@ public class SchemaPropertyCellRenderer
     }
 
     private String generateLeftRightStr(Object value) {
-        MOndrianGuiDef.RelationOrJoin currentObj =
-            (MOndrianGuiDef.RelationOrJoin) value;
-        if (currentObj instanceof MOndrianGuiDef.Table) {
-            return (((MOndrianGuiDef.Table) currentObj).alias == null
-                    || ((MOndrianGuiDef.Table) currentObj).alias.equals("")
-                ? ((MOndrianGuiDef.Table) currentObj).name
-                : ((MOndrianGuiDef.Table) currentObj).alias);
+        MondrianGuiDef.RelationOrJoin currentObj =
+            (MondrianGuiDef.RelationOrJoin) value;
+        if (currentObj instanceof MondrianGuiDef.Table) {
+            return (((MondrianGuiDef.Table) currentObj).alias == null
+                    || ((MondrianGuiDef.Table) currentObj).alias.equals("")
+                ? ((MondrianGuiDef.Table) currentObj).name
+                : ((MondrianGuiDef.Table) currentObj).alias);
         }
-        MOndrianGuiDef.Join currentJoin = (MOndrianGuiDef.Join) currentObj;
+        MondrianGuiDef.Join currentJoin = (MondrianGuiDef.Join) currentObj;
         String joinStr = "("
             + generateLeftRightStr(currentJoin.left)
             + " <b>JOIN</b> "
@@ -398,7 +398,7 @@ public class SchemaPropertyCellRenderer
                 }
 
                 value = relationTable.getValueAt(i, 1);
-                if (value instanceof MOndrianGuiDef.RelationOrJoin) {
+                if (value instanceof MondrianGuiDef.RelationOrJoin) {
                     tableH += comp.getPreferredSize().height;
                     tableW = Math.max(
                         tableW, comp.getPreferredSize().width + stringRenderer

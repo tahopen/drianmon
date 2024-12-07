@@ -9,8 +9,6 @@
 
 package mondrian.olap;
 
-import mondrian.olap.MondrianProperties;
-
 /**
  * Exception which indicates that native evaluation of a function
  * was enabled but not supported, and

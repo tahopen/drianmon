@@ -16,11 +16,11 @@ import mondrian.olap.Exp;
 import mondrian.olap.type.DimensionType;
 
 /**
- * Abstract implementation of the {@link drianmon.calc.DimensionCalc} interface.
+ * Abstract implementation of the {@link mondrian.calc.DimensionCalc} interface.
  *
  * <p>The derived class must
- * implement the {@link #evaluateDimension(drianmon.olap.Evaluator)} method,
- * and the {@link #evaluate(drianmon.olap.Evaluator)} method will call it.
+ * implement the {@link #evaluateDimension(mondrian.olap.Evaluator)} method,
+ * and the {@link #evaluate(mondrian.olap.Evaluator)} method will call it.
  *
  * @author jhyde
  * @since Sep 26, 2005

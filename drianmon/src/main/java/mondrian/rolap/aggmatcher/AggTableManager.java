@@ -282,7 +282,7 @@ public class AggTableManager {
                         if (makeAggStar) {
                             dbTable.setTableUsageType(
                                 JdbcSchema.TableUsageType.AGG);
-                            dbTable.table = new DrianmonDef.Table(
+                            dbTable.table = new MondrianDef.Table(
                                 schema,
                                 name,
                                 null, // null alias
@@ -362,17 +362,17 @@ public class AggTableManager {
 
             dbFactTable.setTableUsageType(JdbcSchema.TableUsageType.FACT);
 
-            DrianmonDef.RelationOrJoin relation =
+            MondrianDef.RelationOrJoin relation =
                 star.getFactTable().getRelation();
             String schema = null;
-            DrianmonDef.Hint[] tableHints = null;
-            if (relation instanceof DrianmonDef.Table) {
-                schema = ((DrianmonDef.Table) relation).schema;
-                tableHints = ((DrianmonDef.Table) relation).tableHints;
+            MondrianDef.Hint[] tableHints = null;
+            if (relation instanceof MondrianDef.Table) {
+                schema = ((MondrianDef.Table) relation).schema;
+                tableHints = ((MondrianDef.Table) relation).tableHints;
             }
             String tableName = dbFactTable.getName();
             String alias = null;
-            dbFactTable.table = new DrianmonDef.Table(
+            dbFactTable.table = new MondrianDef.Table(
                 schema,
                 tableName,
                 alias,

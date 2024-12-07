@@ -11,7 +11,7 @@
 */
 package mondrian.gui;
 
-import mondrian.gui.MOndrianGuiDef;
+import mondrian.gui.MondrianGuiDef;
 
 import org.eigenbase.xom.ElementDef;
 
@@ -71,22 +71,22 @@ public class SchemaTreeCellRenderer
 
         // Allow the layout mgr to calculate the pref size of renderer.
         this.setPreferredSize(null);
-        if (value instanceof MOndrianGuiDef.Cube) {
-            setText(invalidFlag, ((MOndrianGuiDef.Cube) value).name);
+        if (value instanceof MondrianGuiDef.Cube) {
+            setText(invalidFlag, ((MondrianGuiDef.Cube) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench
                             .getResourceConverter().getGUIReference("cube"))));
-        } else if (value instanceof MOndrianGuiDef.Column) {
-            setText(invalidFlag, ((MOndrianGuiDef.Column) value).name);
-        } else if (value instanceof MOndrianGuiDef.Dimension) {
+        } else if (value instanceof MondrianGuiDef.Column) {
+            setText(invalidFlag, ((MondrianGuiDef.Column) value).name);
+        } else if (value instanceof MondrianGuiDef.Dimension) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "dimension"))));
-            setText(invalidFlag, ((MOndrianGuiDef.CubeDimension) value).name);
+            setText(invalidFlag, ((MondrianGuiDef.CubeDimension) value).name);
             // Do not remove this line.  This sets the preferred width of tree
             // cell displaying dimension name.  This resolves the ambiguous
             // problem of last char or last word truncated from dimension name
@@ -101,14 +101,14 @@ public class SchemaTreeCellRenderer
                 new java.awt.Dimension(
                     this.getPreferredSize().width + 1,
                     25));
-        } else if (value instanceof MOndrianGuiDef.DimensionUsage) {
+        } else if (value instanceof MondrianGuiDef.DimensionUsage) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "dimensionUsage"))));
-            setText(invalidFlag, ((MOndrianGuiDef.CubeDimension) value).name);
-        } else if (value instanceof MOndrianGuiDef.KeyExpression) {
+            setText(invalidFlag, ((MondrianGuiDef.CubeDimension) value).name);
+        } else if (value instanceof MondrianGuiDef.KeyExpression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -118,7 +118,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.keyExpression.title",
                     "Key Expression"));
-        } else if (value instanceof MOndrianGuiDef.NameExpression) {
+        } else if (value instanceof MondrianGuiDef.NameExpression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -128,7 +128,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.nameExpression.title",
                     "Name Expression"));
-        } else if (value instanceof MOndrianGuiDef.OrdinalExpression) {
+        } else if (value instanceof MondrianGuiDef.OrdinalExpression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -138,7 +138,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.ordinalExpression.title",
                     "Ordinal Expression"));
-        } else if (value instanceof MOndrianGuiDef.CaptionExpression) {
+        } else if (value instanceof MondrianGuiDef.CaptionExpression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -148,7 +148,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.captionExpression.title",
                     "Caption Expression"));
-        } else if (value instanceof MOndrianGuiDef.ParentExpression) {
+        } else if (value instanceof MondrianGuiDef.ParentExpression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -158,7 +158,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.parentExpression.title",
                     "Parent Expression"));
-        } else if (value instanceof MOndrianGuiDef.Expression) {
+        } else if (value instanceof MondrianGuiDef.Expression) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -168,7 +168,7 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.expression.title",
                     "Expression"));
-        } else if (value instanceof MOndrianGuiDef.ExpressionView) {
+        } else if (value instanceof MondrianGuiDef.ExpressionView) {
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -178,8 +178,8 @@ public class SchemaTreeCellRenderer
                 workbench.getResourceConverter().getString(
                     "common.expressionView.title",
                     "Expression View"));
-        } else if (value instanceof MOndrianGuiDef.Hierarchy) {
-            String name = ((MOndrianGuiDef.Hierarchy) value).name;
+        } else if (value instanceof MondrianGuiDef.Hierarchy) {
+            String name = ((MondrianGuiDef.Hierarchy) value).name;
 
             if (name == null || name.trim().length() == 0) {
                 setText(
@@ -199,14 +199,14 @@ public class SchemaTreeCellRenderer
                 new java.awt.Dimension(
                     this.getPreferredSize().width + 1,
                     25));
-        } else if (value instanceof MOndrianGuiDef.RelationOrJoin) {
+        } else if (value instanceof MondrianGuiDef.RelationOrJoin) {
             TreePath tpath = tree.getPathForRow(row);
             String prefix = "";
             if (tpath != null) {
                 TreePath parentpath = tpath.getParentPath();
                 if (parentpath != null) {
                     Object parent = parentpath.getLastPathComponent();
-                    if (parent instanceof MOndrianGuiDef.Join) {
+                    if (parent instanceof MondrianGuiDef.Join) {
                         int indexOfChild = tree.getModel().getIndexOfChild(
                             parent, value);
                         switch (indexOfChild) {
@@ -226,7 +226,7 @@ public class SchemaTreeCellRenderer
                     }
                 }
             }
-            if (value instanceof MOndrianGuiDef.Join) {
+            if (value instanceof MondrianGuiDef.Join) {
                 setText(
                     workbench.getResourceConverter().getFormattedString(
                         "schemaTreeCellRenderer.join.title",
@@ -237,9 +237,9 @@ public class SchemaTreeCellRenderer
                         myClassLoader.getResource(
                             workbench.getResourceConverter().getGUIReference(
                                 "join"))));
-            } else if (value instanceof MOndrianGuiDef.Table) {
+            } else if (value instanceof MondrianGuiDef.Table) {
                 // Set the table name to alias if present.
-                MOndrianGuiDef.Table theTable = (MOndrianGuiDef.Table) value;
+                MondrianGuiDef.Table theTable = (MondrianGuiDef.Table) value;
                 String theName =
                     (theTable.alias != null
                      && theTable.alias.trim().length() > 0)
@@ -258,7 +258,7 @@ public class SchemaTreeCellRenderer
                         myClassLoader.getResource(
                             workbench.getResourceConverter().getGUIReference(
                                 "table"))));
-            } else if (value instanceof MOndrianGuiDef.View) {
+            } else if (value instanceof MondrianGuiDef.View) {
                 setText(
                     workbench.getResourceConverter().getFormattedString(
                         "schemaTreeCellRenderer.view.title",
@@ -271,8 +271,8 @@ public class SchemaTreeCellRenderer
                 new Dimension(
                     this.getPreferredSize().width + 35,
                     24));
-        } else if (value instanceof MOndrianGuiDef.Level) {
-            setText(invalidFlag, ((MOndrianGuiDef.Level) value).name);
+        } else if (value instanceof MondrianGuiDef.Level) {
+            setText(invalidFlag, ((MondrianGuiDef.Level) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
@@ -283,32 +283,32 @@ public class SchemaTreeCellRenderer
                 new java.awt.Dimension(
                     this.getPreferredSize().width + 1,
                     25)); // Do not remove this
-        } else if (value instanceof MOndrianGuiDef.Measure) {
-            setText(invalidFlag, ((MOndrianGuiDef.Measure) value).name);
+        } else if (value instanceof MondrianGuiDef.Measure) {
+            setText(invalidFlag, ((MondrianGuiDef.Measure) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "measure"))));
-        } else if (value instanceof MOndrianGuiDef.Formula) {
-            setText(invalidFlag, ((MOndrianGuiDef.Formula) value).getName());
+        } else if (value instanceof MondrianGuiDef.Formula) {
+            setText(invalidFlag, ((MondrianGuiDef.Formula) value).getName());
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "formula"))));
-        } else if (value instanceof MOndrianGuiDef.MemberReaderParameter) {
+        } else if (value instanceof MondrianGuiDef.MemberReaderParameter) {
             setText(
                 invalidFlag,
-                ((MOndrianGuiDef.MemberReaderParameter) value).name);
-        } else if (value instanceof MOndrianGuiDef.Property) {
-            setText(invalidFlag, ((MOndrianGuiDef.Property) value).name);
+                ((MondrianGuiDef.MemberReaderParameter) value).name);
+        } else if (value instanceof MondrianGuiDef.Property) {
+            setText(invalidFlag, ((MondrianGuiDef.Property) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "property"))));
-        } else if (value instanceof MOndrianGuiDef.Schema) {
+        } else if (value instanceof MondrianGuiDef.Schema) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.schema.title",
@@ -318,39 +318,39 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "schema"))));
-        } else if (value instanceof MOndrianGuiDef.NamedSet) {
-            setText(invalidFlag, ((MOndrianGuiDef.NamedSet) value).name);
+        } else if (value instanceof MondrianGuiDef.NamedSet) {
+            setText(invalidFlag, ((MondrianGuiDef.NamedSet) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "namedSet"))));
-        } else if (value instanceof MOndrianGuiDef.CalculatedMember) {
+        } else if (value instanceof MondrianGuiDef.CalculatedMember) {
             setText(
-                invalidFlag, ((MOndrianGuiDef.CalculatedMember) value).name);
+                invalidFlag, ((MondrianGuiDef.CalculatedMember) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "calculatedMember"))));
-        } else if (value instanceof MOndrianGuiDef.CalculatedMemberProperty) {
+        } else if (value instanceof MondrianGuiDef.CalculatedMemberProperty) {
             setText(
                 invalidFlag,
-                ((MOndrianGuiDef.CalculatedMemberProperty) value).name);
+                ((MondrianGuiDef.CalculatedMemberProperty) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench
                             .getResourceConverter().getGUIReference("nopic"))));
-        } else if (value instanceof MOndrianGuiDef.UserDefinedFunction) {
+        } else if (value instanceof MondrianGuiDef.UserDefinedFunction) {
             setText(
-                invalidFlag, ((MOndrianGuiDef.UserDefinedFunction) value).name);
+                invalidFlag, ((MondrianGuiDef.UserDefinedFunction) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "userDefinedFunction"))));
-        } else if (value instanceof MOndrianGuiDef.MemberFormatter) {
+        } else if (value instanceof MondrianGuiDef.MemberFormatter) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.memberFormatter.title",
@@ -360,7 +360,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "format"))));
-        } else if (value instanceof MOndrianGuiDef.CellFormatter) {
+        } else if (value instanceof MondrianGuiDef.CellFormatter) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.cellFormatter.title",
@@ -370,7 +370,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "format"))));
-        } else if (value instanceof MOndrianGuiDef.PropertyFormatter) {
+        } else if (value instanceof MondrianGuiDef.PropertyFormatter) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.propertyFormatter.title",
@@ -380,7 +380,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "format"))));
-        } else if (value instanceof MOndrianGuiDef.Script) {
+        } else if (value instanceof MondrianGuiDef.Script) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.script.title",
@@ -390,21 +390,21 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "script"))));
-        } else if (value instanceof MOndrianGuiDef.Role) {
-            setText(invalidFlag, ((MOndrianGuiDef.Role) value).name);
+        } else if (value instanceof MondrianGuiDef.Role) {
+            setText(invalidFlag, ((MondrianGuiDef.Role) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench
                             .getResourceConverter().getGUIReference("role"))));
-        } else if (value instanceof MOndrianGuiDef.Parameter) {
-            setText(invalidFlag, ((MOndrianGuiDef.Parameter) value).name);
+        } else if (value instanceof MondrianGuiDef.Parameter) {
+            setText(invalidFlag, ((MondrianGuiDef.Parameter) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "parameter"))));
-        } else if (value instanceof MOndrianGuiDef.SchemaGrant) {
+        } else if (value instanceof MondrianGuiDef.SchemaGrant) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.schemaGrant.title",
@@ -414,7 +414,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "schemaGrant"))));
-        } else if (value instanceof MOndrianGuiDef.CubeGrant) {
+        } else if (value instanceof MondrianGuiDef.CubeGrant) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.cubeGrant.title",
@@ -424,7 +424,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "cubeGrant"))));
-        } else if (value instanceof MOndrianGuiDef.DimensionGrant) {
+        } else if (value instanceof MondrianGuiDef.DimensionGrant) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.dimensionGrant.title",
@@ -434,7 +434,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "dimensionGrant"))));
-        } else if (value instanceof MOndrianGuiDef.HierarchyGrant) {
+        } else if (value instanceof MondrianGuiDef.HierarchyGrant) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.hierarchyGrant.title",
@@ -444,7 +444,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "hierarchyGrant"))));
-        } else if (value instanceof MOndrianGuiDef.MemberGrant) {
+        } else if (value instanceof MondrianGuiDef.MemberGrant) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.memberGrant.title",
@@ -454,7 +454,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "memberGrant"))));
-        } else if (value instanceof MOndrianGuiDef.Annotations) {
+        } else if (value instanceof MondrianGuiDef.Annotations) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.annotations.title",
@@ -464,51 +464,51 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "annotations"))));
-        } else if (value instanceof MOndrianGuiDef.Annotation) {
+        } else if (value instanceof MondrianGuiDef.Annotation) {
             setText(
-                invalidFlag, ((MOndrianGuiDef.Annotation)value).name);
+                invalidFlag, ((MondrianGuiDef.Annotation)value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "annotation"))));
-        } else if (value instanceof MOndrianGuiDef.SQL) {
-            setText(invalidFlag, ((MOndrianGuiDef.SQL) value).dialect);
+        } else if (value instanceof MondrianGuiDef.SQL) {
+            setText(invalidFlag, ((MondrianGuiDef.SQL) value).dialect);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench
                             .getResourceConverter().getGUIReference("sql"))));
-        } else if (value instanceof MOndrianGuiDef.View) {
+        } else if (value instanceof MondrianGuiDef.View) {
             setText(
                 workbench.getResourceConverter().getString(
                     "common.view.title",
                     "View"));
-        } else if (value instanceof MOndrianGuiDef.VirtualCube) {
-            setText(invalidFlag, ((MOndrianGuiDef.VirtualCube) value).name);
+        } else if (value instanceof MondrianGuiDef.VirtualCube) {
+            setText(invalidFlag, ((MondrianGuiDef.VirtualCube) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "virtualCube"))));
-        } else if (value instanceof MOndrianGuiDef.VirtualCubeDimension) {
+        } else if (value instanceof MondrianGuiDef.VirtualCubeDimension) {
             setText(
                 invalidFlag,
-                ((MOndrianGuiDef.VirtualCubeDimension) value).name);
+                ((MondrianGuiDef.VirtualCubeDimension) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "virtualCubeDimension"))));
-        } else if (value instanceof MOndrianGuiDef.VirtualCubeMeasure) {
+        } else if (value instanceof MondrianGuiDef.VirtualCubeMeasure) {
             setText(
-                invalidFlag, ((MOndrianGuiDef.VirtualCubeMeasure) value).name);
+                invalidFlag, ((MondrianGuiDef.VirtualCubeMeasure) value).name);
             super.setIcon(
                 new ImageIcon(
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "virtualCubeMeasure"))));
-        } else if (value instanceof MOndrianGuiDef.AggName) {
+        } else if (value instanceof MondrianGuiDef.AggName) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggName.title",
@@ -518,7 +518,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggTable"))));
-        } else if (value instanceof MOndrianGuiDef.AggForeignKey) {
+        } else if (value instanceof MondrianGuiDef.AggForeignKey) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggForeignKey.title",
@@ -528,7 +528,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggForeignKey"))));
-        } else if (value instanceof MOndrianGuiDef.AggIgnoreColumn) {
+        } else if (value instanceof MondrianGuiDef.AggIgnoreColumn) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggIgnoreColumn.title",
@@ -538,7 +538,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggIgnoreColumn"))));
-        } else if (value instanceof MOndrianGuiDef.AggLevel) {
+        } else if (value instanceof MondrianGuiDef.AggLevel) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggLevel.title", "Aggregate Level"));
@@ -548,7 +548,7 @@ public class SchemaTreeCellRenderer
                         workbench.getResourceConverter().getGUIReference(
                             "aggLevel"))));
 
-        } else if (value instanceof MOndrianGuiDef.AggLevelProperty) {
+        } else if (value instanceof MondrianGuiDef.AggLevelProperty) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggLevelProperty.title",
@@ -558,7 +558,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "property"))));
-        } else if (value instanceof MOndrianGuiDef.AggMeasure) {
+        } else if (value instanceof MondrianGuiDef.AggMeasure) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggMeasure.title",
@@ -568,7 +568,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggMeasure"))));
-        } else if (value instanceof MOndrianGuiDef.AggPattern) {
+        } else if (value instanceof MondrianGuiDef.AggPattern) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggPattern.title",
@@ -578,7 +578,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggPattern"))));
-        } else if (value instanceof MOndrianGuiDef.AggExclude) {
+        } else if (value instanceof MondrianGuiDef.AggExclude) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.aggExclude.title",
@@ -588,7 +588,7 @@ public class SchemaTreeCellRenderer
                     myClassLoader.getResource(
                         workbench.getResourceConverter().getGUIReference(
                             "aggExclude"))));
-        } else if (value instanceof MOndrianGuiDef.Closure) {
+        } else if (value instanceof MondrianGuiDef.Closure) {
             setText(
                 invalidFlag, workbench.getResourceConverter().getString(
                     "common.closure.title",
@@ -616,10 +616,10 @@ public class SchemaTreeCellRenderer
         JTree tree,
         TreePath tpath,
         Object value,
-        MOndrianGuiDef.Cube cube,
-        MOndrianGuiDef.Dimension parentDimension,
-        MOndrianGuiDef.Hierarchy parentHierarchy,
-        MOndrianGuiDef.Level parentLevel)
+        MondrianGuiDef.Cube cube,
+        MondrianGuiDef.Dimension parentDimension,
+        MondrianGuiDef.Hierarchy parentHierarchy,
+        MondrianGuiDef.Level parentLevel)
     {
         return ValidationUtils.invalid(
             new WorkbenchMessages(workbench.getResourceConverter()),

@@ -1721,7 +1721,7 @@ public class FunUtil extends Util {
   /**
    * Parses a tuple, of the form '(member, member, ...)'. There must be precisely one member for each hierarchy.
    *
-   * @param evaluator   Evaluator, provides a {@link drianmon.olap.SchemaReader} and {@link drianmon.olap.Cube}
+   * @param evaluator   Evaluator, provides a {@link mondrian.olap.SchemaReader} and {@link mondrian.olap.Cube}
    * @param string      String to parse
    * @param i           Position to start parsing in string
    * @param members     Output array of members

@@ -13,10 +13,10 @@ import mondrian.olap.Evaluator;
 import mondrian.olap.Hierarchy;
 
 /**
- * Expression which yields a {@link drianmon.olap.Hierarchy}.
+ * Expression which yields a {@link mondrian.olap.Hierarchy}.
  *
  * <p>When implementing this interface, it is convenient to extend
- * {@link drianmon.calc.impl.AbstractHierarchyCalc}, but it is not required.
+ * {@link mondrian.calc.impl.AbstractHierarchyCalc}, but it is not required.
  *
  * @author jhyde
  * @since Sep 26, 2005

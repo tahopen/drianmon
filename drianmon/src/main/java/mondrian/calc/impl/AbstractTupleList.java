@@ -79,7 +79,7 @@ public abstract class AbstractTupleList
     }
 
     /**
-     * Implementation of {@link drianmon.calc.TupleIterator} for
+     * Implementation of {@link mondrian.calc.TupleIterator} for
      * {@link ArrayTupleList}.
      * Based upon AbstractList.Itr, but with concurrent modification checking
      * removed.

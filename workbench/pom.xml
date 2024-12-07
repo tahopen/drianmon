@@ -134,7 +134,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>drianmon.gui.Workbench</mainClass>
+              <mainClass>mondrian.gui.Workbench</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -155,7 +155,7 @@
                 <property name="relative.generated.java.dir" value="src/generated/java" />
                 <property name="generated.java.dir" value="${project.basedir}/src/generated/java" />
                 <mkdir dir="${project.build.outputDirectory}" />
-                <mkdir dir="${generated.java.dir}/drianmon/olap" />
+                <mkdir dir="${generated.java.dir}/mondrian/olap" />
                 <ant target="def" />
               </target>
             </configuration>

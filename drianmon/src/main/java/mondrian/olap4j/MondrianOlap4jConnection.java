@@ -28,6 +28,7 @@ import org.olap4j.type.DimensionType;
 
 import mondrian.mdx.*;
 import mondrian.olap.*;
+import mondrian.olap.Member;
 import mondrian.olap.fun.MondrianEvaluationException;
 import mondrian.rolap.*;
 import mondrian.util.Bug;

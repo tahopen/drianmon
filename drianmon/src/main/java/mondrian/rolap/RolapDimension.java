@@ -96,8 +96,8 @@ class RolapDimension extends DimensionBase {
     RolapDimension(
         RolapSchema schema,
         RolapCube cube,
-        DrianmonDef.Dimension xmlDimension,
-        DrianmonDef.CubeDimension xmlCubeDimension)
+        MondrianDef.Dimension xmlDimension,
+        MondrianDef.CubeDimension xmlCubeDimension)
     {
         this(
             schema,
@@ -174,7 +174,7 @@ class RolapDimension extends DimensionBase {
     /**
      * Initializes a dimension within the context of a cube.
      */
-    void init(DrianmonDef.CubeDimension xmlDimension) {
+    void init(MondrianDef.CubeDimension xmlDimension) {
         for (int i = 0; i < hierarchies.length; i++) {
             if (hierarchies[i] != null) {
                 ((RolapHierarchy) hierarchies[i]).init(xmlDimension);

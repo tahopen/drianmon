@@ -17,8 +17,8 @@ import mondrian.rolap.sql.SqlConstraint;
 import mondrian.util.Pair;
 
 /**
- * Uses a {@link drianmon.rolap.cache.SmartCache} to store lists of members,
- * where the key depends on a {@link drianmon.rolap.sql.SqlConstraint}.
+ * Uses a {@link mondrian.rolap.cache.SmartCache} to store lists of members,
+ * where the key depends on a {@link mondrian.rolap.sql.SqlConstraint}.
  *
  * <p>Example 1:
  *
@@ -41,9 +41,9 @@ import mondrian.util.Pair;
  * into the cache. Then the key for the cache entry is the Level that the
  * members belong to <em>plus</em> the costraint that restricted the amount of
  * members fetched. For Level.Members the key consists of the Level and the
- * cacheKey of the {@link drianmon.rolap.sql.SqlConstraint}.
+ * cacheKey of the {@link mondrian.rolap.sql.SqlConstraint}.
  *
- * @see drianmon.rolap.sql.SqlConstraint#getCacheKey
+ * @see mondrian.rolap.sql.SqlConstraint#getCacheKey
  *
  * @author av
  * @since Nov 21, 2005

@@ -567,8 +567,8 @@ public class RankFunDef extends FunDefBase {
    * Expression which evaluates an expression to form a list of tuples.
    *
    * <p>
-   * The result is a value of type {@link drianmon.olap.fun.RankFunDef.RankedMemberList} or
-   * {@link drianmon.olap.fun.RankFunDef.RankedTupleList}, or null if the list is empty.
+   * The result is a value of type {@link mondrian.olap.fun.RankFunDef.RankedMemberList} or
+   * {@link mondrian.olap.fun.RankFunDef.RankedTupleList}, or null if the list is empty.
    */
   private static class RankedListCalc extends AbstractCalc {
     private final ListCalc listCalc;

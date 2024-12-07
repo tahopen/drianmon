@@ -18,6 +18,8 @@ import mondrian.calc.ExpCompiler;
 import mondrian.mdx.ResolvedFunCall;
 import mondrian.olap.*;
 import mondrian.olap.type.*;
+import mondrian.olap.type.DimensionType;
+import mondrian.olap.type.LevelType;
 
 /**
  * <code>FunDefBase</code> is the default implementation of {@link FunDef}.

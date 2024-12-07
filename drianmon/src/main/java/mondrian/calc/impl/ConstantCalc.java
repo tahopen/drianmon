@@ -15,6 +15,10 @@ import mondrian.calc.*;
 import mondrian.olap.*;
 import mondrian.olap.fun.FunUtil;
 import mondrian.olap.type.*;
+import mondrian.olap.type.DimensionType;
+import mondrian.olap.type.LevelType;
+
+import java.util.Map;
 
 /**
  * Calculator which always returns the same value.

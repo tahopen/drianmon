@@ -123,7 +123,7 @@ public final class TupleCollections {
      * has some extra state.
      *
      * <p>This method may be used to implement
-     * {@link drianmon.calc.TupleIterable#tupleIterator()} for a
+     * {@link mondrian.calc.TupleIterable#tupleIterator()} for a
      * {@link TupleIterable} or {@link TupleList} that only has a
      * {@code TupleCursor} implementation.
      *
@@ -219,7 +219,7 @@ public final class TupleCollections {
      * Creates a slice of a {@link TupleIterable}.
      *
      * <p>Can be used as an implementation for
-     * {@link drianmon.calc.TupleList#slice(int)}.
+     * {@link mondrian.calc.TupleList#slice(int)}.
      *
      * @param tupleIterable Iterable
      * @param column Which member of each tuple of project.
@@ -257,7 +257,7 @@ public final class TupleCollections {
     }
 
     /**
-     * Converts a {@link drianmon.calc.TupleIterable} to an old-style iterable that
+     * Converts a {@link mondrian.calc.TupleIterable} to an old-style iterable that
      * creates an iterator over member arrays.
      *
      * @param tupleIterable Tuple iterable
@@ -290,7 +290,7 @@ public final class TupleCollections {
     }
 
     /**
-     * Converts a {@link drianmon.calc.TupleList} to an old-style list of member
+     * Converts a {@link mondrian.calc.TupleList} to an old-style list of member
      * arrays.
      *
      * @param tupleList Tuple list
@@ -315,7 +315,7 @@ public final class TupleCollections {
 
     /**
      * Converts an old-style list (members or member arrays) to a
-     * {@link drianmon.calc.TupleList}.
+     * {@link mondrian.calc.TupleList}.
      *
      * <p>Deduces the arity of the list from the first element, if the list
      * is not empty. Otherwise assumes arity 1.

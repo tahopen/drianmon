@@ -16,7 +16,7 @@ import mondrian.calc.*;
 import mondrian.olap.Member;
 
 /**
-* Abstract implementation of {@link drianmon.calc.TupleIterable}.
+* Abstract implementation of {@link mondrian.calc.TupleIterable}.
  *
  * <p>Derived classes need to implement only {@link #tupleCursor()},
  * and this implementation will implement {@link #tupleIterator()} and

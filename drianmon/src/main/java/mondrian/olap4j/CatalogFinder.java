@@ -17,7 +17,7 @@ import mondrian.rolap.RolapSchema;
 
 /**
  * Strategy to locate schemas and catalogs. Allows different
- * {@link drianmon.olap.MondrianServer servers} to do things differently.
+ * {@link mondrian.olap.MondrianServer servers} to do things differently.
  *
  * @author jhyde
  * @since 2010/11/12
@@ -40,7 +40,7 @@ public interface CatalogFinder {
      * particular name.
      *
      * <p>The name of the schema may not be the same as the value returned by
-     * {@link drianmon.rolap.RolapSchema#getName()}. In fact, a given schema
+     * {@link mondrian.rolap.RolapSchema#getName()}. In fact, a given schema
      * may occur multiple times in the same catalog with different names.
      *
      * <p>The schemas occur in the natural order of the repository.

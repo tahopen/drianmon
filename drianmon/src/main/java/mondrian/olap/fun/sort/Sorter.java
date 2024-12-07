@@ -65,7 +65,7 @@ public class Sorter {
    * For each member in a list, evaluates an expression and creates a map from members to values.
    *
    * <p>If the list contains tuples, use
-   * {@link #evaluateTuples(drianmon.olap.Evaluator, drianmon.calc.Calc, drianmon.calc.TupleList)}.
+   * {@link #evaluateTuples(mondrian.olap.Evaluator, mondrian.calc.Calc, mondrian.calc.TupleList)}.
    *
    * @param evaluator  Evaluation context
    * @param exp        Expression to evaluate
@@ -493,7 +493,7 @@ public class Sorter {
    *
    * @param memberList List of members
    * @param post       Whether to sort in post order; if false, sorts in pre order
-   * @see #hierarchizeTupleList(drianmon.calc.TupleList, boolean)
+   * @see #hierarchizeTupleList(mondrian.calc.TupleList, boolean)
    */
   public static void hierarchizeMemberList(
     List<Member> memberList,
@@ -951,7 +951,7 @@ public class Sorter {
   /**
    * Tuple consisting of an object and an integer.
    *
-   * <p>Similar to {@link drianmon.util.Pair}, but saves boxing overhead of converting
+   * <p>Similar to {@link mondrian.util.Pair}, but saves boxing overhead of converting
    * {@code int} to {@link Integer}.
    */
   public static class ObjIntPair<T> {

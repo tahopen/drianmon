@@ -1489,7 +1489,7 @@ public class Workbench extends javax.swing.JFrame {
                 schemaFile == null
                     ? se.getSchema().name.trim() + ".xml"
                     : schemaFile.getName());
-            MOndrianGuiDef.Schema schema = se.getSchema();
+            MondrianGuiDef.Schema schema = se.getSchema();
             JFileChooser jfc = new JFileChooser();
             MondrianProperties.instance();
 
@@ -1563,7 +1563,7 @@ public class Workbench extends javax.swing.JFrame {
      * Validates that the schema can be parsed and loaded,
      * showing a warning message if any errors are encountered.
      */
-    private boolean isSchemaValid(MOndrianGuiDef.Schema schema) {
+    private boolean isSchemaValid(MondrianGuiDef.Schema schema) {
         try {
             StringWriter writer = new StringWriter();
             XMLOutput xmlOutput =  new XMLOutput(writer);
@@ -1571,7 +1571,7 @@ public class Workbench extends javax.swing.JFrame {
             Parser xmlParser = XOMUtil.createDefaultParser();
             Reader reader = new StringReader(writer.getBuffer().toString());
             // attempt to create a new schema
-            new MOndrianGuiDef.Schema(xmlParser.parse(reader));
+            new MondrianGuiDef.Schema(xmlParser.parse(reader));
         } catch (XOMException e) {
             JOptionPane.showMessageDialog(
                 this,
@@ -1627,7 +1627,7 @@ public class Workbench extends javax.swing.JFrame {
             se.setDirtyFlag(false);
             se.setTitle();  // sets title of iframe
 
-            MOndrianGuiDef.Schema schema = se.getSchema();
+            MondrianGuiDef.Schema schema = se.getSchema();
 
             if (!isSchemaValid(schema)) {
                 // the schema would not be re-loadable.  Abort save.

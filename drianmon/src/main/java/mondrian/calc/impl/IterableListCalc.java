@@ -13,8 +13,8 @@ import mondrian.calc.*;
 import mondrian.olap.Evaluator;
 
 /**
- * Adapter that converts a {@link drianmon.calc.IterCalc} to a
- * {@link drianmon.calc.ListCalc}.
+ * Adapter that converts a {@link mondrian.calc.IterCalc} to a
+ * {@link mondrian.calc.ListCalc}.
  *
  * @author jhyde
  * @since Oct 23, 2008

@@ -9,6 +9,14 @@
 */
 package mondrian.olap4j;
 
+import mondrian.olap.*;
+import mondrian.olap.Property;
+import mondrian.olap.Util.PropertyList;
+import mondrian.olap.fun.FunInfo;
+import mondrian.rolap.*;
+import mondrian.xmla.RowsetDefinition;
+import mondrian.xmla.XmlaHandler;
+
 import org.olap4j.*;
 import org.olap4j.Cell;
 import org.olap4j.metadata.*;
@@ -17,13 +25,6 @@ import org.olap4j.metadata.Hierarchy;
 import org.olap4j.metadata.Level;
 import org.olap4j.metadata.Member;
 import org.olap4j.metadata.Schema;
-
-import mondrian.olap.*;
-import mondrian.olap.Util.PropertyList;
-import mondrian.olap.fun.FunInfo;
-import mondrian.rolap.*;
-import mondrian.xmla.RowsetDefinition;
-import mondrian.xmla.XmlaHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -66,7 +67,7 @@ class MondrianOlap4jExtra implements XmlaHandler.XmlaExtra {
         if (level instanceof MondrianOlap4jLevel) {
             // Improved implementation if the provider is mondrian.
             final MondrianOlap4jLevel olap4jLevel = (MondrianOlap4jLevel) level;
-            final drianmon.olap.SchemaReader schemaReader =
+            final mondrian.olap.SchemaReader schemaReader =
                 olap4jLevel.olap4jSchema.olap4jCatalog.olap4jDatabaseMetaData
                     .olap4jConnection.getMondrianConnection().getSchemaReader()
                     .withLocus();
@@ -164,7 +165,7 @@ class MondrianOlap4jExtra implements XmlaHandler.XmlaExtra {
     {
         final MondrianOlap4jHierarchy olap4jHierarchy =
             (MondrianOlap4jHierarchy) hierarchy;
-        final drianmon.olap.SchemaReader schemaReader =
+        final mondrian.olap.SchemaReader schemaReader =
             olap4jHierarchy.olap4jSchema.olap4jCatalog.olap4jDatabaseMetaData
                 .olap4jConnection.getMondrianConnection().getSchemaReader()
                 .withLocus();
@@ -221,7 +222,7 @@ class MondrianOlap4jExtra implements XmlaHandler.XmlaExtra {
         if (member.getOrdinal() == -1) {
             MondrianOlap4jMember olap4jMember =
                 (MondrianOlap4jMember) member;
-            final drianmon.olap.SchemaReader schemaReader =
+            final mondrian.olap.SchemaReader schemaReader =
                 olap4jMember.olap4jSchema.olap4jCatalog.olap4jDatabaseMetaData
                     .olap4jConnection.getMondrianConnection().getSchemaReader()
                     .withLocus();
