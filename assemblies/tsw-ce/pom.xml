@@ -12,10 +12,10 @@
   <packaging>pom</packaging>
   <name>Tahopen Schema Workbench</name>
   <description>Drianmon Schema Workbench</description>
-  <url>http://tahopen.org</url>
+  <url>https://tahopen.org</url>
   <properties>
     <jlfgr.version>1.0</jlfgr.version>
-    <tahopen-launcher.version>0.1.0.0-SNAPSHOT</tahopen-launcher.version>
+    <tahopen-launcher.version>0.1.0.0</tahopen-launcher.version>
     <dependency.groovy-all.revision>2.4.8</dependency.groovy-all.revision>
     <pdi-dataservice-client-plugin.version>9.3.0.0-SNAPSHOT</pdi-dataservice-client-plugin.version>
     <oss-licenses.version>9.4.0.0-SNAPSHOT</oss-licenses.version>

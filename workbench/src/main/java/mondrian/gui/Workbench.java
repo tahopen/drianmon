@@ -76,7 +76,7 @@ public class Workbench extends javax.swing.JFrame {
     private static final String LAST_USED4_URL = "lastUsedUrl4";
     private static final String WorkbenchInfoResourceName =
         "drianmon.gui.resources.workbenchInfo";
-    private static final String GUIResourceName = "drianmon.gui.resources.gui";
+    private static final String GUIResourceName = "mondrian.gui.resources.gui";
     private static final String TextResourceName =
         "drianmon.gui.resources.text";
     private static final String FILTER_SCHEMA_LIST = "FILTER_SCHEMA_LIST";
