@@ -5,10 +5,10 @@
   <parent>
     <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-parent-pom</artifactId>
-    <version>0.1.0.0-SNAPSHOT</version>
+    <version>0.1.0.0</version>
   </parent>
   <artifactId>drianmon</artifactId>
-  <version>0.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0</version>
   <name>Drianmon Project: ${project.artifactId}</name>
   <description>Drianmon OLAP Engine</description>
   <url>http://tahopen.org</url>

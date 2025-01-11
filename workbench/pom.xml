@@ -5,10 +5,10 @@
   <parent>
     <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-parent-pom</artifactId>
-    <version>0.1.0.0-SNAPSHOT</version>
+    <version>0.1.0.0</version>
   </parent>
   <artifactId>workbench</artifactId>
-  <version>0.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0</version>
   <name>Tahopen Project: ${project.artifactId}</name>
   <description>Drianmon Schema Workbench</description>
   <url>http://tahopen.org</url>
@@ -60,7 +60,7 @@
     <dependency>
       <groupId>org.tahopen</groupId>
       <artifactId>drianmon</artifactId>
-      <version>0.1.0.0-SNAPSHOT</version>
+      <version>0.1.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>

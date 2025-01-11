@@ -5,10 +5,10 @@
   <parent>
     <groupId>org.tahopen</groupId>
     <artifactId>tahopen-drianmon-assemblies</artifactId>
-    <version>0.1.0.0-SNAPSHOT</version>
+    <version>0.1.0.0</version>
   </parent>
   <artifactId>tsw-ce</artifactId>
-  <version>0.1.0.0-SNAPSHOT</version>
+  <version>0.1.0.0</version>
   <packaging>pom</packaging>
   <name>Tahopen Schema Workbench</name>
   <description>Drianmon Schema Workbench</description>
@@ -52,7 +52,7 @@
     <dependency>
       <groupId>org.tahopen</groupId>
       <artifactId>drianmon</artifactId>
-      <version>0.1.0.0-SNAPSHOT</version>
+      <version>0.1.0.0</version>
       <exclusions>
         <exclusion>
           <artifactId>javacc</artifactId>
