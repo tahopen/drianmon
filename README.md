@@ -1,5 +1,5 @@
 # Welcome to Drianmon
-Driamon is an Online Analytical Processing (OLAP) server that enables business users to analyze large quantities of data in real-time.
+Drianmon is an Online Analytical Processing (OLAP) server that enables business users to analyze large quantities of data in real-time.
 
 fork the Mondrian Project.
 
