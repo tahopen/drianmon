@@ -5,4 +5,4 @@ fork the Mondrian Project.
 
 ## Sub modules
   * **drianmon** - the core driamon java library
-  * **workbench** - A desktop GUI for generating Driamon schemas
+  * **workbench** - A desktop GUI for generating Drianmon schemas
