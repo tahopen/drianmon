@@ -11,9 +11,10 @@
   <artifactId>tahopen-drianmon-parent-pom</artifactId>
   <version>0.1.0.0</version>
   <packaging>pom</packaging>
-  <name>Tahopen Driamon Parent POM</name>
+  <name>Tahopen Drianmon Parent POM</name>
   <description>Container pom for Drianmon and Drianmon workbench</description>
   <url>http://www.tahopen.org</url>
+  
   <licenses>
     <license>
       <name>Eclipse Public License (EPL), Version 1.0</name>
@@ -44,7 +45,9 @@
     <commons-lang.version>2.4</commons-lang.version>
     <xmlunit.version>1.1</xmlunit.version>
   </properties>
+  
   <profiles>
+  
     <profile>
       <id>mondrian</id>
       <activation>
@@ -72,60 +75,7 @@
         <module>assemblies</module>
       </modules>
     </profile>
+    
   </profiles>
-
-  <repositories>
-  <!--
-    <repository>
-            <id>redhat-ga-repository</id>
-            <name>Redhat GA Repository</name>
-            <url>https://maven.repository.redhat.com/ga/</url>
-    </repository>
-
-   <repository>
-        <id>spring</id>
-        <name>Spring Repository</name>
-        <url>https://repo.spring.io/plugins-release/</url>
-  </repository>
-
-  <repository>
-    <id>spring-snapshot</id>
-    <name>Spring Snapshot Repository</name>
-    <url>https://repo.spring.io/snapshot</url>
-    <snapshots>
-        <enabled>true</enabled>
-    </snapshots>
-  </repository>
--->
-
-  </repositories>
-
-  <pluginRepositories>
-<!--
-   <pluginRepository>
-            <id>redhat-ga-repository</id>
-            <name>Redhat GA Repository</name>
-            <url>https://maven.repository.redhat.com/ga/</url>
-        </pluginRepository>  
-
- <pluginRepository>
-        <id>mavencentral</id>
-        <url>https://repo.maven.apache.org/maven2</url>
-    </pluginRepository>
-    <pluginRepository>
-        <id>spring-releases</id>
-        <url>https://repo.spring.io/libs-release</url>
-    </pluginRepository>
-
-    <pluginRepository>
-        <id>spring-snapshots</id>
-        <url>https://repo.spring.io/snapshot</url>
-    </pluginRepository>
-    <pluginRepository>
-        <id>spring-milestones</id>
-        <url>https://repo.spring.io/milestone</url>
-    </pluginRepository>
--->
-  </pluginRepositories>
 
 </project>

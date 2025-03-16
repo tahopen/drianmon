@@ -22,7 +22,7 @@
     <dependency.jersey.revision>1.19.1</dependency.jersey.revision>
     <pdi.version>0.1.0.0</pdi.version>
     <commons-xul.version>0.1.0.0</commons-xul.version>
-    <drianmon-schemaworkbench-plugins.version>0.1.0.0-SNAPSHOT</drianmon-schemaworkbench-plugins.version>
+    <drianmon-schemaworkbench-plugins.version>0.1.0.0</drianmon-schemaworkbench-plugins.version>
   </properties>
   <dependencies>
     <dependency>
