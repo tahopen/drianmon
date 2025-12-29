@@ -211,14 +211,14 @@
       <groupId>xerces</groupId>
       <artifactId>xercesImpl</artifactId>
     </dependency>
-
+<!--
     <dependency>
       <groupId>pentaho</groupId>
       <artifactId>oss-licenses</artifactId>
       <version>${oss-licenses.version}</version>
       <type>zip</type>
     </dependency>
-
+-->
     <dependency>
       <groupId>sun</groupId>
       <artifactId>jlfgr</artifactId>

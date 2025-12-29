@@ -1,5 +1,5 @@
-## Welcome to Mondrian Schema Workbench
-The Mondrian Schema Workbench allows you to visually create and test Mondrian
+## Welcome to Drianmon Schema Workbench
+The Drianmon Schema Workbench allows you to visually create and test Drianmon
 OLAP cube schemas.
 ### Building
 #### Requirements

@@ -12,3 +12,4 @@ bin/
 build/
 classes/
 lib/
+.asc
